@@ -219,13 +219,10 @@ header nav .nav-container .nav-top {
 }
 
 header nav .nav-container .nav-top img {
-    margin-right: auto;
     margin-top: 100px;
+    margin-left: 50px;
 }
 
-header nav .nav-container .nav-top .nav-elements {
-    margin-right: 100px;
-}
 header nav .nav-container .nav-top .nav-elements a {
     text-decoration: none;
     color: white;
@@ -292,7 +289,7 @@ header nav .nav-container .nav-bottom {
     justify-content: space-between;
 }
 
-header nav .nav-container .nav-bottom .left-content {
+header nav .nav-container .nav-bottom .left-nav-bottom{
     width: 30%;
     border-radius: 10px;
     background-color: rgb(0, 218, 218, 0.911);
@@ -304,27 +301,27 @@ header nav .nav-container .nav-bottom .left-content {
 }
 
 
-header nav .nav-container .nav-bottom .left-content h1 {
+header nav .nav-container .nav-bottom .left-nav-bottom h1 {
     margin: auto;
     width: 75%;
     font-size: 30px;
 }
 
-header nav .nav-container .nav-bottom .left-content p {
+header nav .nav-container .nav-bottom .left-nav-bottom p {
     margin: auto;
     width: 75%;
     text-align: justify;
     line-height: 1.6;
 }
 
-header nav .nav-container .nav-bottom .left-content a {
+header nav .nav-container .nav-bottom .left-nav-bottom a {
     text-align: center;
     width: 75%;
     margin: auto;
     padding: 20px 0;
 }
 
-header nav .nav-container .nav-bottom .right-content {
+header nav .nav-container .nav-bottom .right-nav-bottom {
     width: 65%;
     border-radius: 10px;
     background-color: rgba(247, 247, 247, 0.911);
