@@ -239,9 +239,8 @@ header nav .nav-container .nav-top .nav-elements a:hover {
 }
 
 header nav .nav-container .nav-center {
-    margin: auto;
-    margin-top: 100px;
-    width: 55%;
+    margin: 100px auto auto auto;
+    width: 90%;
     height: 50%;
     text-align: center;
 }
@@ -252,7 +251,8 @@ header nav .nav-container .nav-center h1 {
 }
 
 header nav .nav-container .nav-center p {
-    margin-top: 25px;
+    margin: 25px auto auto auto;
+    width: 80%;
     color: rgba(255, 255, 255, 0.719);
 }
 
@@ -285,7 +285,7 @@ header nav .nav-container .btn:hover {
 header nav .nav-container .nav-bottom {
     display: flex;
     width: 90%;
-    height: 45%;
+    height: 40%;
     margin: auto;
     margin-top: 30px;
     display: flex;
@@ -313,6 +313,8 @@ header nav .nav-container .nav-bottom .left-content h1 {
 header nav .nav-container .nav-bottom .left-content p {
     margin: auto;
     width: 75%;
+    text-align: justify;
+    line-height: 1.6;
 }
 
 header nav .nav-container .nav-bottom .left-content a {
