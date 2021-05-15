@@ -132,6 +132,7 @@ header .head-home .info i, header .head-home .small-nav i {
     margin-right: 20px;
     text-decoration: none;
     color: rgba(0, 0, 0, 0.63);
+    cursor: pointer;
 }
 
 header .head-home .small-nav .notification {
