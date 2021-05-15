@@ -204,7 +204,7 @@ header nav .nav-container::after {
     content: "";
     background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)), url("./../images/nav.jpg");
     background-size: cover;
-    background-position: top;
+    background-position: center;
     position: absolute;
     top: 0px;
     right: 0px;
@@ -341,17 +341,15 @@ body .about-section {
     border-radius: 10px;
 }
   
-body .about-section h1 {
-  font-size: 50px;
-  color:#2b9ec2;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
  
 body .about-section .content {
   text-align: justify;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   width: 80%;
-  margin: auto;
+  margin: 20px auto auto auto;
   line-height: 1.6;
   letter-spacing: 1px;
   font-size: large;
@@ -359,6 +357,7 @@ body .about-section .content {
 
 body .about-section .content h2 {
     margin: 20px 0;
+    align-self: flex-start;
 }
 
 body .about-section .content .read-more-btn {
