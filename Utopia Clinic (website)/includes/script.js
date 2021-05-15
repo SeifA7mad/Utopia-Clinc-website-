@@ -1,12 +1,20 @@
+let isSigned = false;
+
 let navToggle = () => {
     $('.side-nav').animate({
         width: "toggle"
     });
 }
 
+let signIn = () => {
+    isSigned = true;
+    diplayProfileModal();
+}
+
 $('.notification').click(() => {
-    let displayProp =  $('.notification-list').css("display") === "none" ? "flex" : "none";
-    $('.notification-list').css("display", displayProp);
+    let displayProp =  $('.notification-modal').css("display") === "none" ? "flex" : "none";
+    $('.notification-modal').css("display", displayProp);
+    $('.profile-modal').css("display", "none");
 });
 
 $('.read-more-btn').click(() => {
@@ -17,4 +25,21 @@ $('.read-more-btn').click(() => {
         $('.more-text').css("display", "none");
         $('.read-more-btn').html("Read More");
     }
-})
+});
+
+let diplayProfileModal = () => {
+    let displayProp = $('.profile-modal').css("display") === "none" ? "flex" : "none";
+
+    if (displayProp === "flex") {
+        if (isSigned) {
+            $('.profile-modal-content').css("display", displayProp);
+            $('.sign-in-form').css("display", "none");
+        } else {
+            $('.sign-in-form').css("display", displayProp);
+            $('.profile-modal-content').css("display", "none");
+        }
+    }
+
+    $('.profile-modal').css("display", displayProp);
+    $('.notification-modal').css("display", "none");
+}

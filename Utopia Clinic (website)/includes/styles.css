@@ -157,7 +157,7 @@ header .head-home .small-nav .notification-icon {
     margin: auto;
 } 
 
-header .head-home .notification-list {
+header .head-home .small-nav .notification-modal {
     display: none;
     position: absolute;
     flex-direction: column;
@@ -171,12 +171,12 @@ header .head-home .notification-list {
     align-items: center;
 }
 
-header .head-home .notification-list h2 {
+header .head-home .small-nav .notification-modal h2 {
     text-shadow: 1px 1px rgba(0, 0, 0, 0.226);
     margin-top: 5px;
 }
 
-header .head-home .notification-list .notification-item {
+header .head-home .small-nav .notification-modal .notification-item {
     width: 90%;
     border-radius: 15px;
     margin: 10px 0;
@@ -188,10 +188,71 @@ header .head-home .notification-list .notification-item {
     line-height: 1.6;
 }
 
-header .head-home .notification-list .notification-item:hover {
+header .head-home .small-nav .notification-modal .notification-item:hover {
     background-color: rgba(64, 224, 208, 0.78);
 }
 
+header .head-home .small-nav .profile-modal {
+    display: none;
+    position: absolute;
+    height: fit-content;
+    right: 130px;
+    background-color: rgb(124, 124, 124);
+    width: 20%;
+    z-index: 1;
+    border-radius: 5px;
+}
+
+header .head-home .small-nav .profile-modal .sign-in-form {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+header .head-home .small-nav .profile-modal .sign-in-form h2 {
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.226);
+    margin-top: 5px;
+}
+
+header .head-home .small-nav .profile-modal .sign-in-form form {
+    display: flex;
+    flex-direction: column;
+    margin: 10px auto; 
+}
+
+header .head-home .small-nav .profile-modal .sign-in-form form * {
+    margin-top: 10px;
+}
+
+header .head-home .small-nav .profile-modal .sign-in-form form label {
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: large;
+    color: rgba(64, 224, 208, 0.555);
+}
+
+header .head-home .small-nav .profile-modal .sign-in-form form input {
+    border-radius: 10px;
+    border-color: white;
+    border-style: none;
+    padding: 3px 30px;
+}
+
+header .head-home .small-nav .profile-modal .profile-modal-content {
+    display: none;
+}
+
+.backdrop {
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.5);
+}
 
 header nav .nav-container {
     width: 100%;
@@ -262,7 +323,7 @@ header nav .nav-container .nav-center .nav-center-buttons {
     margin-top: 70px;
 }
 
-header nav .nav-container .btn {
+header .btn {
     text-decoration: none;
     font-size: 1.5em;
     border-radius: 7px;
@@ -274,13 +335,12 @@ header nav .nav-container .nav-center .nav-center-buttons a {
     padding: 20px 100px;
 }
 
-header nav .nav-container .btn1 {
+header .btn1 {
     color: black;
     background-color: rgba(64, 224, 208, 0.78);
-    margin-left: 30px;
 }
 
-header nav .nav-container .btn:hover {
+header .btn:hover {
     background-color: rgba(0, 0, 0, 0.671);
 }
 
