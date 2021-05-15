@@ -444,3 +444,35 @@ footer {
 
 }
 /* FOOTER */
+
+/*Offers*/
+.offer{
+    display: flex;
+    width:100%;
+    justify-content: space-between;
+    background-color: darkgray;
+}
+.card-offers{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width:30%;
+    height:30%;
+    grid-template-columns: repeat(auto-fit,minmax(30rem,1fr));
+}
+.card-offers:hover{
+    transform: translateY(-0.5%);
+    box-shadow: 0 4rem 8rem black;
+}
+.card.img{
+    display: block;
+    width:100%;
+    height: 50%;
+}
+.card-buttom{
+    padding: 40px ;
+    font-size: 90%;
+    color: black;
+    margin-bottom: 20px;
+    letter-spacing: 1;
+}
