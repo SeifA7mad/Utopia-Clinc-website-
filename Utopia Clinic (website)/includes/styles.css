@@ -350,6 +350,7 @@ header nav .nav-container .nav-bottom {
     height: 40%;
     margin: auto;
     justify-content: space-between;
+    border: solid black;
 }
 
 header nav .nav-container .nav-bottom .left-nav-bottom{
@@ -446,19 +447,25 @@ footer {
 /* FOOTER */
 
 /*Offers*/
-.offer{
+.offer {
     display: flex;
-    width:100%;
+    width: 100%;
+    height: fit-content;    
     justify-content: space-between;
     background-color: darkgray;
+    border: solid black;
+    flex-wrap: wrap;
 }
+
 .card-offers{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     width:30%;
-    height:30%;
+    height: 100%;
+    margin: 10px 10px;
     grid-template-columns: repeat(auto-fit,minmax(30rem,1fr));
+    border: solid black;
 }
 .card-offers:hover{
     transform: translateY(-0.5%);
