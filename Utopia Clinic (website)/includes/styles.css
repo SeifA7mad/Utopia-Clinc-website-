@@ -19,7 +19,6 @@ header .headDashboard h3 {
     color: azure;
     margin-right: auto;
     font-style: italic;
-    font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 1.5em;
     text-shadow: 1px 1px black;
 }
@@ -91,7 +90,6 @@ nav .side-nav ul li a {
     margin-left: -20px;
     font-size: 20px;
     font-style: italic;
-    font-family: Georgia, 'Times New Roman', Times, serif;
     text-decoration: none;
     color: black;
 } 
@@ -133,6 +131,7 @@ header .head-home .info i, header .head-home .small-nav i {
     margin-right: 20px;
     text-decoration: none;
     color: rgba(0, 0, 0, 0.63);
+    cursor: pointer;
 }
 
 header .head-home .small-nav .notification {
@@ -141,18 +140,55 @@ header .head-home .small-nav .notification {
 
 header .head-home .small-nav .notification-icon {
     position: absolute;
-    background-color: black;
-    border: solid black 1px;
+    background-color: rgb(133, 127, 127);
     width: 20px;
     height: 20px;
+    line-height: 20px;
     border-radius: 50px;
     text-align: center;
-    color: rgba(255, 66, 66, 0.712);
-    font-size: 20px;
+    color: rgba(64, 224, 208, 0.78);
+    font-size: 15px;
+    font-weight: bold;
     z-index: 1;
-    right: 40px;
+    left: 18px;
     top: 18px;
+    margin: auto;
 } 
+
+header .head-home .notification-list {
+    display: none;
+    position: absolute;
+    flex-direction: column;
+    height: fit-content;
+    right: 70px;
+    background-color: rgb(124, 124, 124);
+    width: 20%;
+    z-index: 1;
+    border-radius: 5px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .head-home .notification-list h2 {
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.226);
+    margin-top: 5px;
+}
+
+header .head-home .notification-list .notification-item {
+    width: 90%;
+    border-radius: 15px;
+    margin: 10px 0;
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.226);
+    font-weight: bold;
+    padding: 10px;
+    cursor: pointer;
+    text-align: justify;
+    line-height: 1.6;
+}
+
+header .head-home .notification-list .notification-item:hover {
+    background-color: rgba(64, 224, 208, 0.78);
+}
 
 header nav .nav-container {
     width: 100%;
@@ -183,18 +219,14 @@ header nav .nav-container .nav-top {
 }
 
 header nav .nav-container .nav-top img {
-    margin-right: auto;
     margin-top: 100px;
+    margin-left: 50px;
 }
 
-header nav .nav-container .nav-top .nav-elements {
-    margin-right: 100px;
-}
 header nav .nav-container .nav-top .nav-elements a {
     text-decoration: none;
     color: white;
     text-shadow: 2px 2px black;
-    font-family: sans-serif;
     font-size: 25px;
     margin-right: 70px;
 }
@@ -204,9 +236,8 @@ header nav .nav-container .nav-top .nav-elements a:hover {
 }
 
 header nav .nav-container .nav-center {
-    margin: auto;
-    margin-top: 100px;
-    width: 55%;
+    margin: 100px auto auto auto;
+    width: 90%;
     height: 50%;
     text-align: center;
 }
@@ -217,7 +248,8 @@ header nav .nav-container .nav-center h1 {
 }
 
 header nav .nav-container .nav-center p {
-    margin-top: 25px;
+    margin: 25px auto auto auto;
+    width: 80%;
     color: rgba(255, 255, 255, 0.719);
 }
 
@@ -250,14 +282,14 @@ header nav .nav-container .btn:hover {
 header nav .nav-container .nav-bottom {
     display: flex;
     width: 90%;
-    height: 45%;
+    height: 40%;
     margin: auto;
     margin-top: 30px;
     display: flex;
     justify-content: space-between;
 }
 
-header nav .nav-container .nav-bottom .left-content {
+header nav .nav-container .nav-bottom .left-nav-bottom{
     width: 30%;
     border-radius: 10px;
     background-color: rgb(0, 218, 218, 0.911);
@@ -269,27 +301,27 @@ header nav .nav-container .nav-bottom .left-content {
 }
 
 
-header nav .nav-container .nav-bottom .left-content h1 {
+header nav .nav-container .nav-bottom .left-nav-bottom h1 {
     margin: auto;
     width: 75%;
     font-size: 30px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-header nav .nav-container .nav-bottom .left-content p {
+header nav .nav-container .nav-bottom .left-nav-bottom p {
     margin: auto;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     width: 75%;
+    text-align: justify;
+    line-height: 1.6;
 }
 
-header nav .nav-container .nav-bottom .left-content a {
+header nav .nav-container .nav-bottom .left-nav-bottom a {
     text-align: center;
     width: 75%;
     margin: auto;
     padding: 20px 0;
 }
 
-header nav .nav-container .nav-bottom .right-content {
+header nav .nav-container .nav-bottom .right-nav-bottom {
     width: 65%;
     border-radius: 10px;
     background-color: rgba(247, 247, 247, 0.911);

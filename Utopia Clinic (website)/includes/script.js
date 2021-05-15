@@ -13,3 +13,7 @@ $('.read-more-btn').click(() => {
         $('.read-more-btn').html("Read More");
     }
 })
+$('.notification').click(() => {
+    let displayProp =  $('.notification-list').css("display") === "none" ? "flex" : "none";
+    $('.notification-list').css("display", displayProp);
+});
