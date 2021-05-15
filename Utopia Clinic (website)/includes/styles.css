@@ -407,11 +407,12 @@ body {
   .content .button a{
       color:#fff;
       background-color: #2b9ec2;
-      border:1px solid #2b9ec2;
-      padding: 10px 35px;
+      border:none;
+      padding: 5px;
+      outline: none;
       text-decoration: none;
       letter-spacing: 1px;
-      font-size: 22px;
+      font-size: 30px;
       text-transform: uppercase;
   }
   .content .button a:hover{
