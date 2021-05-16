@@ -330,6 +330,7 @@ header .btn {
     border-radius: 7px;
     color: white; 
     background-color: rgba(133, 127, 127, 0.788);
+    cursor: pointer;
 }
 
 header nav .nav-container .nav-center .nav-center-buttons a {
@@ -427,6 +428,8 @@ header nav .nav-container .nav-bottom .about-section .content .read-more-btn {
     font-size: 30px;
     text-transform: uppercase;
     cursor: pointer;
+    margin-bottom: 20px;
+    border-radius: 10px;
 }
 header nav .nav-container .nav-bottom .about-section .content .read-more-btn:hover{
     background-color: #fff;
@@ -439,6 +442,68 @@ header nav .nav-container .nav-bottom  .more-text {
 }
 
 /* About US */
+
+
+/* Offers */
+
+.offer {
+    display: flex;
+    width: 100%;
+    height: fit-content;    
+    background-color: rgba(64, 224, 208, 0.555);
+    flex-wrap: wrap;
+    border-radius: 10px;
+}
+
+.offer .card-offers {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    height: 100%;
+    margin: 10px auto;
+    border-radius: 10px;
+    background-color: rgb(167, 167, 167);
+}
+
+.offer .card-offers:hover{
+    transform: translateY(-0.5%);
+    box-shadow: 0 4rem 8rem black;
+}
+
+.offer .card-offers .card-top {
+    width: 75%;
+    align-self: center;
+    height: 10em;
+    margin-top: 10px;
+    background-color: whitesmoke;
+    border-style: outset;
+    display: flex;
+    border-radius: 10px;
+}
+
+.offer .card-offers .card-top img {
+    width: 95%;
+    height: 95%;
+    margin: auto;
+    border-radius: 10px;
+}
+.offer .card-offers .card-buttom {
+    font-size: 90%;
+    color: black;
+    letter-spacing: 1;
+    line-height: 1.6;
+    text-align: center;
+    font-family: sans-serif;
+    margin-bottom: 10px;
+}
+
+.offer .card-offers .card-buttom button {
+    border: none;
+    width: 75%;
+    height: 1.5em;
+}
+
+/* Offers */
 
 /* FOOTER */
 footer {
