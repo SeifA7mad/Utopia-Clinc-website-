@@ -390,6 +390,14 @@ header nav .nav-container .nav-bottom .right-nav-bottom {
     border-radius: 10px;
     background-color: rgba(247, 247, 247, 0.911);
 }
+
+body main .home-content {
+    display: flex;
+}
+
+body main .home-content .left-home-content {
+
+}
 /* Home */
 
 /* About US */
@@ -462,7 +470,7 @@ header nav .nav-container .nav-bottom  .more-text {
     height: 100%;
     margin: 10px auto;
     border-radius: 10px;
-    background-color: rgb(167, 167, 167);
+    background-color: rgba(167, 167, 167, 0.904);
 }
 
 .offer .card-offers:hover{
@@ -476,7 +484,6 @@ header nav .nav-container .nav-bottom  .more-text {
     height: 10em;
     margin-top: 10px;
     background-color: whitesmoke;
-    border-style: outset;
     display: flex;
     border-radius: 10px;
 }
