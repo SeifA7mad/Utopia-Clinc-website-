@@ -329,6 +329,7 @@ header .btn {
     border-radius: 7px;
     color: white; 
     background-color: rgba(133, 127, 127, 0.788);
+    cursor: pointer;
 }
 
 header nav .nav-container .nav-center .nav-center-buttons a {
@@ -426,6 +427,8 @@ header nav .nav-container .nav-bottom .about-section .content .read-more-btn {
     font-size: 30px;
     text-transform: uppercase;
     cursor: pointer;
+    margin-bottom: 20px;
+    border-radius: 10px;
 }
 header nav .nav-container .nav-bottom .about-section .content .read-more-btn:hover{
     background-color: #fff;
@@ -439,30 +442,25 @@ header nav .nav-container .nav-bottom  .more-text {
 
 /* About US */
 
-/* FOOTER */
-footer {
 
-}
-/* FOOTER */
-
-/*Offers*/
+/* Offers */
 
 .offer {
     display: flex;
     width: 100%;
     height: fit-content;    
-    background-color: rgb(44, 151, 140);
+    background-color: rgba(64, 224, 208, 0.555);
     flex-wrap: wrap;
+    border-radius: 10px;
 }
 
-.offer .card-offers{
+.offer .card-offers {
     display: flex;
     flex-direction: column;
     width: 30%;
     height: 100%;
     margin: 10px auto;
     border-radius: 10px;
-    border: outset darkgray;
     background-color: rgb(167, 167, 167);
 }
 
@@ -503,3 +501,11 @@ footer {
     width: 75%;
     height: 1.5em;
 }
+
+/* Offers */
+
+/* FOOTER */
+footer {
+
+}
+/* FOOTER */
