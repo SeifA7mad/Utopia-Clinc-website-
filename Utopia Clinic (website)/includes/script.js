@@ -52,6 +52,5 @@ let progressCirclePercentage = (percentage) => {
     } 
 
     let rotate = "rotate(" + rotateDeg + "deg)";
-    console.log(rotate);
     $('.progress-circle .left-half-clipper .value-bar').css("transform", rotate);
 }
