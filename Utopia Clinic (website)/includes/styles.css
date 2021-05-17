@@ -434,7 +434,7 @@ body main .home-container .left-home-container h1 {
 
 body main .home-container .right-home-container {
     width: 55%;
-    background-color: red;   
+    background-color: #434c5f9d;   
     display: flex;
     justify-content: space-between;
     align-items: center;
