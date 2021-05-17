@@ -102,6 +102,8 @@ nav .side-nav ul li i {
 .body-container {
     overflow-y: scroll;
     height: 93vh;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Dashboard */
@@ -543,50 +545,61 @@ footer {
 .add-new-offer{
     display: flex;
     flex-direction: column;
-    height: 100%;
+    margin: auto;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(135deg,#71b7e6,#9b59b6);
-    width: 100;
-    background: #fff ;
+    background:linear-gradient(135deg,#71b7e6,#9b59b6) ;
+    width: 70%;
+    height: 90%;
+    border-radius: 10px;
 }
+
 .add-new-offer .title{
     font-size: 25px;
     font-weight: 500 ;
     position: relative;
+    margin: 20px auto;
 }
 .add-new-offer .title::before{
     content: '';
     position: absolute;
-    left:0;
+    margin: auto;
+    left: 0;
     bottom:0;
     height: 3px;
     width:160px;
     margin-top: 50px;
     background:linear-gradient(135deg,#71b7e6,#9b59b6) ;
 }
-.add-new-offer form .offer-details{
+
+.add-new-offer form {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
     justify-content: space-between;
     margin: 20px 0 12px 0;
+    width: 50%; 
+    height: 90%;
+    border-radius: 10px;
+    background-color: whitesmoke;
 }
- .offer-details .input-box input{
-    height: 30px;
+
+.add-new-offer form .input-box {
+    width: 80%;
+    margin: auto;
+    height: 20%;
+    margin-bottom: 20px;
+}
+
+ .add-new-offer form .input-box input{
+    height: 70%;
     width: 100%; 
     border-radius: 5px;
     border: 1px solid #ccc;
-    font-size:medium;
-    border-bottom-width: 2px ;
+    font-size: medium;
+    border-bottom-width: 2px;
+    margin-top: 7px ;
 }
-.offer-details .input-box input:focus,.offer-details .input-box input:valid{
-    border-color: #9b59b6;
-}
-.offer-details .input-box .offer-details{
-    font-weight: 500;
-    margin-bottom: 5px;
-}
+
 form .offer-btn{
     height: 100px;
     margin: auto;
