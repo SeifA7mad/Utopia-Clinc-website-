@@ -370,7 +370,7 @@ header .btn:hover {
     background-color: rgba(0, 0, 0, 0.671);
 }
  
-.home-container {
+.nav-bottom {
     display: flex;
     width: 90%;
     height: fit-content;
@@ -378,15 +378,15 @@ header .btn:hover {
     justify-content: space-between;
 }
 
-header nav .nav-container .home-container {
+header nav .nav-container .nav-bottom {
     margin: 50px auto auto auto;
 }
 
-header nav .nav-container .home-container .left-home-container * {
+header nav .nav-container .nav-bottom .left-nav-bottom * {
     width: 75%;
 }
 
-.home-container .left-home-container {
+.nav-bottom .left-nav-bottom {
     width: 30%;
     border-radius: 10px;
     background-color: rgb(0, 218, 218, 0.911);
@@ -394,45 +394,45 @@ header nav .nav-container .home-container .left-home-container * {
     flex-direction: column;
 }
 
-.home-container .left-home-container h1 {
+.nav-bottom .left-nav-bottom h1 {
     margin: 20px auto auto auto;
     font-size: 30px;
 }
 
-.home-container .left-home-container p {
+.nav-bottom .left-nav-bottom p {
     margin: 10px auto;
     text-align: justify;
     line-height: 1.6;
 }
 
-.home-container .left-home-container a {
+.nav-bottom .left-nav-bottom a {
     text-align: center;
     width: 75%;
     margin: auto auto 20px auto;
     padding: 20px 0;
 }
 
-.right-home-container {
+.right-nav-bottom {
     width: 65%;
     border-radius: 10px;
     background-color: rgba(247, 247, 247, 0.911);
 }
 
-body main .home-container {
+body main .nav-bottom {
 
 }
 
 
-body main .home-container .left-home-container {
+body main .nav-bottom .left-nav-bottom {
     background-color: white;
     width: 40%;
 }
 
-body main .home-container .left-home-container h1 {
+body main .nav-bottom .left-nav-bottom h1 {
     color: #434c5f;
 }
 
-body main .home-container .right-home-container {
+body main .nav-bottom .right-nav-bottom {
     width: 55%;
     background-color: #434c5f9d;   
     display: flex;
@@ -536,14 +536,14 @@ body main .home-container .right-home-container {
 
 /* About US */
 
-header nav .nav-container .home-container .about-section {
+header nav .nav-container .nav-bottom .about-section {
     text-align: center;
     background-color: #474e5de3;
     color: white;
     border-radius: 10px;
 }
 
-header nav .nav-container .home-container .about-section .content {
+header nav .nav-container .nav-bottom .about-section .content {
   text-align: justify;
   display: flex;
   flex-direction: column;
@@ -556,12 +556,12 @@ header nav .nav-container .home-container .about-section .content {
   font-size: large;
 }
 
-header nav .nav-container .home-container .about-section .content h2 {
+header nav .nav-container .nav-bottom .about-section .content h2 {
     margin: 20px 0;
     align-self: flex-start;
 }
 
-header nav .nav-container .home-container .about-section .content .read-more-btn {
+header nav .nav-container .nav-bottom .about-section .content .read-more-btn {
     color:#fff;
     background-color: #2b9ec2;
     padding: 5px;
@@ -573,12 +573,12 @@ header nav .nav-container .home-container .about-section .content .read-more-btn
     margin-bottom: 20px;
     border-radius: 10px;
 }
-header nav .nav-container .home-container .about-section .content .read-more-btn:hover{
+header nav .nav-container .nav-bottom .about-section .content .read-more-btn:hover{
     background-color: #fff;
     color:#2b9ec2;
 }
 
-header nav .nav-container .home-container  .more-text {
+header nav .nav-container .nav-bottom  .more-text {
     display: none;
     margin-bottom: 20px;
 }
