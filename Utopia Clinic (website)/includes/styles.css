@@ -430,6 +430,7 @@ body main .nav-bottom .left-nav-bottom {
 
 body main .nav-bottom .left-nav-bottom h1 {
     color: #434c5f;
+    margin: 0;
 }
 
 body main .nav-bottom .right-nav-bottom {
@@ -440,7 +441,7 @@ body main .nav-bottom .right-nav-bottom {
     align-items: center;
 }
 
-.progress-circle {
+body main .nav-bottom .right-nav-bottom .progress-circle {
     font-size: 20px;
     margin: 20px;
     position: relative;
@@ -453,7 +454,7 @@ body main .nav-bottom .right-nav-bottom {
     line-height: 5em;
 }
   
-.progress-circle:after {
+body main .nav-bottom .right-nav-bottom .progress-circle:after {
     border: none;
     position: absolute;
     top: 0.35em;
@@ -469,7 +470,7 @@ body main .nav-bottom .right-nav-bottom {
   
   /* Text inside the control */
   
-.progress-circle span {
+  body main .nav-bottom .right-nav-bottom .progress-circle span {
     position: absolute;
     line-height: 5em;
     width: 5em;
@@ -479,7 +480,7 @@ body main .nav-bottom .right-nav-bottom {
     z-index: 2;
 }
   
-.left-half-clipper {
+body main .nav-bottom .right-nav-bottom .progress-circle .left-half-clipper {
     /* a round circle */
     border-radius: 50%;
     width: 5em;
@@ -493,11 +494,11 @@ body main .nav-bottom .right-nav-bottom {
   
   /* when p>50, don't clip left half*/
   
-.progress-circle.over50 .left-half-clipper {
+  body main .nav-bottom .right-nav-bottom  .progress-circle.over50 .left-half-clipper {
     clip: rect(auto, auto, auto, auto);
 }
   
-.value-bar {
+body main .nav-bottom .right-nav-bottom .progress-circle .left-half-clipper .value-bar {
     /*This is an overlayed square, that is made round with the border radius,
      then it is cut to display only the left half, then rotated clockwise
      to escape the outer clipping path.*/
@@ -517,7 +518,7 @@ body main .nav-bottom .right-nav-bottom {
   
   /* Progress bar filling the whole right half for values above 50% */
   
-.progress-circle.over50 .first50-bar {
+  body main .nav-bottom .right-nav-bottom .progress-circle.over50 .first50-bar {
     /*Progress bar for the first 50%, filling the whole right half*/
     position: absolute;
     /*needed for clipping*/
@@ -528,7 +529,7 @@ body main .nav-bottom .right-nav-bottom {
     height: 5em;
 }
   
-.progress-circle:not(.over50) .first50-bar {
+body main .nav-bottom .right-nav-bottom .progress-circle:not(.over50) .first50-bar {
     display: none;
 }
 
