@@ -395,7 +395,7 @@ body main .home-content {
     display: flex;
 }
 
-body main .home-content .left-home-content {
+/*body main .home-content .left-home-content {
 
 }
 /* Home */
@@ -510,16 +510,78 @@ header nav .nav-container .nav-bottom  .more-text {
     height: 1.5em;
 }
 
+
 /* Offers */
 
 /* FOOTER */
-footer {
+/*footer {
 
 }
 /* FOOTER */
 
 /* Payment */
 
+.payment{
+    display: flex;    
+}
+
+.p-head{
+    padding-top: 110px;
+    padding-left: 295px;
+    font-size: 20px;
+    color: rgb(182, 205, 214);
+}
+.payment-form{
+    
+    flex-direction: column;
+    align-items: center;
+    width: 600px;
+    margin: 100px auto auto auto;
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 #2b9ec2, 0 4px 8px 0 #2b9ec2;
+    background-color: rgba(221, 196, 196, 0.432);
+
+    
+}
+
+.box1{
+    font-family: sans-serif;
+    width: 50%;
+    padding: 10px;
+    border: none;
+    border-radius: 15px;
+    box-sizing: border-box;
+    margin: 10px 0 15px 0;
+
+}
+
+.div1{
+    display: inline-block;
+}
+
+.box2{
+    font-family: sans-serif;
+    width: 50%;
+    padding: 10px;
+    border:none;
+    border-radius: 15px;
+    margin: 10px 0 15px 0;
+}
+
+.btn1{
+    width: 50%;
+    padding: 10px;
+    border:none;
+    border-radius: 15px;
+    background-color: rgba(82, 52, 52, 0.432);
+    font-size: 18px;
+    color: rgba(247, 247, 247, 0.911);
+}
+
+.btn1:hover{
+    background-color: rgba(56, 33, 33, 0.534);
+    color:#2b9ec2;
+}
 
 
 /* Payment */
