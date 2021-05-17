@@ -394,7 +394,8 @@ header nav .nav-container .nav-bottom .left-nav-bottom * {
     flex-direction: column;
 }
 
-.nav-bottom .left-nav-bottom h1 {
+.nav-bottom .left-nav-bottom h1, 
+.nav-bottom .right-nav-bottom h1 {
     margin: 20px auto auto auto;
     font-size: 30px;
 }
@@ -412,10 +413,12 @@ header nav .nav-container .nav-bottom .left-nav-bottom * {
     padding: 20px 0;
 }
 
-.right-nav-bottom {
+.nav-bottom .right-nav-bottom {
     width: 65%;
     border-radius: 10px;
     background-color: rgba(247, 247, 247, 0.911);
+    display: flex;
+    flex-direction: column;
 }
 
 body main .nav-bottom {
@@ -428,9 +431,14 @@ body main .nav-bottom .left-nav-bottom {
     width: 40%;
 }
 
-body main .nav-bottom .left-nav-bottom h1 {
+body main .nav-bottom .left-nav-bottom h1, 
+body main .nav-bottom .right-nav-bottom h1 {
     color: #434c5f;
-    margin: 0;
+    margin: 20px 0;
+}
+
+body main .nav-bottom .right-nav-bottom h1 {
+    margin-left: 20px;
 }
 
 body main .nav-bottom .right-nav-bottom {
@@ -438,7 +446,12 @@ body main .nav-bottom .right-nav-bottom {
     background-color: #434c5f9d;   
     display: flex;
     justify-content: space-between;
-    align-items: center;
+}
+
+body main .nav-bottom .right-nav-bottom .percentages {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
 body main .nav-bottom .right-nav-bottom .progress-circle {
@@ -447,8 +460,8 @@ body main .nav-bottom .right-nav-bottom .progress-circle {
     position: relative;
     /* so that children can be absolutely positioned */
     padding: 0;
-    width: 5em;
-    height: 5em;
+    width: 7em;
+    height: 7em;
     background-color: #F2E9E1;
     border-radius: 50%;
     line-height: 5em;
@@ -459,35 +472,48 @@ body main .nav-bottom .right-nav-bottom .progress-circle:after {
     position: absolute;
     top: 0.35em;
     left: 0.35em;
+    right: 0.35em;
+    bottom: 0.35em;
     text-align: center;
-    display: block;
     border-radius: 50%;
-    width: 4.3em;
-    height: 4.3em;
+    width: 6.3em;
+    height: 6.3em;
     background-color: white;
-    content: " ";
+    content: "";
 }
   
   /* Text inside the control */
   
-  body main .nav-bottom .right-nav-bottom .progress-circle span {
+body main .nav-bottom .right-nav-bottom .progress-circle span {
     position: absolute;
     line-height: 5em;
-    width: 5em;
+    width: 7em;
     text-align: center;
-    display: block;
     color: #08a1db;
     z-index: 2;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+
+body main .nav-bottom .right-nav-bottom .progress-circle p {
+    position: absolute;
+    width: 7em;
+    font-size: 18px;
+    text-align: center;
+    color: #08a1db;
+    z-index: 2;
+    bottom: 0;
+    left: 5px;
 }
   
 body main .nav-bottom .right-nav-bottom .progress-circle .left-half-clipper {
     /* a round circle */
     border-radius: 50%;
-    width: 5em;
-    height: 5em;
+    width: 7em;
+    height: 7em;
     position: absolute;
     /* needed for clipping */
-    clip: rect(0, 5em, 5em, 2.5em);
+    clip: rect(0, 7em, 7em, 4.5em);
     /* clips the whole left half*/
 }
   
@@ -504,9 +530,9 @@ body main .nav-bottom .right-nav-bottom .progress-circle .left-half-clipper .val
      to escape the outer clipping path.*/
     position: absolute;
     /*needed for clipping*/
-    clip: rect(0, 2.5em, 5em, 0);
-    width: 5em;
-    height: 5em;
+    clip: rect(0, 4.5em, 7em, 0);
+    width: 7em;
+    height: 7em;
     border-radius: 50%;
     border: 0.45em solid #08a1db;
     /*The border is 0.35 but making it larger removes visual artifacts */
@@ -522,11 +548,11 @@ body main .nav-bottom .right-nav-bottom .progress-circle .left-half-clipper .val
     /*Progress bar for the first 50%, filling the whole right half*/
     position: absolute;
     /*needed for clipping*/
-    clip: rect(0, 5em, 5em, 2.5em);
+    clip: rect(0, 7em, 7em, 4.5em);
     background-color: #08a1db;
     border-radius: 50%;
-    width: 5em;
-    height: 5em;
+    width: 7em;
+    height: 7em;
 }
   
 body main .nav-bottom .right-nav-bottom .progress-circle:not(.over50) .first50-bar {

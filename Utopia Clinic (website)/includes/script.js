@@ -44,13 +44,17 @@ let diplayProfileModal = () => {
     $('.notification-modal').css("display", "none");
 }
 
-let progressCirclePercentage = (percentage) => {
+let progressCirclePercentage = (className, percentage) => {
     let rotateDeg = percentage * 3.6;
-
+    let name = "." + className;
     if (percentage > 50) {
-        $('.progress-circle').addClass('over50');
+        $(name).addClass('over50');
     } 
 
     let rotate = "rotate(" + rotateDeg + "deg)";
-    $('.progress-circle .left-half-clipper .value-bar').css("transform", rotate);
+    name = name + " .value-bar"
+    $(name).css("transform", rotate);
 }
+
+progressCirclePercentage("rating-clinic", 80);
+progressCirclePercentage("rating-doctor", 60);
