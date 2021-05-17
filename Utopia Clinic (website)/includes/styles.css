@@ -306,6 +306,10 @@ header nav .nav-container .nav-top img {
     margin-top: 40px;
 }
 
+header nav .nav-container .nav-top .nav-elements {
+    margin-bottom: 40px;
+}
+
 header nav .nav-container .nav-top .nav-elements a {
     text-decoration: none;
     color: white;
