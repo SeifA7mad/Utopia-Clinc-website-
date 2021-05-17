@@ -548,9 +548,49 @@ footer {
     align-items: center;
     background: linear-gradient(135deg,#71b7e6,#9b59b6);
     width: 100;
-    background-color: #fff ;
+    background: #fff ;
 }
 .add-new-offer .title{
     font-size: 25px;
     font-weight: 500 ;
+    position: relative;
 }
+.add-new-offer .title::before{
+    content: '';
+    position: absolute;
+    left:0;
+    bottom:0;
+    height: 3px;
+    width:160px;
+    margin-top: 50px;
+    background:linear-gradient(135deg,#71b7e6,#9b59b6) ;
+}
+.add-new-offer form .offer-details{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0 12px 0;
+}
+ .offer-details .input-box input{
+    height: 30px;
+    width: 100%; 
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size:medium;
+    border-bottom-width: 2px ;
+}
+.offer-details .input-box input:focus,.offer-details .input-box input:valid{
+    border-color: #9b59b6;
+}
+.offer-details .input-box .offer-details{
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+form .offer-btn{
+    height: 100px;
+    margin: auto;
+    margin-top: 10px;
+}
+
+    
