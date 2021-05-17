@@ -4,6 +4,10 @@
     font-family: sans-serif;
 }
 
+body main {
+    margin-top: 100px;
+}
+
 /* Dashboard */
 
 header .headDashboard {
@@ -344,7 +348,7 @@ header nav .nav-container .nav-center .nav-center-buttons {
     margin-top: 70px;
 }
 
-header .btn {
+.btn {
     text-decoration: none;
     font-size: 1.5em;
     border-radius: 7px;
@@ -357,7 +361,7 @@ header nav .nav-container .nav-center .nav-center-buttons a {
     padding: 20px 100px;
 }
 
-header .btn1 {
+.btn1 {
     color: black;
     background-color: rgba(64, 224, 208, 0.78);
 }
@@ -365,72 +369,86 @@ header .btn1 {
 header .btn:hover {
     background-color: rgba(0, 0, 0, 0.671);
 }
-
-header nav .nav-container .nav-bottom {
+ 
+.home-container {
     display: flex;
     width: 90%;
     height: fit-content;
-    margin: 50px auto auto auto;
+    margin: auto;
     justify-content: space-between;
 }
 
-header nav .nav-container .nav-bottom .left-nav-bottom{
+header nav .nav-container .home-container {
+    margin: 50px auto auto auto;
+}
+
+header nav .nav-container .home-container .left-home-container * {
+    width: 75%;
+}
+
+.home-container .left-home-container {
     width: 30%;
     border-radius: 10px;
     background-color: rgb(0, 218, 218, 0.911);
-    text-align: left;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
 }
 
-header nav .nav-container .nav-bottom .left-nav-bottom h1 {
-    margin: 10px auto auto auto;
-    width: 75%;
+.home-container .left-home-container h1 {
+    margin: 20px auto auto auto;
     font-size: 30px;
 }
 
-header nav .nav-container .nav-bottom .left-nav-bottom p {
-    margin: auto;
-    width: 75%;
+.home-container .left-home-container p {
+    margin: 10px auto;
     text-align: justify;
     line-height: 1.6;
 }
 
-header nav .nav-container .nav-bottom .left-nav-bottom a {
+.home-container .left-home-container a {
     text-align: center;
     width: 75%;
-    margin: auto auto 10px auto;
+    margin: auto auto 20px auto;
     padding: 20px 0;
 }
 
-header nav .nav-container .nav-bottom .right-nav-bottom {
+.right-home-container {
     width: 65%;
     border-radius: 10px;
     background-color: rgba(247, 247, 247, 0.911);
 }
 
-body main .home-content {
-    display: flex;
+body main .home-container {
+
 }
 
-body main .home-content .left-home-content {
 
+body main .home-container .left-home-container {
+    background-color: white;
+    width: 40%;
+}
+
+body main .home-container .left-home-container h1 {
+    color: #434c5f;
+}
+
+body main .home-container .right-home-container {
+    width: 55%;
+    background-color: white;   
 }
 
 /* Home */
 
 /* About US */
 
-header nav .nav-container .nav-bottom .about-section {
+header nav .nav-container .home-container .about-section {
     text-align: center;
     background-color: #474e5de3;
     color: white;
     border-radius: 10px;
 }
 
-header nav .nav-container .nav-bottom .about-section .content {
+header nav .nav-container .home-container .about-section .content {
   text-align: justify;
   display: flex;
   flex-direction: column;
@@ -443,12 +461,12 @@ header nav .nav-container .nav-bottom .about-section .content {
   font-size: large;
 }
 
-header nav .nav-container .nav-bottom .about-section .content h2 {
+header nav .nav-container .home-container .about-section .content h2 {
     margin: 20px 0;
     align-self: flex-start;
 }
 
-header nav .nav-container .nav-bottom .about-section .content .read-more-btn {
+header nav .nav-container .home-container .about-section .content .read-more-btn {
     color:#fff;
     background-color: #2b9ec2;
     padding: 5px;
@@ -460,12 +478,12 @@ header nav .nav-container .nav-bottom .about-section .content .read-more-btn {
     margin-bottom: 20px;
     border-radius: 10px;
 }
-header nav .nav-container .nav-bottom .about-section .content .read-more-btn:hover{
+header nav .nav-container .home-container .about-section .content .read-more-btn:hover{
     background-color: #fff;
     color:#2b9ec2;
 }
 
-header nav .nav-container .nav-bottom  .more-text {
+header nav .nav-container .home-container  .more-text {
     display: none;
     margin-bottom: 20px;
 }
@@ -538,3 +556,26 @@ footer {
 
 }
 /* FOOTER */
+
+
+.c100 {
+    position: relative;
+    font-size: 120px;
+    width: 1em;
+    height: 1em;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+    float: left;
+    margin: 0 0.1em 0.1em 0;
+    background-color: #cccccc;
+  }
+
+  .c100 .slice {
+    position: absolute;
+    width: 1em;
+    height: 1em;
+    clip: rect(0em, 1em, 1em, 0.5em);
+  }
