@@ -703,6 +703,10 @@ header nav .nav-container .nav-bottom .payment form {
     border: solid black;
 }
 
+header nav .nav-container .nav-bottom .payment form radio-button{
+    margin:0;
+}
+
 header nav .nav-container .nav-bottom .payment form label {
     margin: 20px 120px;
     align-self: flex-start;
