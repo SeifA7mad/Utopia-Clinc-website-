@@ -748,5 +748,20 @@ header nav .nav-container .nav-bottom .payment form button:hover {
     color:#2b9ec2;
 }
 
+header nav .nav-container .nav-bottom .payment form .row{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    
+
+}
+
+header nav .nav-container .nav-bottom .payment form .row img{
+
+    width: 15%;
+    margin: 15px 0 0 25px;
+    border-radius: 10px;
+}
 /* Payment */
+
 
