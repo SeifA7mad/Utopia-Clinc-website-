@@ -43,3 +43,18 @@ let diplayProfileModal = () => {
     $('.profile-modal').css("display", displayProp);
     $('.notification-modal').css("display", "none");
 }
+
+let progressCirclePercentage = (className, percentage) => {
+    let rotateDeg = percentage * 3.6;
+    let name = "." + className;
+    if (percentage > 50) {
+        $(name).addClass('over50');
+    } 
+
+    let rotate = "rotate(" + rotateDeg + "deg)";
+    name = name + " .value-bar"
+    $(name).css("transform", rotate);
+}
+
+progressCirclePercentage("rating-clinic", 80);
+progressCirclePercentage("rating-doctor", 60);

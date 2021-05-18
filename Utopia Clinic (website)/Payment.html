@@ -58,56 +58,41 @@
                     <a href="./AboutUs.html"> About Us </a>
                 </div>
             </div>
-    <div>
-        <div class="payment">
-
-                
-
-                <div class="p-head">
-                    <h1>Payment</h1><br><br><br>
-                    <h2>Choose payment method below</h2><br>
-                        <input type="radio" name="cash" id="Cash" >Cash<br><br>
-                    <input type="radio" name="credit" id="Credit Card"> Credit Card
-                    
-                    
-                </div>
-                
-                <div class="icon">
-                    <img src="nav.png">
-                    <img src="mc.png">
-                    <br>
-                </div>
-                
-
-            <div class = payment-form>
-                <form>
-                    <label for = "name"> NAME ON CARD</label><br>
-                    <input class="box1" type = "text" name="name" id="name" placeholder="Enter name on Card"><br>
-        
-                    <label for = "name"> CARD NUMBER</label><br>
-                    <input class="box1" type = "text" name="number" id="number" placeholder="0000 0000 0000 0000"><br>
-                    <div class="div1">
-                        <label for = "name"> EXPIRY DATE</label><br>
-                    <input class="box2" type = "text" name="month" id="month" placeholder="MONTH/MM">
-                    </div>
-                    <div class="div1">
-                        <label for = "name"> </label><br>
-                    <input class ="box2" type = "text" name="year" id="year" placeholder="YEAR/YY"><br>
-                    </div>
-                    <br>
-                    <label for = "name"> CCV</label><br>
-                    <input class="box1" type = "text" name="ccv" id="ccv" placeholder="123"><br>
-        
-                    <button class="btn1" type = "button"> Pay</button>
-        
-                </form>
+            <div class="nav-center">
+                <h1> Payment </h1>
             </div>
-             
-     </div>
+            <div class="nav-bottom">
+                <div class="payment">
+                    <form>
+                        <input type="radio" id="Cash" name="Cash" value="Cash">
+                        <label for="Cash">Cash</label>
+                        <input type="radio" id="Credit Card" name="Credit Card" value="Credit Card">
+                        <label for="Credit Card">Credit Card</label>
+                        
+                        <label for = "name"> NAME ON CARD</label>
+                        <input type = "text" name="name" id="name" placeholder="Enter name on Card">
+                        <label for = "name"> CARD NUMBER</label>
+                        <input type = "text" name="number" id="number" placeholder="0000 0000 0000 0000">
+                        <label for = "name"> EXPIRY DATE</label>
+                        <div class="payment-date">
+                            <input type = "text" name="month" id="month" placeholder="MONTH/MM">
+                            <input type = "text" name="year" id="year" placeholder="YEAR/YY">
+                        </div>
+                        <label for = "name"> CCV</label>
+                        <input type = "text" name="ccv" id="ccv" placeholder="123">
+            
+                        <button type = "button"> Pay</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+                
+                <!-- <div class="icon">
+                    <img src="./images/visa.png">
+                    <img src="./images/mc.png">
+                    <br>
+                </div> -->
     </nav>
-    </div>
-</div>
-
 </header>
 
 <body>
