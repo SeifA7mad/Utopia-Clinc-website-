@@ -59,3 +59,10 @@ let progressCirclePercentage = (className, percentage) => {
 
 progressCirclePercentage(".rating-clinic", 80);
 progressCirclePercentage(".rating-doctor", 60);
+
+let changeTitle = (title) => {
+    if (title === 'Archive') {
+        $('.' +title).show();
+    }
+    $('.body-container .body-container-top h1').html(title);
+}
