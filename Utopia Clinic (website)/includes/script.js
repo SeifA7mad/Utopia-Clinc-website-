@@ -46,15 +46,22 @@ let diplayProfileModal = () => {
 
 let progressCirclePercentage = (className, percentage) => {
     let rotateDeg = percentage * 3.6;
-    let name = "." + className;
-    if (percentage > 50) {
-        $(name).addClass('over50');
-    } 
 
-    let rotate = "rotate(" + rotateDeg + "deg)";
-    name = name + " .value-bar"
-    $(name).css("transform", rotate);
+    if (percentage > 50) {
+        $(className).addClass('over50');
+    }
+
+    className = className + " .value-bar";   
+
+    $({deg: 0}).animate({deg: rotateDeg}, {
+        duration: 2000,
+        step: function(now) {
+            $(className).css({
+                transform: 'rotate(' + now + 'deg)'
+            });
+        }
+    });
 }
 
-progressCirclePercentage("rating-clinic", 80);
-progressCirclePercentage("rating-doctor", 60);
+progressCirclePercentage(".rating-clinic", 80);
+progressCirclePercentage(".rating-doctor", 60);
