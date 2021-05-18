@@ -4,6 +4,10 @@
     font-family: sans-serif;
 }
 
+.body {
+    margin-top: 100px;
+}
+
 /* Dashboard */
 
 header .head-dashboard {
@@ -347,7 +351,7 @@ header nav .nav-container .nav-center .nav-center-buttons {
 .btn {
     text-decoration: none;
     font-size: 1.5em;
-    border-radius: 7px;
+    border-radius: 30px;
     color: white; 
     background-color: rgba(133, 127, 127, 0.788);
     cursor: pointer;
@@ -362,7 +366,7 @@ header nav .nav-container .nav-center .nav-center-buttons a {
     background-color: rgba(64, 224, 208, 0.78);
 }
 
-header .btn:hover {
+.btn:hover {
     background-color: rgba(0, 0, 0, 0.671);
 }
  
@@ -397,7 +401,7 @@ header nav .nav-container .nav-bottom .left-nav-bottom * {
 }
 
 .nav-bottom .left-nav-bottom p {
-    margin: 10px auto;
+    margin: 20px auto;
     text-align: justify;
     line-height: 1.6;
 }
@@ -430,11 +434,22 @@ body main .nav-bottom .left-nav-bottom {
 body main .nav-bottom .left-nav-bottom h1, 
 body main .nav-bottom .right-nav-bottom h1 {
     color: #434c5f;
-    margin: 20px 0;
+    margin-right: 0;
+    margin-left: 0;
+}
+
+
+body main .nav-bottom .left-nav-bottom a {
+    margin-right: 0;
+    margin-left: 0;
+    width: 25%;
+    padding: 10px 0;
+    font-size: 1em;
 }
 
 body main .nav-bottom .right-nav-bottom h1 {
     margin-left: 20px;
+    margin-bottom: 30px;
 }
 
 body main .nav-bottom .right-nav-bottom {
@@ -516,7 +531,7 @@ body main .nav-bottom .right-nav-bottom .progress-circle .left-half-clipper {
   
   /* when p>50, don't clip left half*/
   
-  body main .nav-bottom .right-nav-bottom  .progress-circle.over50 .left-half-clipper {
+body main .nav-bottom .right-nav-bottom  .progress-circle.over50 .left-half-clipper {
     clip: rect(auto, auto, auto, auto);
 }
   
@@ -553,6 +568,11 @@ body main .nav-bottom .right-nav-bottom .progress-circle .left-half-clipper .val
   
 body main .nav-bottom .right-nav-bottom .progress-circle:not(.over50) .first50-bar {
     display: none;
+}
+
+body main .home-image {
+    width: 100%;
+    margin: auto;
 }
 
 /* Home */
