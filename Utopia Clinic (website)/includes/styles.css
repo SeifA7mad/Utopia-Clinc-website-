@@ -4,13 +4,9 @@
     font-family: sans-serif;
 }
 
-body main {
-    margin-top: 100px;
-}
-
 /* Dashboard */
 
-header .headDashboard {
+header .head-dashboard {
     display: flex;
     background-color: #2db4cf;
     width: 100%;
@@ -19,7 +15,7 @@ header .headDashboard {
     justify-content: center;
 }
 
-header .headDashboard h3 {
+header .head-dashboard h3 {
     color: azure;
     margin-right: auto;
     font-style: italic;
@@ -27,7 +23,7 @@ header .headDashboard h3 {
     text-shadow: 1px 1px black;
 }
 
-header .headDashboard .toggleNav {
+header .head-dashboard .toggleNav {
     margin-right: auto;
     margin-left: 10px;
     cursor: pointer;
@@ -35,11 +31,11 @@ header .headDashboard .toggleNav {
     padding: 0 5px;
 } 
 
-header .headDashboard .toggleNav:hover {
+header .head-dashboard .toggleNav:hover {
     background-color: rgba(0, 0, 0, 0.109);
 }
 
-header .headDashboard .toggleNav div {
+header .head-dashboard .toggleNav div {
     width: 35px;
     height: 5px;
     background-color: black;
