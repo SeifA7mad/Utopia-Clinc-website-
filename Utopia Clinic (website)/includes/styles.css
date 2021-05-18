@@ -443,7 +443,7 @@ body main .nav-bottom .right-nav-bottom h1 {
 
 body main .nav-bottom .right-nav-bottom {
     width: 55%;
-    background-color: #434c5f9d;   
+    background-color: white;   
     display: flex;
     justify-content: space-between;
 }
@@ -452,11 +452,11 @@ body main .nav-bottom .right-nav-bottom .percentages {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    margin-bottom: 20px;
 }
 
 body main .nav-bottom .right-nav-bottom .progress-circle {
     font-size: 20px;
-    margin: 20px;
     position: relative;
     /* so that children can be absolutely positioned */
     padding: 0;
