@@ -4,6 +4,10 @@
     font-family: sans-serif;
 }
 
+body main {
+    margin-top: 100px;
+}
+
 /* Dashboard */
 
 header .headDashboard {
@@ -346,7 +350,7 @@ header nav .nav-container .nav-center .nav-center-buttons {
     margin-top: 70px;
 }
 
-header .btn {
+.btn {
     text-decoration: none;
     font-size: 1.5em;
     border-radius: 7px;
@@ -359,7 +363,7 @@ header nav .nav-container .nav-center .nav-center-buttons a {
     padding: 20px 100px;
 }
 
-header .btn1 {
+.btn1 {
     color: black;
     background-color: rgba(64, 224, 208, 0.78);
 }
@@ -367,58 +371,194 @@ header .btn1 {
 header .btn:hover {
     background-color: rgba(0, 0, 0, 0.671);
 }
-
-header nav .nav-container .nav-bottom {
+ 
+.nav-bottom {
     display: flex;
     width: 90%;
     height: fit-content;
-    margin: 50px auto auto auto;
+    margin: auto;
     justify-content: space-between;
 }
 
-header nav .nav-container .nav-bottom .left-nav-bottom{
+header nav .nav-container .nav-bottom {
+    margin: 50px auto auto auto;
+}
+
+header nav .nav-container .nav-bottom .left-nav-bottom * {
+    width: 75%;
+}
+
+.nav-bottom .left-nav-bottom {
     width: 30%;
     border-radius: 10px;
     background-color: rgb(0, 218, 218, 0.911);
-    text-align: left;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
 }
 
-header nav .nav-container .nav-bottom .left-nav-bottom h1 {
-    margin: 10px auto auto auto;
-    width: 75%;
+.nav-bottom .left-nav-bottom h1, 
+.nav-bottom .right-nav-bottom h1 {
+    margin: 20px auto auto auto;
     font-size: 30px;
 }
 
-header nav .nav-container .nav-bottom .left-nav-bottom p {
-    margin: auto;
-    width: 75%;
+.nav-bottom .left-nav-bottom p {
+    margin: 10px auto;
     text-align: justify;
     line-height: 1.6;
 }
 
-header nav .nav-container .nav-bottom .left-nav-bottom a {
+.nav-bottom .left-nav-bottom a {
     text-align: center;
     width: 75%;
-    margin: auto auto 10px auto;
+    margin: auto auto 20px auto;
     padding: 20px 0;
 }
 
-header nav .nav-container .nav-bottom .right-nav-bottom {
+.nav-bottom .right-nav-bottom {
     width: 65%;
     border-radius: 10px;
     background-color: rgba(247, 247, 247, 0.911);
-}
-
-body main .home-content {
     display: flex;
+    flex-direction: column;
 }
 
-body main .home-content .left-home-content {
+body main .nav-bottom {
 
+}
+
+
+body main .nav-bottom .left-nav-bottom {
+    background-color: white;
+    width: 40%;
+}
+
+body main .nav-bottom .left-nav-bottom h1, 
+body main .nav-bottom .right-nav-bottom h1 {
+    color: #434c5f;
+    margin: 20px 0;
+}
+
+body main .nav-bottom .right-nav-bottom h1 {
+    margin-left: 20px;
+}
+
+body main .nav-bottom .right-nav-bottom {
+    width: 55%;
+    background-color: white;   
+    display: flex;
+    justify-content: space-between;
+}
+
+body main .nav-bottom .right-nav-bottom .percentages {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+body main .nav-bottom .right-nav-bottom .progress-circle {
+    font-size: 20px;
+    position: relative;
+    /* so that children can be absolutely positioned */
+    padding: 0;
+    width: 7em;
+    height: 7em;
+    background-color: #F2E9E1;
+    border-radius: 50%;
+    line-height: 5em;
+}
+  
+body main .nav-bottom .right-nav-bottom .progress-circle:after {
+    border: none;
+    position: absolute;
+    top: 0.35em;
+    left: 0.35em;
+    right: 0.35em;
+    bottom: 0.35em;
+    text-align: center;
+    border-radius: 50%;
+    width: 6.3em;
+    height: 6.3em;
+    background-color: white;
+    content: "";
+}
+  
+  /* Text inside the control */
+  
+body main .nav-bottom .right-nav-bottom .progress-circle span {
+    position: absolute;
+    line-height: 5em;
+    width: 7em;
+    text-align: center;
+    color: #08a1db;
+    z-index: 2;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+
+body main .nav-bottom .right-nav-bottom .progress-circle p {
+    position: absolute;
+    width: 7em;
+    font-size: 18px;
+    text-align: center;
+    color: #08a1db;
+    z-index: 2;
+    bottom: 0;
+    left: 5px;
+}
+  
+body main .nav-bottom .right-nav-bottom .progress-circle .left-half-clipper {
+    /* a round circle */
+    border-radius: 50%;
+    width: 7em;
+    height: 7em;
+    position: absolute;
+    /* needed for clipping */
+    clip: rect(0, 7em, 7em, 4.5em);
+    /* clips the whole left half*/
+}
+  
+  
+  /* when p>50, don't clip left half*/
+  
+  body main .nav-bottom .right-nav-bottom  .progress-circle.over50 .left-half-clipper {
+    clip: rect(auto, auto, auto, auto);
+}
+  
+body main .nav-bottom .right-nav-bottom .progress-circle .left-half-clipper .value-bar {
+    /*This is an overlayed square, that is made round with the border radius,
+     then it is cut to display only the left half, then rotated clockwise
+     to escape the outer clipping path.*/
+    position: absolute;
+    /*needed for clipping*/
+    clip: rect(0, 4.5em, 7em, 0);
+    width: 7em;
+    height: 7em;
+    border-radius: 50%;
+    border: 0.45em solid #08a1db;
+    /*The border is 0.35 but making it larger removes visual artifacts */
+    /*background-color: #4D642D;*/
+    /* for debug */
+    box-sizing: border-box;
+}
+  
+  
+  /* Progress bar filling the whole right half for values above 50% */
+  
+  body main .nav-bottom .right-nav-bottom .progress-circle.over50 .first50-bar {
+    /*Progress bar for the first 50%, filling the whole right half*/
+    position: absolute;
+    /*needed for clipping*/
+    clip: rect(0, 7em, 7em, 4.5em);
+    background-color: #08a1db;
+    border-radius: 50%;
+    width: 7em;
+    height: 7em;
+}
+  
+body main .nav-bottom .right-nav-bottom .progress-circle:not(.over50) .first50-bar {
+    display: none;
 }
 
 /* Home */
@@ -607,3 +747,7 @@ form .offer-btn{
 }
 
     
+/*AddNewOffer(Admin)*/
+
+
+
