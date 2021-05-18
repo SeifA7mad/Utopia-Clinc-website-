@@ -678,7 +678,8 @@ footer {
 /* FOOTER */
 
 /*AddNewOffer(Admin)*/
-.add-new-offer{
+
+.form-dashboard {
     display: flex;
     flex-direction: column;
     margin: auto;
@@ -690,13 +691,13 @@ footer {
     border-radius: 10px;
 }
 
-.add-new-offer .title{
+.form-dashboard .title{
     font-size: 25px;
     font-weight: 500 ;
     position: relative;
     margin: 20px auto;
 }
-.add-new-offer .title::before{
+.form-dashboard .title::before{
     content: '';
     position: absolute;
     margin: auto;
@@ -708,7 +709,7 @@ footer {
     background:linear-gradient(135deg,#71b7e6,#9b59b6) ;
 }
 
-.add-new-offer form {
+.form-dashboard form {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -719,14 +720,14 @@ footer {
     background-color: whitesmoke;
 }
 
-.add-new-offer form .input-box {
+.form-dashboard form .input-box {
     width: 80%;
     margin: auto;
     height: 20%;
     margin-bottom: 20px;
 }
 
- .add-new-offer form .input-box input{
+ .form-dashboard form .input-box input{
     height: 70%;
     width: 100%; 
     border-radius: 5px;
