@@ -1,11 +1,5 @@
 let isSigned = false;
 
-let navToggle = () => {
-    $('.side-nav').animate({
-        width: "toggle"
-    });
-}
-
 let signIn = () => {
     isSigned = true;
     diplayProfileModal();
