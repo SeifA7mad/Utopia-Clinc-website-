@@ -193,62 +193,58 @@ nav .side-nav ul li:hover, nav .side-nav ul li a:hover {
 }
 
 .add-doctor{
-    width: 100%;
-    height: fit-content;
+    width: 50%;
+    height: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
     border-radius: 10px;
+    border: solid black;
 }
 .add-doctor form{
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-margin: 20px 0;
-border-radius: 10px;
-width: 50%;
-height: 100%;
-background-color: rgba(221, 196, 196, 0.432); 
-font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    width: 100%;
+    background-color: rgba(221, 196, 196, 0.432); 
+    font-family: sans-serif;
 }
 
 .add-doctor form h1{
-margin: 20px 140px;
-align-self: flex-start; 
-color: rgb(69, 71, 71);
+    margin: 10px 0;
+    color: rgb(69, 71, 71);
 }
 
 .add-doctor form input{
-width: 65%;
-padding: 10px;
-border: none;
-border-radius: 15px;
-box-sizing: border-box;
-margin: auto;
+    width: 65%;
+    padding: 10px;
+    border: none;
+    border-radius: 15px;
+    box-sizing: border-box;
 }
 
 .add-doctor form label{
-margin: 20px 140px;
-align-self: flex-start; 
+    width: 65%;
+    margin: 10px 0;
 }
 
 .add-doctor form button{
-width: 40%;
-padding: 10px;
-margin: 40px auto;
-margin-right: 130px;
-border: none;
-border-radius: 15px;
-background-color: rgba(148, 113, 113, 0.432);
-font-size: 18px;
-color: rgba(247, 247, 247, 0.911);
-cursor: pointer;
+    width: 40%;
+    padding: 10px;
+    margin: 30px 0;
+    border: none;
+    border-radius: 15px;
+    background-color: rgba(148, 113, 113, 0.432);
+    font-size: 18px;
+    color: rgba(247, 247, 247, 0.911);
+    cursor: pointer;
 }
 
 .add-doctor form button:hover{
-background-color: rgba(34, 129, 236, 0.534);
-color:#495052;
+    background-color: rgba(34, 129, 236, 0.534);
+    color:#495052;
 }
 /* Dashboard */
 
