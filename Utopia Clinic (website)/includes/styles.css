@@ -931,18 +931,7 @@ footer .footer-bottom div ul li a:hover {
 }
 /* FOOTER */
 
-/* Ask Doctor*/
-section{
-	position: relative;
-	min-height: 100vh;
-	padding: 5px 100px;
-	justify-content: center;
-	display: flex;
-	align-items: center;
-	background-image: url(nav.jpg);
-	background-size: cover; 
-	flex-direction: column;
-}
+/* 
 section .topCon{
 	min-width: 800px;
 	text-align:center; 
@@ -957,8 +946,8 @@ section .topCon p{
 	
 	font-weight: 300;
 	color: #fff;
-}
-.container {
+} */
+/* .container {
 	width: 100%;
 	justify-content: center;
 	display: flex;
@@ -1070,7 +1059,7 @@ section .topCon p{
     .contactForm{
         width:100%;
     }
-}
+} */
 
 /* *{	
 	margin: 0;
@@ -1097,11 +1086,12 @@ section .topCon p{
 
 
 .container{
-	width: 500px;
-	text-align: right;
+	margin: auto;
+    display: flex;
+    width: 50%;
+    flex-direction: column;
 }
 .boxContainer{
-	height: 200px;
 	width: 100%;
 	background: #444;
 	box-shadow: 0 5px 15px #111;
@@ -1110,10 +1100,9 @@ section .topCon p{
 	display: none;
 }
 .boxContainer .box{
-	height: 80%;
+	height: fit-content;
 	width: 100%;
 	border-radius: 5px;
-	padding: 10px;
 	background:#f8f8f8;
 	overflow-y: auto;
 	text-align: left;
