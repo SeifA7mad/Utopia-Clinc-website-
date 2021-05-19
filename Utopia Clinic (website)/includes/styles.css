@@ -965,11 +965,10 @@ footer .footer-bottom div ul li a:hover {
 	object-fit: cover;
 } */
 .container{
-	width: 500px;
-	text-align: right;
+    margin: auto;
 }
 .boxContainer{
-	height: 200px;
+	height: fit-content;
 	width: 100%;
 	background: #444;
 	box-shadow: 0 5px 15px #111;
@@ -978,14 +977,11 @@ footer .footer-bottom div ul li a:hover {
 	display: none;
 }
 .boxContainer .box{
-	height: 80%;
 	width: 100%;
 	border-radius: 5px;
-	padding: 10px;
 	background:#f8f8f8;
 	overflow-y: auto;
 	text-align: left;
-
 }
 #input{
 	width: 100%;
