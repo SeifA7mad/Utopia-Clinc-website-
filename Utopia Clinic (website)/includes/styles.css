@@ -1085,29 +1085,54 @@ section .topCon p{
 }
 
 
-.container{
+.askadoctor-container {
 	margin: auto;
     display: flex;
     width: 50%;
     flex-direction: column;
 }
-.boxContainer{
+
+.askadoctor-container .buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    width: 60%;
+}
+
+.askadoctor-container button{
+	height: 30px;
+	width: 160px;
+	background:rgba(18,240,248);
+	color: #fff;
+	cursor: pointer;
+	margin: 10px 0;
+	font-size: 15px;
+	box-shadow: 0 3px 10px #111;
+	border-radius: 5px;
+}
+.askadoctor-container button:hover{
+	opacity: .8;
+}
+.askadoctor-container .boxContainer{
 	width: 100%;
+    height: fit-content;
 	background: #444;
 	box-shadow: 0 5px 15px #111;
 	border-radius: 5px;
 	padding: 15px; 
 	display: none;
 }
-.boxContainer .box{
+
+.askadoctor-container .boxContainer .box{
 	height: fit-content;
 	width: 100%;
 	border-radius: 5px;
 	background:#f8f8f8;
 	overflow-y: auto;
 	text-align: left;
-
 }
+
 #input{
 	width: 100%;
 	height: 40px;
@@ -1119,19 +1144,6 @@ section .topCon p{
 #input:focus{
 	border-bottom: 2px solid #fff;
 }
-button{
-	height: 30px;
-	width: 160px;
-	background:rgba(18,240,248);
-	color: #fff;
-	cursor: pointer;
-	margin: 10px 0;
-	font-size: 15px;
-	box-shadow: 0 3px 10px #111;
-	border-radius: 5px;
-}
-button:hover{
-	opacity: .8;
-}
+
 
 /*Mostafa: Reservation*/
