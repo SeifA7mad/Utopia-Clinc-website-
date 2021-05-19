@@ -1,100 +1,194 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title></title>
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css" integrity="sha384-wESLQ85D6gbsF459vf1CiZ2+rr+CsxRY0RpiF1tLlQpDnAgg6rwdsUF1+Ics2bni" crossorigin="anonymous">
-</head>
-<body>
-
-			
-	<section>
+	<head>
+		<title> Utopia Clinic </title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="./includes/styles.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	</head>
 	
-		<div class="topCon">
-			<h2>Resrvation</h2>
-			<p>Please Type your Information in a form, polit, applicable way and ensure honesty
-			</p>
-		</div>
-		<div class="container">
-			<div class="contactInfo">
-				<div class="box">
-					<div class="icon">
-						<i class="fa fa-map-marker"></i>
-					</div>
-					<div class="text">
-						<h3>Address</h3>
-						<p>Mokattam sjgsugdcsjdgugsd ishdihs sdhich sdhchs </p>
-					</div>
-				</div>
-
-				<div class="box">
-					<div class="icon">
-						<i class="fa fa-phone"></i>
-					</div>
-					<div class="text">
-						<h3>Phone </h3>
-						<p>01062505630 </p>
-					</div>
-				</div>
-
-				<div class="box">
-					<div class="icon">
-						<i class="fa fa-envelope-square"></i>
-
-					</div>
-					<div class="text">
-						<h3>Email</h3>
-						<p>mostbs@jsjd.com</p>
-					</div>
-				</div>
-				<div class="box">
-					<div class="icon">
-						<i class="fa fa-envelope-square"></i>
-
-					</div>
-					<div class="text">
-						<h3> Our Working Hours</h3>
-						<p> 6:00am to 4:00pm</p>
-					</div>
-				</div>
+	<header>
+		<div class="head-home">
+			<div class="info">
+				<i class="fa fa-phone fa-lg" aria-hidden="true"> 01028877643 </i>
+				<i class="fa fa-map-marker fa-lg" aria-hidden="true"> Mokattam </i>
+				<i class="fa fa-clock-o fa-lg" aria-hidden="true"> 6:00am to 4:00pm</i>
 			</div>
-			<div class="contactForm">
-				<h2> Fill Application</h2>
-				<form action="">
-					<div class="inputBox">
-						<input type="" name="" id="" required>
-						<span> Enter Full Name</span>
+			<div class="small-nav">
+				<i class="fa fa-user fa-2x profile" aria-hidden="true" onclick="diplayProfileModal()"></i> 
+				<div class="profile-modal">
+					<div class="sign-in-form">
+						<h2> Sign in </h2>
+						<form>
+							<label for="sign-in-email"> E-mail: </label>
+							<input type="text" name="sign-in-email" id="sign-in-email">
+							<label for="sign-in-password"> Password: </label>
+							<input type="password" name="sign-in-password" id="sign-in-password">
+							<input type="button" value="Sign in" class="btn btn1" style="cursor: pointer; margin-top: 20px;" onclick="signIn()">
+						</form>
 					</div>
-					<div class="inputBox">
-						<input type="" name="" id=""required>
-						<span> Enter Clinical ID</span>
+					<div class="profile-modal-content">
+						<img src="./images/profilePicture.png">
+						<p> Seif Ahmad </p>
 					</div>
-					<div class="inputBox">
-						<input type="" name="" id="" required>
-						<span> Enter Type of pain</span>
+				</div>
+				<i class="fa fa-bell-o fa-2x notification" aria-hidden="true"> <div class="notification-icon"> <!-- Dynamic generated --> 1 </div> </i>
+				<div class="notification-modal">
+					<h2> Notifications </h2>
+					<!-- Dynamic generated -->
+					<div class="notification-item">
+						Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, deleniti.
 					</div>
-					<div class="inputBox">
-						<input type="" name="" id=""required>
-						<span> Your signature</span>
-					</div>
-					<div class="inputBox">
-						
-						<textarea name="" id="" required></textarea>
-						<span> Type any further Information</span>
-					</div>
-					<div class="inputBox">
-						<input type="submit" value="Submit">
-						
-					</div>
-				</form>
-
-
+				</div>
+				<!-- <div class="backdrop">
+	
+				</div> -->
 			</div>
 		</div>
-		
-	</section>
+		<nav>
+			<div class="nav-container">
+				<div class="nav-top">
+					<img src="images/Utopia-logo.png">
+					<div class="nav-elements">
+						<a href="./home.html"> Home </a>
+						<a href=""> Home </a>
+						<a href="./Offers.html"> Offers </a>
+						<a href="./AboutUs.html"> About Us </a>
+					</div>
+				</div>
+				<div class="nav-center">
+					<div class="topCon">
+						<h2>Resrvation</h2>
+						<p>Please Type your Information in a form, polit, applicable way and ensure honesty
+						</p>
+					</div>
+				</div>
+				<div class="nav-bottom">
+					<div class="container">
+						<div class="contactInfo">
+							<div class="box">
+								<div class="icon">
+									<i class="fa fa-map-marker"></i>
+								</div>
+								<div class="text">
+									<h3>Address</h3>
+									<p>Mokattam sjgsugdcsjdgugsd ishdihs sdhich sdhchs </p>
+								</div>
+							</div>
+			
+							<div class="box">
+								<div class="icon">
+									<i class="fa fa-phone"></i>
+								</div>
+								<div class="text">
+									<h3>Phone </h3>
+									<p>01062505630 </p>
+								</div>
+							</div>
+			
+							<div class="box">
+								<div class="icon">
+									<i class="fa fa-envelope-square"></i>
+			
+								</div>
+								<div class="text">
+									<h3>Email</h3>
+									<p>mostbs@jsjd.com</p>
+								</div>
+							</div>
+							<div class="box">
+								<div class="icon">
+									<i class="fa fa-envelope-square"></i>
+			
+								</div>
+								<div class="text">
+									<h3> Our Working Hours</h3>
+									<p> 6:00am to 4:00pm</p>
+								</div>
+							</div>
+						</div>
+						
+						<div class="contactForm">
+							<h2> Fill Application</h2>
+							<form action="">
+								<div class="inputBox">
+									<input type="" name="" id="" required>
+									<span> Enter Full Name</span>
+								</div>
+								<div class="inputBox">
+									<input type="" name="" id=""required>
+									<span> Enter Clinical ID</span>
+								</div>
+								<div class="inputBox">
+									<input type="" name="" id="" required>
+									<span> Enter Type of pain</span>
+								</div>
+								<div class="inputBox">
+									<input type="" name="" id=""required>
+									<span> Your signature</span>
+								</div>
+								<div class="inputBox">
+									
+									<textarea name="" id="" required></textarea>
+									<span> Type any further Information</span>
+								</div>
+								<div class="inputBox">
+									<input type="submit" value="Submit">
+									
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>   
+		</nav>
+	</header>
 
+
+<body>
+	<script src="./includes/script.js"></script>
 </body>
+
+<footer>
+    <div class="footer-top">
+        <img src="images/Utopia-logo.png">
+        <div class="social-icons">
+            <p> Follow us -</p>
+            <span class="icons"> <i class="fa fa-instagram fa-lg" aria-hidden="true"></i> </span>
+            <span class="icons"> <i class="fa fa-facebook fa-lg" aria-hidden="true"></i> </span>
+            <span class="icons"> <i class="fa fa-twitter fa-lg" aria-hidden="true"></i> </span>
+            <span class="icons"> <i class="fa fa-google-plus fa-lg" aria-hidden="true"></i> </span>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div>
+            <h1> About Us </h1>
+            <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium esse eos velit aperiam vero iure quo ullam numquam molestiae ipsa aut obcaecati, illum eaque ipsum asperiores similique sint repellat ex.</p>
+            <span class="icons"> <i class="fa fa-phone" aria-hidden="true"></i> <p> <span style="color: rgba(64, 224, 208, 0.692);"> Hotline: </span> </p>  </span>
+            <span class="icons"> <i class="fa fa-map-marker" aria-hidden="true"></i> <p> <span style="color: rgba(64, 224, 208, 0.692);"> Address: </span> </p> </span>
+            <span class="icons"> <i class="fa fa-clock-o" aria-hidden="true"></i> <p><span style="color: rgba(64, 224, 208, 0.692);"> Sat-Thurs: </span> </p></span>
+        </div>
+        <div>
+            <h1> Explore </h1>
+            <ul>
+                <div style="display: flex; flex-direction: column;">
+                    <li> <a href=""> Home </a> </li>
+                    <li> <a href=""> Home </a> </li>
+                    <li> <a href=""> Home </a> </li>
+                </div>
+                <div style="display: flex; flex-direction: column;">
+                    <li> <a href=""> Home </a> </li>
+                    <li> <a href=""> Home </a> </li>
+                    <li> <a href=""> Home </a> </li>
+               </div>
+            </ul>
+        </div>
+        <div>
+            <h1> Recent News </h1>
+        </div>
+    </div>
+</footer>
 
 
 </html>
