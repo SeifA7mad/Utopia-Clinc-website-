@@ -700,7 +700,7 @@ header nav .nav-container .nav-bottom .payment form {
     box-shadow: 0 4px 8px 0 #2b9ec2, 0 4px 8px 0 #2b9ec2;
     background-color: rgba(221, 196, 196, 0.432); 
     font-family: sans-serif;
-    border: solid black;
+    border: solid rgb(97, 93, 93);
 }
 
 header nav .nav-container .nav-bottom .payment form radio-button{
@@ -903,5 +903,4 @@ footer .footer-bottom div ul li a:hover {
     color: rgba(64, 224, 208, 0.692);
     text-decoration: underline;
 }
-
 /*footer*/
