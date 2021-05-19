@@ -932,7 +932,147 @@ footer .footer-bottom div ul li a:hover {
 /* FOOTER */
 
 /* Ask Doctor*/
-/* *{	
+section{
+	position: relative;
+	min-height: 100vh;
+	padding: 5px 100px;
+	justify-content: center;
+	display: flex;
+	align-items: center;
+	background-image: url(nav.jpg);
+	background-size: cover; 
+	flex-direction: column;
+}
+section .topCon{
+	min-width: 800px;
+	text-align:center; 
+
+}
+section .topCon h2{
+	font-size: 36px;
+	font-weight: 500;
+	color: #fff;
+}
+section .topCon p{
+	
+	font-weight: 300;
+	color: #fff;
+}
+.container {
+	width: 100%;
+	justify-content: center;
+	display: flex;
+	align-items: center;
+	margin-top: 30px;
+}
+.container .contactInfo{
+	width: 50%;
+	display: flex;
+	flex-direction:  column;
+}
+.container .contactInfo .box{
+	position: relative;
+	padding: 20px 0;
+	display: flex;
+
+}
+.container .contactInfo .box .icon{
+	min-width:  60px;
+	height: 60px;
+	background-color: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+	font-size:  24px;
+}
+.container .contactInfo .box .text{
+	display: flex;
+	flex-direction: column;
+	margin-left: 20px;
+	font-size: 16px;
+	color: #fff;
+	font-weight: 300;
+
+	}
+	.container .contactInfo .box .text h3{
+		font-weight: 700;
+		color: rgba(18,240,248);
+
+	}
+	.contactForm{
+		width: 40%;
+		padding: 60px;
+		background-color: #fff;
+	}
+	.contactForm h2{
+		font-size: 30px;
+		color: #333;
+		font-weight: 500;
+
+	}
+	.contactForm .inputBox{
+		margin-top: 10px;
+		position: relative;
+		width: 100%;
+	}
+	.contactForm .inputBox input,
+	.contactForm .inputBox textarea{
+		width: 100%;
+		padding: 5px 0;
+		font-size: 16px;
+		margin: 10px 0; 
+		border: none;
+		border-bottom:  2px solid #333;
+		resize: none;
+	}
+	.contactForm .inputBox span{
+		position: absolute;
+		left: 0;
+		padding: 5px 0;
+		font-size: 16px;
+		margin: 10px 0;
+		pointer-events: none;
+		color: #666;
+	}
+.contactForm .inputBox input:focus ~ span,
+.contactForm .inputBox input:valid ~ span,
+.contactForm .inputBox textarea:focus ~ span,
+.contactForm .inputBox textarea:valid ~ span
+{
+    font-size:12px;
+    color:rgb(255, 3, 137);
+    transform:translateY(-20px);
+    -webkit-transform:translateY(-20px);
+    -moz-transform:translateY(-20px);
+    -ms-transform:translateY(-20px);
+    -o-transform:translateY(-20px);
+}
+	.contactForm .inputBox input[type=submit]{
+		width: 100%;
+		background-color: rgba(13,198,204);
+		border-bottom: none;
+		color: #fff;
+		font-weight: 500;
+		font-size: 20px;
+
+
+	}
+	@media (max-width:991px)
+{
+    .container{
+        flex-direction:column;
+    }
+    .container .contactInfo{
+        margin-bottom:50px;
+    }
+    .container .contactInfo,
+    .contactForm{
+        width:100%;
+    }
+}
+/* Ask Doctor*/
+*{	
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
@@ -940,8 +1080,7 @@ footer .footer-bottom div ul li a:hover {
 	border: none;
 	outline: none;
 	letter-spacing: 2px;
-} */
-
+}
 .topCon{
 
 }
@@ -956,19 +1095,13 @@ footer .footer-bottom div ul li a:hover {
 	color: #fff;
 }
 
-/* body{
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	min-height: 100vh;
-	background-image: url(nav.jpg);
-	object-fit: cover;
-} */
+
 .container{
-    margin: auto;
+	width: 500px;
+	text-align: right;
 }
 .boxContainer{
-	height: fit-content;
+	height: 200px;
 	width: 100%;
 	background: #444;
 	box-shadow: 0 5px 15px #111;
@@ -977,11 +1110,14 @@ footer .footer-bottom div ul li a:hover {
 	display: none;
 }
 .boxContainer .box{
+	height: 80%;
 	width: 100%;
 	border-radius: 5px;
+	padding: 10px;
 	background:#f8f8f8;
 	overflow-y: auto;
 	text-align: left;
+
 }
 #input{
 	width: 100%;
