@@ -100,7 +100,7 @@ nav .side-nav ul li:hover, nav .side-nav ul li a:hover {
     margin-top: 10px;
 }
 
-#Archive {
+#Archive, #Report {
     display: none;
 }
 
@@ -138,6 +138,7 @@ nav .side-nav ul li:hover, nav .side-nav ul li a:hover {
     font-weight: bold;
     font-size: 0.8em;
     cursor: pointer;
+    text-transform: uppercase;
 }
 
 .body-container .body-container-bottom .tabs a:hover {
@@ -186,7 +187,8 @@ nav .side-nav ul li:hover, nav .side-nav ul li a:hover {
 }
 
 .body-container .body-container-bottom #Doctors,
-.body-container .body-container-bottom #Patients {
+.body-container .body-container-bottom #Patients,
+.body-container .body-container-bottom #Offers {
     display: none;
 }
 

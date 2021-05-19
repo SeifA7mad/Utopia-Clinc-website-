@@ -60,6 +60,7 @@ let progressCirclePercentage = (className, percentage) => {
 progressCirclePercentage(".rating-clinic", 80);
 progressCirclePercentage(".rating-doctor", 60);
 
+
 $('.side-nav ul li a').click(function(event) {
     event.preventDefault();
     
@@ -74,7 +75,9 @@ $('.side-nav ul li a').click(function(event) {
     
   });
 
-$('.body-container-bottom .tabs a').click(function(event) {
+  let activeLink;
+
+$('#Archive .body-container-bottom .tabs a').click(function(event) {
     event.preventDefault();
     
     // Toggle active class on tab buttons
@@ -82,11 +85,15 @@ $('.body-container-bottom .tabs a').click(function(event) {
     $(this).siblings().removeClass("current-tab");
     
     // display only active tab content
-    var activeTab = $(this).attr("href");
-    createTable(activeTab.replace('#', ''), tableHeader);
-    $('.info-table').not(activeTab).css("display","none");
+    let activeTab = $(this).attr("href");
+    if (activeTab !== activeLink) {
+        createTableArchive(activeTab.replace('#', ''), tableHeader);
+    }
+
+    $('.info-table').not(activeTab).remove();
     $('.body-container .head h3').html(activeTab.replace('#', ''));
     $(activeTab).fadeIn();
+    activeLink = activeTab;
   });
 
   const tableHeader = [
@@ -99,7 +106,7 @@ $('.body-container-bottom .tabs a').click(function(event) {
       "Action",
   ]
 
-  let createTable = (id, th) => {
+  let createTableArchive = (id, th) => {
       let tableDiv = $('<div></div>');
       tableDiv.addClass('info-table');
       tableDiv.attr('id', id);
@@ -111,5 +118,5 @@ $('.body-container-bottom .tabs a').click(function(event) {
       }
       table.append(tableHead);
       tableDiv.append(table);
-      $('.body-container-bottom').append(tableDiv);
+      $('#Archive .body-container-bottom').append(tableDiv);
   }
