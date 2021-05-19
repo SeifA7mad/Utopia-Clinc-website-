@@ -100,7 +100,7 @@ nav .side-nav ul li:hover, nav .side-nav ul li a:hover {
     margin-top: 10px;
 }
 
-#Archive, #Report {
+#Archive, #Report, #Tasks, #Profile {
     display: none;
 }
 
@@ -192,9 +192,96 @@ nav .side-nav ul li:hover, nav .side-nav ul li a:hover {
     display: none;
 }
 
+.body-container .body-container-bottom i {
+    color: green;
+    margin-top: 10px;
+    cursor: pointer;
+}
 
+.add-form {
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    margin: auto;
+}
+.add-form::after {
+    background-color: rgba(0, 0, 0, 0.8);
+    content: "";
+    position: absolute;
+    height: 100%;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.9;
+    z-index: -1;
+}
+.add-form form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    width: 50%;
+    height: 100%;
+    background-color: rgba(221, 196, 196, 0.904); 
+    font-family: sans-serif;
+    margin: auto;
+    z-index: 3;
+    overflow-y: scroll;
+}
 
+.add-form form i {
+    align-self: flex-end;
+    cursor: pointer;
+    margin-top: 50px;
+}
 
+.add-form form h1{
+    margin: 10px 0;
+    color: rgb(69, 71, 71);
+}
+
+.add-form form input{
+    width: 65%;
+    padding: 10px;
+    border: none;
+    border-radius: 15px;
+    box-sizing: border-box;
+}
+
+.add-form form label{
+    width: 65%;
+    margin: 10px 0;
+}
+
+.add-form form button{
+    width: 40%;
+    padding: 10px;
+    margin: 30px 0;
+    border: none;
+    border-radius: 15px;
+    background-color: rgba(148, 113, 113, 0.432);
+    font-size: 18px;
+    color: rgba(247, 247, 247, 0.911);
+    cursor: pointer;
+}
+
+.add-form form button:hover{
+    background-color: rgba(34, 129, 236, 0.534);
+    color:#495052;
+}
+
+#form-Doctors, #form-Offers {
+    display: none;
+}
 /* Dashboard */
 
 /* Home */
@@ -357,15 +444,18 @@ header .head-home .info {
     font-size: 1.3em;
 }
 
-.backdrop {
+/* .backdrop {
     width: 100%;
     height: 100%;
-    z-index: 100;
+    z-index: 10;
     left: 0;
     top: 0;
     position: fixed;
-    background-color: rgba(0, 0, 0, 0.5);
-}
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none;
+    overflow-y: scroll;
+} */
+
 
 header nav .nav-container {
     width: 100%;
@@ -886,7 +976,7 @@ footer {
     height: fit-content;
     display: flex;
     flex-direction: column;
-    margin: auto;
+    margin: 100px auto auto auto;
 }
 
 footer .footer-top {
@@ -1018,6 +1108,299 @@ footer .footer-bottom div ul li a:hover {
     color: rgba(64, 224, 208, 0.692);
     text-decoration: underline;
 }
-/* FOOTER */
+
+/* Payment */
+
+header nav .nav-container .nav-bottom .payment {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+}
+
+header nav .nav-container .nav-bottom .payment form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    border-radius: 10px;
+    width: 50%;
+    height: 100%;
+    box-shadow: 0 4px 8px 0 #2b9ec2, 0 4px 8px 0 #2b9ec2;
+    background-color: rgba(221, 196, 196, 0.432); 
+    font-family: sans-serif;
+    border: solid rgb(97, 93, 93);
+}
+
+header nav .nav-container .nav-bottom .payment form label {
+    margin: 20px 120px;
+    align-self: flex-start;
+}
+
+header nav .nav-container .nav-bottom .payment form input {
+    width: 65%;
+    padding: 10px;
+    border: none;
+    border-radius: 15px;
+    box-sizing: border-box;
+    margin: auto;
+}
+
+header nav .nav-container .nav-bottom .payment form .payment-date {
+    display: flex;
+    width: 82%;
+    margin: auto;
+}
+
+header nav .nav-container .nav-bottom .payment form .payment-date input {
+    width: 30%;
+}
+
+header nav .nav-container .nav-bottom .payment form button {
+    width: 65%;
+    padding: 10px;
+    margin: 40px auto;
+    border: none;
+    border-radius: 15px;
+    background-color: rgba(82, 52, 52, 0.432);
+    font-size: 18px;
+    color: rgba(247, 247, 247, 0.911);
+    cursor: pointer;
+}
+
+header nav .nav-container .nav-bottom .payment form button:hover {
+    background-color: rgba(56, 33, 33, 0.534);
+    color:#2b9ec2;
+}
+
+header nav .nav-container .nav-bottom .payment form .row{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    
+
+}
+
+header nav .nav-container .nav-bottom .payment form .row img{
+
+    width: 15%;
+    margin: 15px 0 0 25px;
+    border-radius: 10px;
+}
+/* Payment */
 
 
+
+
+/* Mostafa */
+
+.topCon{
+	min-width: 800px;
+	text-align:center; 
+
+}
+.topCon h2{
+	font-size: 36px;
+	font-weight: 500;
+	color: #fff;
+}
+.topCon p{
+	font-weight: 300;
+	color: #fff;
+} 
+
+.container {
+	width: 100%;
+	justify-content: center;
+	display: flex;
+	align-items: center;
+	margin-top: 30px;
+}
+.contactInfo{
+	width: 50%;
+	display: flex;
+	flex-direction:  column;
+}
+.contactInfo .box{
+	position: relative;
+	padding: 20px 0;
+	display: flex;
+
+}
+.contactInfo .box .icon{
+	min-width:  60px;
+	height: 60px;
+	background-color: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+	font-size:  24px;
+}
+.contactInfo .box .text{
+	display: flex;
+	flex-direction: column;
+	margin-left: 20px;
+	font-size: 16px;
+	color: #fff;
+	font-weight: 300;
+
+}
+	.contactInfo .box .text h3{
+		font-weight: 700;
+		color: rgba(18,240,248);
+
+	}
+	.contactForm{
+		width: 40%;
+		padding: 60px;
+		background-color: #fff;
+	}
+	.contactForm h2{
+		font-size: 30px;
+		color: #333;
+		font-weight: 500;
+
+	}
+	.contactForm .inputBox{
+		margin-top: 10px;
+		position: relative;
+		width: 100%;
+	}
+	.contactForm .inputBox input,
+	.contactForm .inputBox textarea{
+		width: 100%;
+		padding: 5px 0;
+		font-size: 16px;
+		margin: 10px 0; 
+		border: none;
+		border-bottom:  2px solid #333;
+		resize: none;
+	}
+	.contactForm .inputBox span{
+		position: absolute;
+		left: 0;
+		padding: 5px 0;
+		font-size: 16px;
+		margin: 10px 0;
+		pointer-events: none;
+		color: #666;
+	}
+.contactForm .inputBox input:focus ~ span,
+.contactForm .inputBox input:valid ~ span,
+.contactForm .inputBox textarea:focus ~ span,
+.contactForm .inputBox textarea:valid ~ span
+{
+    font-size:12px;
+    color:rgb(255, 3, 137);
+    transform:translateY(-20px);
+    -webkit-transform:translateY(-20px);
+    -moz-transform:translateY(-20px);
+    -ms-transform:translateY(-20px);
+    -o-transform:translateY(-20px);
+}
+	.contactForm .inputBox input[type=submit]{
+		width: 100%;
+		background-color: rgba(13,198,204);
+		border-bottom: none;
+		color: #fff;
+		font-weight: 500;
+		font-size: 20px;
+
+
+	}
+	@media (max-width:991px)
+{
+    .container{
+        flex-direction:column;
+    }
+    .container .contactInfo{
+        margin-bottom:50px;
+    }
+    .container .contactInfo,
+    .contactForm{
+        width:100%;
+    }
+}
+
+
+.topCon{
+
+}
+ .topCon h1{
+	font-size: 36px;
+	font-weight: 500;
+	color: #fff;
+	align-items: stretch;
+}
+ .topCon p{
+	font-weight: 300;
+	color: #fff;
+}
+
+
+.askadoctor-container {
+	margin: auto;
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+}
+
+.askadoctor-container .buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    width: 60%;
+}
+
+.askadoctor-container button{
+	height: 30px;
+	width: 160px;
+	background:rgba(18,240,248);
+	color: #fff;
+	cursor: pointer;
+	margin: 10px 0;
+	font-size: 15px;
+	box-shadow: 0 3px 10px #111;
+	border-radius: 5px;
+}
+.askadoctor-container button:hover{
+	opacity: .8;
+}
+.askadoctor-container .boxContainer{
+	width: 100%;
+    height: fit-content;
+	background: #444;
+	box-shadow: 0 5px 15px #111;
+	border-radius: 5px;
+	padding: 15px; 
+	display: none;
+}
+
+.askadoctor-container .boxContainer .box{
+	height: fit-content;
+	width: 100%;
+	border-radius: 5px;
+	background:#f8f8f8;
+	overflow-y: auto;
+	text-align: left;
+}
+
+#input{
+	width: 100%;
+	height: 40px;
+	background:none;
+	font-size: 15px;
+	color: #fff;
+	border-bottom: 1px solid #fff;
+}
+#input:focus{
+	border-bottom: 2px solid #fff;
+}
+
+
+/*Mostafa: Reservation*/
