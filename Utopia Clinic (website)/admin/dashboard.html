@@ -11,34 +11,83 @@
 
     <header>
         <div class="head-dashboard">
-            <div class="toggleNav" onclick="navToggle()">
-                <div></div>
-                <div></div>
-                <div></div>
+            <div class="head-dashboard-left">
+                <img src="../images/logo2.png">
+                <h3> Utopia Clinic </h3>
+            </div> 
+            <div class="head-dashboard-right small-nav">
+                <i class="fa fa-user fa-2x profile" aria-hidden="true" onclick="diplayProfileModal()"></i> 
+                <div class="profile-modal">
+                    <div class="sign-in-form">
+                        <h2> Sign in </h2>
+                        <form>
+                            <label for="sign-in-email"> E-mail: </label>
+                            <input type="text" name="sign-in-email" id="sign-in-email">
+                            <label for="sign-in-password"> Password: </label>
+                            <input type="password" name="sign-in-password" id="sign-in-password">
+                            <input type="button" value="Sign in" class="btn btn1" style="cursor: pointer; margin-top: 20px;" onclick="signIn()">
+                        </form>
+                    </div>
+                    <div class="profile-modal-content">
+                        <img src="../images/profilePicture.png">
+                        <p> Seif Ahmad </p>    
+                    </div>
+                </div>
+                <i class="fa fa-bell-o fa-2x notification" aria-hidden="true"> <div class="notification-icon"> <!-- Dynamic generated --> 1 </div> </i>
+                <div class="notification-modal">
+                    <h2> Notifications </h2>
+                    <!-- Dynamic generated -->
+                    <div class="notification-item">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, deleniti.
+                    </div>
+                </div> 
             </div>
-            <h3> Utopia Clinic </h3>
         </div>
     </header>
 
-    <body>
-        <main>
-            <nav>
-                <div class="side-nav">
-                    <img src="./../images/profilePicture.png" alt="Profile Picture">
-                    <a href="#" style="margin-bottom: 10px; margin-top: 5px;"> Edit profile </a>
-                    <ul>
-                        <li> <i class="fa fa-home" aria-hidden="true"></i> <a href=""> Home </a> </li>
-                        <li> <i class="fa fa-user" aria-hidden="true"></i> <a href=""> Profile </a> </li>
-                        <li> <i class="fa fa-home" aria-hidden="true"></i> <a href=""> Reserve </a> </li>
-                        <li> <i class="fa fa-home" aria-hidden="true"></i> <a href=""> Offers </a> </li>
-                        <li> <i class="fa fa-home" aria-hidden="true"></i> <a href=""> Home </a> </li>
-                    </ul>
-                </div>
-            </nav>
+    <body class="body-dashboard">
+       <nav>
+            <div class="side-nav">
+                <ul>
+                    <li> <i class="fa fa-home fa-2x" aria-hidden="true"></i> <a> Home </a> </li>
+                    <li> <i class="fa fa-user fa-2x" aria-hidden="true"></i> <a> Profile </a> </li>
+                    <li> <i class="fa fa-tasks fa-2x"></i> <a> Tasks </a> </li>
+                    <li> <i class="fa fa-file-text fa-2x" aria-hidden="true"></i> <a href="#Report"> Report </a> </li>
+                    <li> <i class="fa fa-archive fa-2x" aria-hidden="true"></i> <a href="#Archive"> Archive </a> </li>
+                </ul>
+            </div>
+        </nav>
 
-        <div class="body-container"> 
-           
-        </div>
+        <main>
+            <div class="body-container" id="Archive"> 
+               <div class="body-container-top">
+                   <h1> Archive </h1>
+               </div>
+               <div class="body-container-bottom">
+                   <div class="tabs"> 
+                       <a href="#Patients"> PATIENTS </a>
+                       <a href="#Doctors"> DOCTORS </a>
+                       <a href="#Offers"> OFFERS </a>
+                   </div>
+                   <div class="head">
+                       <h3> </h3>
+                   </div>
+               </div>
+            </div>  
+
+            <div class="body-container" id="Report"> 
+                <div class="body-container-top">
+                    <h1> Report </h1>
+                </div>
+                <div class="body-container-bottom">
+                    <div class="tabs"> 
+                        
+                    </div>
+                    <div class="head">
+                        <h3> </h3>
+                    </div>
+                </div>
+            </div> 
         </main>
         <script src="./../includes/script.js"></script>
     </body>

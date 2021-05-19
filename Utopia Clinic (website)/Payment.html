@@ -52,58 +52,60 @@
             <div class="nav-top">
                 <img src="images/Utopia-logo.png">
                 <div class="nav-elements">
+                    <a href="./home.html"> Home </a>
                     <a href=""> Home </a>
-                    <a href=""> About Us </a>
-                    <a href=""> Home </a>
-                    <a href=""> Home </a>
+                    <a href="./Offers.html"> Offers </a>
+                    <a href="./AboutUs.html"> About Us </a>
                 </div>
             </div>
             <div class="nav-center">
-                <h1> Off<span style="color: rgba(64, 224, 208, 0.78);">ers </span> </h1>
+                <h1> Payment </h1>
             </div>
             <div class="nav-bottom">
-                <div class="offer">
-                    <!-- Generated dynamicly -->
-                    <div class="card-offers">
-                        <div class="card-top">
-                            <img class="card-img" src="./images/dental.webp" alt="Dental">
+                <div class="payment">
+                    <form>
+                        <div class="row">
+                            <img src="images/visa.png" alt="visa">
+                            <img src ="images/mc.png" alt="Master Card">
                         </div>
-                        <div class="card-buttom">
-                            <h1>Dental</h1>
-                            <P>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae maiores nobis ratione sequi! Cum ex debitis aut, laudantium obcaecati tenetur. </P>
-                            <button class="btn"> Reserve </button>
+                       
+
+                        <label for = "name"> NAME ON CARD</label>
+                        <input type = "text" name="name" id="name" placeholder="Enter name on Card">
+                        <label for = "name"> CARD NUMBER</label>
+                        <input type = "text" name="number" id="number" placeholder="0000 0000 0000 0000">
+                        <label for = "name"> EXPIRY DATE</label>
+                        <div class="payment-date">
+                            <input type = "text" name="month" id="month" placeholder="MONTH/MM">
+                            <input type = "text" name="year" id="year" placeholder="YEAR/YY">
                         </div>
-                    </div>
-                    <div class="card-offers">
-                        <div class="card-top">
-                            <img class="card-img" src="./images/dental.webp"alt="Dental">
-                        </div>
-                        <div class="card-buttom">
-                            <h1>Dental</h1>
-                            <P>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae maiores nobis ratione sequi! Cum ex debitis aut, laudantium obcaecati tenetur. </P>
-                            <button class="btn">
-                                Reserve
-                            </button>
-                        </div>
-                    </div>
-                    <div class="card-offers">
-                        <div class="card-top">
-                            <img class="card-img" src="./images/dental.webp" alt="Dental">
-                        </div>
-                        <div class="card-buttom">
-                            <h1>Dental</h1>
-                            <P>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae maiores nobis ratione sequi! Cum ex debitis aut, laudantium obcaecati tenetur. </P>
-                            <button class="btn"> Reserve </button>
-                        </div>
-                    </div>        
+                        <label for = "name"> CCV</label>
+                        <input type = "text" name="ccv" id="ccv" placeholder="123">
+            
+                        <button type = "button"> Pay</button>
+                    </form>
+                  
                 </div>
             </div>
-        </div>   
+        </div>
+                
     </nav>
 </header>
 
 <body>
-    <script src="./includes/script.js"></script>    
+    <main>
+        <div class="home-content">
+            <div class="left-home-content">
+                
+            </div>
+            <div class="right-home-content">
+                
+            </div>
+        </div>
+    </main>
+    <script src="./includes/script.js"></script>
+
+
 </body>
 
 <footer>
@@ -145,3 +147,6 @@
         </div>
     </div>
 </footer>
+
+
+</html>
