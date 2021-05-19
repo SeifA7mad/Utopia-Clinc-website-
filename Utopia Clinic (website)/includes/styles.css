@@ -764,4 +764,144 @@ header nav .nav-container .nav-bottom .payment form .row img{
 }
 /* Payment */
 
+/*offers*/
+footer {
+    width: 100%;
+    background-color: rgb(38, 56, 95);
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
 
+footer .footer-top {
+    display: flex;
+    width: 90%;
+    height: 20%;
+    margin: auto;
+    border-bottom: dashed rgba(245, 245, 245, 0.445);
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer .footer-top * {
+    margin: 20px 0;
+}
+
+footer .footer-top img {
+    width: 10%;
+    height: 10%;
+}
+
+footer .footer-top .social-icons {
+    display: flex;
+    width: 30%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer .footer-top .social-icons p {
+    font-weight: bold;
+    color: white;
+}
+
+footer .footer-top .social-icons .icons {
+    background-color: rgba(64, 224, 208, 0.849);
+    border-radius: 50px;
+    width: 2.5em;
+    height: 2.5em;
+    display: flex;
+}
+
+footer .footer-top .social-icons i {
+    text-align: center;
+    margin: auto;
+}
+
+footer .footer-bottom {
+    width: 90%;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+footer .footer-bottom div * {
+    margin: 10px 0;
+}
+
+footer .footer-bottom div {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    text-align: justify;
+}
+
+footer .footer-bottom div h1 {
+    color: rgba(64, 224, 208, 0.849);
+}
+
+footer .footer-bottom div p {
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.63);
+    width: 80%;
+}
+
+footer .footer-bottom div .icons {
+    background-color: rgba(64, 224, 208, 0.692);
+    border-radius: 50px;
+    width: 1.5em;
+    height: 1.5em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+footer .footer-bottom div span i {
+    text-align: center;
+    margin: auto;
+}
+
+footer .footer-bottom div span p {
+    position: absolute;
+    left: 2em;
+    width: 13em;
+}
+
+
+footer .footer-bottom div ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+footer .footer-bottom div ul li {
+    position: relative;
+	padding-bottom: 10px;
+}
+
+footer .footer-bottom div ul li:before{
+    content: "";
+    position: absolute;
+    border-right: 3px solid rgba(64, 224, 208, 0.692);
+    border-bottom: 3px solid rgba(64, 224, 208, 0.692);
+    width: 0.5em;
+    height: 0.5em;
+    top: calc(47% - 4px);
+    left: -20px;
+    transform: translateY(-50%) rotate(-45deg);
+}
+
+footer .footer-bottom div ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+footer .footer-bottom div ul li a:hover {
+    color: rgba(64, 224, 208, 0.692);
+    text-decoration: underline;
+}
+
+/*footer*/
