@@ -60,9 +60,30 @@ let progressCirclePercentage = (className, percentage) => {
 progressCirclePercentage(".rating-clinic", 80);
 progressCirclePercentage(".rating-doctor", 60);
 
-let changeTitle = (title) => {
-    if (title === 'Archive') {
-        $('.' +title).show();
-    }
-    $('.body-container .body-container-top h1').html(title);
-}
+$('.side-nav ul li a').click(function(event) {
+    event.preventDefault();
+    
+    // Toggle active class on tab buttons
+    $(this).parent().addClass("current-nav");
+    $(this).parent().siblings().removeClass("current-nav");
+    
+    // display only active tab content
+    var activeTab = $(this).attr("href");
+    $('.body-container').not(activeTab).css("display","none");
+    $(activeTab).fadeIn();
+    
+  });
+
+$('.body-container-bottom .tabs a').click(function(event) {
+    event.preventDefault();
+    
+    // Toggle active class on tab buttons
+    $(this).addClass("current-tab");
+    $(this).siblings().removeClass("current-tab");
+    
+    // display only active tab content
+    var activeTab = $(this).attr("href");
+    $('.info-table').not(activeTab).css("display","none");
+    $(activeTab).fadeIn();
+    console.log(activeTab);
+  });

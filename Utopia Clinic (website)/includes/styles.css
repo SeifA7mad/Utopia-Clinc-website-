@@ -16,7 +16,7 @@ header .head-dashboard {
     display: flex;
     background-color: rgb(255, 255, 255);
     width: 100%;
-    height: 8vh;
+    height: 7vh;
     justify-content: space-between;
     align-items: center;
 }
@@ -27,6 +27,7 @@ header .head-dashboard .head-dashboard-left {
     height: 90%;
     width: 15%;
     justify-content: space-between;
+    margin-left: 20px;
 }
 
 header .head-dashboard h3 {
@@ -35,7 +36,7 @@ header .head-dashboard h3 {
 }
 
 header .head-dashboard .head-dashboard-left img {
-    height: 100%;
+    height: 90%;
 }
 
 header .head-dashboard .head-dashboard-right {
@@ -61,12 +62,16 @@ nav .side-nav ul {
     width: 100%;
 }
 
+nav .side-nav ul .current-nav {
+    color: red;
+}
+
 nav .side-nav ul li {
     width: 100%;
     cursor: pointer;
     text-shadow: 2px 2px rgba(0, 0, 0, 0.109);  
     display: flex;
-    margin: 20px 20px;
+    margin: 20px 0;
     align-items: center;
 }
 
@@ -78,7 +83,8 @@ nav .side-nav ul li a {
 } 
 
 nav .side-nav ul li i {
-    margin-right: 10px;
+    width: 50%;
+    text-align: center;
 }
 
 nav .side-nav ul li:hover, nav .side-nav ul li a:hover {
@@ -89,12 +95,12 @@ nav .side-nav ul li:hover, nav .side-nav ul li a:hover {
 .body-container {
     float: right;
     width: 80%;
-    margin-right: 5em;
+    margin-right: 2em;
     height: fit-content;
     margin-top: 10px;
 }
 
-.Archive {
+#Archive {
     display: none;
 }
 
@@ -131,10 +137,15 @@ nav .side-nav ul li:hover, nav .side-nav ul li a:hover {
     color: black;
     font-weight: bold;
     font-size: 0.8em;
+    cursor: pointer;
 }
 
 .body-container .body-container-bottom .tabs a:hover {
     color: rgba(0, 0, 255, 0.527);
+}
+
+.body-container .body-container-bottom .tabs .current-tab {
+    color: red;
 }
 
 .body-container .body-container-bottom .head {
@@ -143,6 +154,35 @@ nav .side-nav ul li:hover, nav .side-nav ul li a:hover {
     display: flex;
     margin-top: 15px;
     justify-content: space-between;
+}
+
+.body-container .body-container-bottom .info-table  {
+    margin-top: 10px;
+    width: 96%;
+}
+
+
+.body-container .body-container-bottom .info-table table {
+    width: 100%;
+}
+
+.body-container .body-container-bottom .info-table table th, .body-container .body-container-bottom .info-table table td {
+   width: fit-content;
+}
+
+.body-container .body-container-bottom .info-table table th {
+    background-color: rgba(216, 211, 211, 0.438);
+}
+
+.body-container .body-container-bottom .info-table table th,
+.body-container .body-container-bottom .info-table table td {
+    border: 2.5px solid rgba(216, 211, 211, 0.966);
+    text-align: left;
+}
+
+.body-container .body-container-bottom #Doctors,
+.body-container .body-container-bottom #Patients {
+    display: none;
 }
 
 
