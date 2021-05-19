@@ -83,7 +83,33 @@ $('.body-container-bottom .tabs a').click(function(event) {
     
     // display only active tab content
     var activeTab = $(this).attr("href");
+    createTable(activeTab.replace('#', ''), tableHeader);
     $('.info-table').not(activeTab).css("display","none");
+    $('.body-container .head h3').html(activeTab.replace('#', ''));
     $(activeTab).fadeIn();
-    console.log(activeTab);
   });
+
+  const tableHeader = [
+      "Full Name",
+      "E-mail",
+      "Role",
+      "Phone number",
+      "Address",
+      "Gender",
+      "Action",
+  ]
+
+  let createTable = (id, th) => {
+      let tableDiv = $('<div></div>');
+      tableDiv.addClass('info-table');
+      tableDiv.attr('id', id);
+      let table = $('<table></table>');
+      let tableHead = $('<tr></tr>');
+
+      for (let i of th) {
+          tableHead.append($('<th>'+i+'</th>'));
+      }
+      table.append(tableHead);
+      tableDiv.append(table);
+      $('.body-container-bottom').append(tableDiv);
+  }
