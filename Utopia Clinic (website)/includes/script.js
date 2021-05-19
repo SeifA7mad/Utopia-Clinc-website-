@@ -152,3 +152,25 @@ $('#Archive .body-container-bottom .tabs a').click(function(event) {
       tableDiv.append(table);
       $( bodyID + ' .body-container-bottom').append(tableDiv);
   }
+
+  $(document).ready(function(){
+	$('#comment').click(function() {
+
+		var input = $("#input").val(); // get the value from the input field
+		$(".box").append(input+'<br>');// add to the box comment
+		$("#input").val(' '); 
+		$(".boxContainer").slideDown();
+	});
+		
+	
+	$("#cancel").click(function(){
+		$("#input").val(' ');
+	
+
+	});
+	$("#delete").click(function() {
+		/* Act on the event */
+		$(".box").text(' ');
+		$(".boxContainer").slideUp();
+	});
+	});
