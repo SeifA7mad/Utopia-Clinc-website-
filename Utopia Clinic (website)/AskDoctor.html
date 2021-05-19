@@ -1,29 +1,85 @@
-<!DOCTYPE html><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-	<title>Ask Doctor</title>
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	<script type="text/javascript" src="script.js"></script>
-</head>
+	<head>
+		<title> Utopia Clinic </title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="./includes/styles.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	</head>
+	
+	<header>
+		<div class="head-home">
+			<div class="info">
+				<i class="fa fa-phone fa-lg" aria-hidden="true"> 01028877643 </i>
+				<i class="fa fa-map-marker fa-lg" aria-hidden="true"> Mokattam </i>
+				<i class="fa fa-clock-o fa-lg" aria-hidden="true"> 6:00am to 4:00pm</i>
+			</div>
+			<div class="small-nav">
+				<i class="fa fa-user fa-2x profile" aria-hidden="true" onclick="diplayProfileModal()"></i> 
+				<div class="profile-modal">
+					<div class="sign-in-form">
+						<h2> Sign in </h2>
+						<form>
+							<label for="sign-in-email"> E-mail: </label>
+							<input type="text" name="sign-in-email" id="sign-in-email">
+							<label for="sign-in-password"> Password: </label>
+							<input type="password" name="sign-in-password" id="sign-in-password">
+							<input type="button" value="Sign in" class="btn btn1" style="cursor: pointer; margin-top: 20px;" onclick="signIn()">
+						</form>
+					</div>
+					<div class="profile-modal-content">
+						<img src="./images/profilePicture.png">
+						<p> Seif Ahmad </p>
+					</div>
+				</div>
+				<i class="fa fa-bell-o fa-2x notification" aria-hidden="true"> <div class="notification-icon"> <!-- Dynamic generated --> 1 </div> </i>
+				<div class="notification-modal">
+					<h2> Notifications </h2>
+					<!-- Dynamic generated -->
+					<div class="notification-item">
+						Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, deleniti.
+					</div>
+				</div>
+				<!-- <div class="backdrop">
+	
+				</div> -->
+			</div>
+		</div>
+		<nav>
+			<div class="nav-container">
+				<div class="nav-top">
+					<img src="images/Utopia-logo.png">
+					<div class="nav-elements">
+						<a href="./home.html"> Home </a>
+						<a href=""> Home </a>
+						<a href="./Offers.html"> Offers </a>
+						<a href="./AboutUs.html"> About Us </a>
+					</div>
+				</div>
+				<div class="nav-center">
+					<div class="topCon">
+						<h1>Ask Doctor</h1>
+						<p> Please Feel free to ask one of our doctors about your sever issue. </p>
+					</div>
+				</div>
+				<div class="nav-bottom">
+					<div class="container">
+						<input type="text" id="input" placeholder="write your issue">
+						<button type="button" name="button" id="cancel">cancel</button>
+						<button type="button" name="button" onclick= "myFunciotn()"id="comment">comment </button>
+						
+						<div class="boxContainer">
+							<div class="box"></div>
+							<button type="button" name="button" id="delete">delete</button>
+						</div>
+					</div>
+				</div>
+			</div>   
+		</nav>
+	</header>
 
 <body>
-	<div class="topCon">
-			<h1>Ask Doctor</h1>
-			<p> Please Feel free to ask one of our doctors about your sever issue. </p>
-
-	</div>
-
-	<div class="container">
-		<input type="text" id="input" placeholder="write your issue">
-		<button type="button" name="button" id="cancel">cancel</button>
-		<button type="button" name="button" onclick= "myFunciotn()"id="comment">comment </button>
-		
-	<div class="boxContainer">
-		<div class="box"></div>
-			<button type="button" name="button" id="delete">delete</button>
-		</div>
-    </div>	
 
 </body>
 </html>
