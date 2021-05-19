@@ -61,6 +61,8 @@ progressCirclePercentage(".rating-clinic", 80);
 progressCirclePercentage(".rating-doctor", 60);
 progressCirclePercentage(".rating", 20);
 
+let activeBody;
+
 $('.side-nav ul li a').click(function(event) {
     event.preventDefault();
     
@@ -72,10 +74,10 @@ $('.side-nav ul li a').click(function(event) {
     var activeTab = $(this).attr("href");
     $('.body-container').not(activeTab).css("display","none");
     $(activeTab).fadeIn();
-    
+    activeBody = activeTab;
   });
 
-  let activeLink;
+let activeLink;
 
 $('#Archive .body-container-bottom .tabs a').click(function(event) {
     event.preventDefault();
@@ -87,11 +89,11 @@ $('#Archive .body-container-bottom .tabs a').click(function(event) {
     // display only active tab content
     let activeTab = $(this).attr("href");
     if (activeTab !== activeLink) {
-        createTableArchive(activeTab.replace('#', ''), tableHeader);
+        createTableArchive(activeBody, activeTab.replace('#', ''), tableHeader, tableRows);
     }
 
     $('.info-table').not(activeTab).remove();
-    $('#Archive .head h3').html(activeTab.replace('#', ''));
+    $('#Archive .head h3').html(activeTab.replace('#', '') + activeBody.replace('#', ' '));
     $(activeTab).fadeIn();
     activeLink = activeTab;
   });
@@ -104,9 +106,30 @@ $('#Archive .body-container-bottom .tabs a').click(function(event) {
       "Address",
       "Gender",
       "Action",
-  ]
+  ];
 
-  let createTableArchive = (id, th) => {
+  const tableRows = [
+      [
+        "Seif Ahmad",
+        "Sauofa_ahmad@yahoo.com",
+        "mo5 w a3sab",
+        "01028877643",
+        "Mokattam",
+        'M',
+        "Delete"
+      ],
+      [
+        "Seif Ahmad",
+        "Sauofa_ahmad@yahoo.com",
+        "mo5 w a3sab",
+        "01028877643",
+        "Mokattam",
+        'M',
+        "Delete"
+      ]
+  ]; 
+
+  let createTableArchive = (bodyID, id, th, tr) => {
       let tableDiv = $('<div></div>');
       tableDiv.addClass('info-table');
       tableDiv.attr('id', id);
@@ -117,6 +140,15 @@ $('#Archive .body-container-bottom .tabs a').click(function(event) {
           tableHead.append($('<th>'+i+'</th>'));
       }
       table.append(tableHead);
+
+      for (let i = 0; i < tr.length; i++) {
+          let tableRow = $('<tr></tr>');
+          for (let j = 0; j < tr[i].length; j++) {
+              let tableD = $('<td>' +tr[i][j]+ '</td>');
+              tableRow.append(tableD);
+          }
+          table.append(tableRow);
+      }
       tableDiv.append(table);
-      $('#Archive .body-container-bottom').append(tableDiv);
+      $( bodyID + ' .body-container-bottom').append(tableDiv);
   }
