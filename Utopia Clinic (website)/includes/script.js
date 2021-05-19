@@ -59,6 +59,7 @@ let progressCirclePercentage = (className, percentage) => {
 
 progressCirclePercentage(".rating-clinic", 80);
 progressCirclePercentage(".rating-doctor", 60);
+progressCirclePercentage(".rating", 20);
 
 $('.side-nav ul li a').click(function(event) {
     event.preventDefault();
@@ -74,7 +75,9 @@ $('.side-nav ul li a').click(function(event) {
     
   });
 
-$('.body-container-bottom .tabs a').click(function(event) {
+  let activeLink;
+
+$('#Archive .body-container-bottom .tabs a').click(function(event) {
     event.preventDefault();
     
     // Toggle active class on tab buttons
@@ -82,8 +85,38 @@ $('.body-container-bottom .tabs a').click(function(event) {
     $(this).siblings().removeClass("current-tab");
     
     // display only active tab content
-    var activeTab = $(this).attr("href");
-    $('.info-table').not(activeTab).css("display","none");
+    let activeTab = $(this).attr("href");
+    if (activeTab !== activeLink) {
+        createTableArchive(activeTab.replace('#', ''), tableHeader);
+    }
+
+    $('.info-table').not(activeTab).remove();
+    $('#Archive .head h3').html(activeTab.replace('#', ''));
     $(activeTab).fadeIn();
-    console.log(activeTab);
+    activeLink = activeTab;
   });
+
+  const tableHeader = [
+      "Full Name",
+      "E-mail",
+      "Role",
+      "Phone number",
+      "Address",
+      "Gender",
+      "Action",
+  ]
+
+  let createTableArchive = (id, th) => {
+      let tableDiv = $('<div></div>');
+      tableDiv.addClass('info-table');
+      tableDiv.attr('id', id);
+      let table = $('<table></table>');
+      let tableHead = $('<tr></tr>');
+
+      for (let i of th) {
+          tableHead.append($('<th>'+i+'</th>'));
+      }
+      table.append(tableHead);
+      tableDiv.append(table);
+      $('#Archive .body-container-bottom').append(tableDiv);
+  }

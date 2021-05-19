@@ -69,10 +69,10 @@ nav .side-nav ul .current-nav {
 nav .side-nav ul li {
     width: 100%;
     cursor: pointer;
-    text-shadow: 2px 2px rgba(0, 0, 0, 0.109);  
     display: flex;
     margin: 20px 0;
     align-items: center;
+    
 }
 
 nav .side-nav ul li a {
@@ -100,7 +100,7 @@ nav .side-nav ul li:hover, nav .side-nav ul li a:hover {
     margin-top: 10px;
 }
 
-#Archive {
+#Archive, #Report {
     display: none;
 }
 
@@ -138,6 +138,7 @@ nav .side-nav ul li:hover, nav .side-nav ul li a:hover {
     font-weight: bold;
     font-size: 0.8em;
     cursor: pointer;
+    text-transform: uppercase;
 }
 
 .body-container .body-container-bottom .tabs a:hover {
@@ -154,6 +155,11 @@ nav .side-nav ul li:hover, nav .side-nav ul li a:hover {
     display: flex;
     margin-top: 15px;
     justify-content: space-between;
+}
+
+.body-container .body-container-bottom .head h3 {
+    font-size: 1.5em;
+    font-weight: bold;
 }
 
 .body-container .body-container-bottom .info-table  {
@@ -181,7 +187,8 @@ nav .side-nav ul li:hover, nav .side-nav ul li a:hover {
 }
 
 .body-container .body-container-bottom #Doctors,
-.body-container .body-container-bottom #Patients {
+.body-container .body-container-bottom #Patients,
+.body-container .body-container-bottom #Offers {
     display: none;
 }
 
@@ -330,6 +337,22 @@ header .head-home .info {
 
 .profile-modal .profile-modal-content {
     display: none;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.profile-modal .profile-modal-content img {
+    width: 40%;
+    height: 40%;
+    border-radius: 50%;
+    margin: 10px auto;
+}
+
+.profile-modal .profile-modal-content p {
+    align-self: center;
+    font-weight: bold;
+    font-size: 1.3em;
 }
 
 .backdrop {
