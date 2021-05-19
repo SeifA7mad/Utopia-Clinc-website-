@@ -192,32 +192,44 @@ nav .side-nav ul li:hover, nav .side-nav ul li a:hover {
     display: none;
 }
 
-.add-doctor{
-    width: 50%;
-    height: 50%;
+.body-container .body-container-bottom i {
+    color: green;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.add-form {
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.8);
     display: flex;
     flex-direction: column;
     align-items: center;
     border-radius: 10px;
-    border: solid black;
+    margin: auto;
 }
-.add-doctor form{
+.add-form form{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     border-radius: 10px;
-    width: 100%;
+    width: 50%;
     background-color: rgba(221, 196, 196, 0.432); 
     font-family: sans-serif;
+    margin: auto;
 }
 
-.add-doctor form h1{
+.add-form form h1{
     margin: 10px 0;
     color: rgb(69, 71, 71);
 }
 
-.add-doctor form input{
+.add-form form input{
     width: 65%;
     padding: 10px;
     border: none;
@@ -225,12 +237,12 @@ nav .side-nav ul li:hover, nav .side-nav ul li a:hover {
     box-sizing: border-box;
 }
 
-.add-doctor form label{
+.add-form form label{
     width: 65%;
     margin: 10px 0;
 }
 
-.add-doctor form button{
+.add-form form button{
     width: 40%;
     padding: 10px;
     margin: 30px 0;
@@ -242,9 +254,13 @@ nav .side-nav ul li:hover, nav .side-nav ul li a:hover {
     cursor: pointer;
 }
 
-.add-doctor form button:hover{
+.add-form form button:hover{
     background-color: rgba(34, 129, 236, 0.534);
     color:#495052;
+}
+
+#form-Doctors {
+    display: none;
 }
 /* Dashboard */
 
@@ -408,15 +424,18 @@ header .head-home .info {
     font-size: 1.3em;
 }
 
-.backdrop {
+/* .backdrop {
     width: 100%;
     height: 100%;
-    z-index: 100;
+    z-index: 10;
     left: 0;
     top: 0;
     position: fixed;
-    background-color: rgba(0, 0, 0, 0.5);
-}
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none;
+    overflow-y: scroll;
+} */
+
 
 header nav .nav-container {
     width: 100%;

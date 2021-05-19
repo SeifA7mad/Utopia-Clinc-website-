@@ -88,12 +88,18 @@ $('#Archive .body-container-bottom .tabs a').click(function(event) {
     
     // display only active tab content
     let activeTab = $(this).attr("href");
+    let plusIcon;
     if (activeTab !== activeLink) {
         createTableArchive(activeBody, activeTab.replace('#', ''), tableHeader, tableRows);
+        if (activeTab != "#Patients") {
+            plusIcon = $('<i></i>');
+            plusIcon.addClass('fa fa-plus fa-2x');
+            plusIcon.attr('onclick', "formToggle('#form-" +activeTab.replace('#', '')+ "')");
+        }
     }
-
     $('.info-table').not(activeTab).remove();
     $('#Archive .head h3').html(activeTab.replace('#', '') + activeBody.replace('#', ' '));
+    $('#Archive .info-table').append(plusIcon);
     $(activeTab).fadeIn();
     activeLink = activeTab;
   });
@@ -152,6 +158,14 @@ $('#Archive .body-container-bottom .tabs a').click(function(event) {
       tableDiv.append(table);
       $( bodyID + ' .body-container-bottom').append(tableDiv);
   }
+
+let formToggle = (id) => {
+    $(id).show();
+}
+
+let closeForm = () => {
+    $('.add-form').hide();
+}
 
   $(document).ready(function(){
 	$('#comment').click(function() {
