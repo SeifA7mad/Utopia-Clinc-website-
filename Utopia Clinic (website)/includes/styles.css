@@ -100,7 +100,7 @@ nav .side-nav ul li:hover, nav .side-nav ul li a:hover {
     margin-top: 10px;
 }
 
-#Archive, #Report, #Tasks {
+#Archive, #Report, #Tasks, #Profile {
     display: none;
 }
 
