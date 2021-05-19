@@ -59,7 +59,7 @@ let progressCirclePercentage = (className, percentage) => {
 
 progressCirclePercentage(".rating-clinic", 80);
 progressCirclePercentage(".rating-doctor", 60);
-
+progressCirclePercentage(".rating", 20);
 
 $('.side-nav ul li a').click(function(event) {
     event.preventDefault();
@@ -91,7 +91,7 @@ $('#Archive .body-container-bottom .tabs a').click(function(event) {
     }
 
     $('.info-table').not(activeTab).remove();
-    $('.body-container .head h3').html(activeTab.replace('#', ''));
+    $('#Archive .head h3').html(activeTab.replace('#', ''));
     $(activeTab).fadeIn();
     activeLink = activeTab;
   });
