@@ -772,14 +772,14 @@ body main .home-image {
 
 /* About US */
 
-header nav .nav-container .nav-bottom .about-{
+header nav .nav-container .nav-bottom .about-section {
     text-align: center;
     background-color: #474e5de3;
     color: white;
     border-radius: 10px;
 }
 
-header nav .nav-container .nav-bottom .about-.content {
+header nav .nav-container .nav-bottom .about-section .content {
   text-align: justify;
   display: flex;
   flex-direction: column;
@@ -792,12 +792,12 @@ header nav .nav-container .nav-bottom .about-.content {
   font-size: large;
 }
 
-header nav .nav-container .nav-bottom .about-.content h2 {
+header nav .nav-container .nav-bottom .about-section .content h2 {
     margin: 20px 0;
     align-self: flex-start;
 }
 
-header nav .nav-container .nav-bottom .about-.content .read-more-btn {
+header nav .nav-container .nav-bottom .about-section .content .read-more-btn {
     color:#fff;
     background-color: #2b9ec2;
     padding: 5px;
@@ -809,7 +809,7 @@ header nav .nav-container .nav-bottom .about-.content .read-more-btn {
     margin-bottom: 20px;
     border-radius: 10px;
 }
-header nav .nav-container .nav-bottom .about-.content .read-more-btn:hover{
+header nav .nav-container .nav-bottom .about-section .content .read-more-btn:hover{
     background-color: #fff;
     color:#2b9ec2;
 }
@@ -889,7 +889,7 @@ footer {
     height: fit-content;
     display: flex;
     flex-direction: column;
-    margin: auto;
+    margin: 100px auto auto auto;
 }
 
 footer .footer-top {
