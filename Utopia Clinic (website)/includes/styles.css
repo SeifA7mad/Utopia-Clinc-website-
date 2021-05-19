@@ -680,14 +680,14 @@ body main .home-image {
 
 /* About US */
 
-header nav .nav-container .nav-bottom .about-section {
+header nav .nav-container .nav-bottom .about-{
     text-align: center;
     background-color: #474e5de3;
     color: white;
     border-radius: 10px;
 }
 
-header nav .nav-container .nav-bottom .about-section .content {
+header nav .nav-container .nav-bottom .about-.content {
   text-align: justify;
   display: flex;
   flex-direction: column;
@@ -700,12 +700,12 @@ header nav .nav-container .nav-bottom .about-section .content {
   font-size: large;
 }
 
-header nav .nav-container .nav-bottom .about-section .content h2 {
+header nav .nav-container .nav-bottom .about-.content h2 {
     margin: 20px 0;
     align-self: flex-start;
 }
 
-header nav .nav-container .nav-bottom .about-section .content .read-more-btn {
+header nav .nav-container .nav-bottom .about-.content .read-more-btn {
     color:#fff;
     background-color: #2b9ec2;
     padding: 5px;
@@ -717,7 +717,7 @@ header nav .nav-container .nav-bottom .about-section .content .read-more-btn {
     margin-bottom: 20px;
     border-radius: 10px;
 }
-header nav .nav-container .nav-bottom .about-section .content .read-more-btn:hover{
+header nav .nav-container .nav-bottom .about-.content .read-more-btn:hover{
     background-color: #fff;
     color:#2b9ec2;
 }
@@ -931,41 +931,42 @@ footer .footer-bottom div ul li a:hover {
 }
 /* FOOTER */
 
-/* 
-section .topCon{
+/* Mostafa */
+
+.topCon{
 	min-width: 800px;
 	text-align:center; 
 
 }
-section .topCon h2{
+.topCon h2{
 	font-size: 36px;
 	font-weight: 500;
 	color: #fff;
 }
-section .topCon p{
-	
+.topCon p{
 	font-weight: 300;
 	color: #fff;
-} */
-/* .container {
+} 
+
+.container {
 	width: 100%;
 	justify-content: center;
 	display: flex;
 	align-items: center;
 	margin-top: 30px;
 }
-.container .contactInfo{
+.contactInfo{
 	width: 50%;
 	display: flex;
 	flex-direction:  column;
 }
-.container .contactInfo .box{
+.contactInfo .box{
 	position: relative;
 	padding: 20px 0;
 	display: flex;
 
 }
-.container .contactInfo .box .icon{
+.contactInfo .box .icon{
 	min-width:  60px;
 	height: 60px;
 	background-color: #fff;
@@ -975,7 +976,7 @@ section .topCon p{
 	border-radius: 50%;
 	font-size:  24px;
 }
-.container .contactInfo .box .text{
+.contactInfo .box .text{
 	display: flex;
 	flex-direction: column;
 	margin-left: 20px;
@@ -983,8 +984,8 @@ section .topCon p{
 	color: #fff;
 	font-weight: 300;
 
-	}
-	.container .contactInfo .box .text h3{
+}
+	.contactInfo .box .text h3{
 		font-weight: 700;
 		color: rgba(18,240,248);
 
@@ -1059,17 +1060,9 @@ section .topCon p{
     .contactForm{
         width:100%;
     }
-} */
+}
 
-/* *{	
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	font-family: verdana,sans-serif,serif;
-	border: none;
-	outline: none;
-	letter-spacing: 2px;
-} */
+
 .topCon{
 
 }
