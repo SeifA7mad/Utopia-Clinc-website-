@@ -94,7 +94,7 @@ $('.body-container-bottom .tabs a').click(function(event) {
         if (activeBody === "#Archive") {
             createTableArchive(activeBody, activeTab.replace('#', ''), tableHeaderArchive, tableRowsArchive);
         } else if (activeBody === "#Report") {
-            createTableArchive(activeBody, activeTab.replace('#', ''), tableHeaderArchive, tableRowsArchive);
+            createTableArchive(activeBody, activeTab.replace('#', ''), tableHeaderReport, tableRowsArchive);
         }
         $(activeBody+ ' .head').css('display', 'flex');
         if (activeBody === "#Archive" && activeTab != "#Patients") {
@@ -147,6 +147,19 @@ $('.body-container-bottom .tabs a').click(function(event) {
         "Delete"
       ]
   ]; 
+
+  const tableHeaderReport = [
+    "Patient Name",
+    "Doctor Name",
+    "Type of chechup",
+    "Date",
+    "Time",
+    "Rate",
+    "Cost",
+    "Action",
+    "name",
+    "phone number"
+];
 
   let createTableArchive = (bodyID, id, th, tr) => {
       let tableDiv = $('<div></div>');
