@@ -71,7 +71,7 @@ $('.side-nav ul li a').click(function(event) {
     $(this).parent().siblings().removeClass("current-nav");
     
     // display only active tab content
-    var activeTab = $(this).attr("href");
+    let activeTab = $(this).attr("href");
     $('.body-container').not(activeTab).css("display","none");
     $(activeTab).fadeIn();
     activeBody = activeTab;
