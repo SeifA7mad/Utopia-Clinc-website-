@@ -207,27 +207,36 @@ $('form .validate').click(function(event) {
             if (input.eq(i).val() !== "") {
                 if (input.eq(i).attr('name') === "email") {
                     if (!input.eq(i).val().includes('@')) {
-                        input.eq(i).val("Not Email");
+                        input.eq(i).val('');
+                        input.eq(i).attr("placeholder", "Enter a valid mail");
+                        input.eq(i).addClass('error');
                         submitCond = false;
                     }
                 } else if (input.eq(i).attr('name') === "password") {
                     if (!input.eq(i).val().match(password)) {
-                        input.eq(i).val("Not password");
+                        input.eq(i).val('');
+                        input.eq(i).attr("placeholder", "Password must contains 8 letters, at least one capital and small letter");
+                        input.eq(i).addClass('error');
                         submitCond = false;
                     }
                 } else if (input.eq(i).attr('name') === "text") {
                     if (!input.eq(i).val().match(letters)) {
-                        input.eq(i).val("Not text");
+                        input.eq(i).val('');
+                        input.eq(i).attr("placeholder", "no numbers allowed");
+                        input.eq(i).addClass('error');
                         submitCond = false;
                     }
                 } else if (input.eq(i).attr('name') === "num") {
                     if (!input.eq(i).val().match(numbers)) {
-                        input.eq(i).val("Not num");
+                        input.eq(i).val('');
+                        input.eq(i).attr("placeholder", "no letters allowed");
+                        input.eq(i).addClass('error');
                         submitCond = false;
                     }
                 } 
             } else {
-                input.eq(i).val("Empty");
+                input.eq(i).attr("placeholder", "Required");
+                input.eq(i).addClass('error');
                 submitCond = false;
             }
         }
