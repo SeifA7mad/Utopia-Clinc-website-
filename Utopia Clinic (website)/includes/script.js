@@ -167,6 +167,48 @@ let closeForm = () => {
     $('.add-form').hide();
 }
 
+$('form .validate').click(function(event) {
+    event.preventDefault();
+    let form = $(this).parent();
+    let input = form.children('input');
+    let submitCond = true;
+    let numbers = /^[0-9]+$/;
+    let letters = /^[a-zA-Z]+$/;
+
+    for (let i = 0; i < input.length; i++) {
+        if (input.eq(i).attr('name') !== "button") {
+            if (input.eq(i).val() !== "") {
+                if (input.eq(i).attr('name') === "email") {
+                    if (!input.eq(i).val().includes('@')) {
+                        input.eq(i).val("Not Email");
+                        submitCond = false;
+                    }
+                } else if (input.eq(i).attr('name') === "password") {
+                    
+                } else if (input.eq(i).attr('name') === "text") {
+                    if (!input.eq(i).val().match(letters)) {
+                        input.eq(i).val("Not text");
+                        submitCond = false;
+                    }
+                } else if (input.eq(i).attr('name') === "num") {
+                    if (!input.eq(i).val().match(numbers)) {
+                        input.eq(i).val("Not num");
+                        submitCond = false;
+                    }
+                } 
+            } else {
+                input.eq(i).val("Empty");
+                submitCond = false;
+            }
+        }
+    }
+
+    if (submitCond) {
+        form.submit();
+    }
+})
+
+
   $(document).ready(function(){
 	$('#comment').click(function() {
 
