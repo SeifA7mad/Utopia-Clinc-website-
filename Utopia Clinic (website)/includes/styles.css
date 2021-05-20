@@ -162,6 +162,11 @@ nav .side-nav ul li:hover, nav .side-nav ul li a:hover {
     font-weight: bold;
 }
 
+.body-container .body-container-bottom .head input {
+    border-radius: 10px;
+    border-style: solid;
+}
+
 .body-container .body-container-bottom .info-table  {
     margin-top: 10px;
     width: 96%;
@@ -872,12 +877,15 @@ header nav .nav-container .nav-bottom  .more-text {
     text-align: center;
     font-family: sans-serif;
     margin-bottom: 10px;
+    width: 100%;
 }
 
-.offer .card-offers .card-buttom button {
-    border: none;
-    width: 75%;
+.offer .card-offers .card-buttom a {
+    width: 100%;
     height: 1.5em;
+    text-decoration: none;
+    padding: 5px 50px;
+    margin-top: 10px;
 }
 
 /* Offers */
