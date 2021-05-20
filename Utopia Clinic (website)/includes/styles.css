@@ -1232,12 +1232,13 @@ header nav .nav-container .nav-bottom .payment form .row img{
     display: flex;
     height: fit-content;
     justify-content: space-between;
+    
 }
 .body-container .body-container-bottom .profile-container .Speciality p{
     font-size: 20px;
-    border: #41bfe6;;
-    border-style: solid;
+    border: solid rgba(216, 211, 211, 0.836);
     border-radius: 10px;
+    padding: 5px;
 }
 
 
