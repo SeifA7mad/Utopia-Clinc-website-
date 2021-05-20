@@ -109,7 +109,7 @@ $('#Archive .body-container-bottom .tabs a').click(function(event) {
   $(".body-container-bottom .head input").on("keyup", function() {
     var value = $(this).val().toLowerCase();
     $(".info-table tr").not('.notForSearch').filter(function() {
-      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
     });
   });
 
