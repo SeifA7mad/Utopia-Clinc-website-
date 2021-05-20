@@ -1448,3 +1448,39 @@ header nav .nav-container .nav-bottom .payment form .row img{
 
 
 /*Mostafa: Reservation*/
+
+/*Sign-up*/
+
+header .sign-up-form{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+
+}
+
+header .sign-up-form form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    width: 50%;
+    height: 100%;
+}
+
+header .sign-up-form form input{
+    width: 65%;
+    padding: 10px;
+    border: none;
+    border-radius: 15px;
+    box-sizing: border-box;
+    margin: auto;
+}
+
+header .Sign-up-image{
+    width: 50%;
+    margin: auto;
+}
+/*Sign-up*/
