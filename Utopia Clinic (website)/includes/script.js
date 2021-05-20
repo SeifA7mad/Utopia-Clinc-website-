@@ -79,7 +79,7 @@ $('.side-nav ul li a').click(function(event) {
 
 let activeLink;
 
-$('#Archive .body-container-bottom .tabs a').click(function(event) {
+$('.body-container-bottom .tabs a').click(function(event) {
     event.preventDefault();
     
     // Toggle active class on tab buttons
@@ -91,19 +91,23 @@ $('#Archive .body-container-bottom .tabs a').click(function(event) {
     let plusIcon;
 
     if (activeTab !== activeLink) {
-        createTableArchive(activeBody, activeTab.replace('#', ''), tableHeader, tableRows);
-        $('#Archive .head').css('display', 'flex');
-        if (activeTab != "#Patients") {
+        if (activeBody === "#Archive") {
+            createTableArchive(activeBody, activeTab.replace('#', ''), tableHeaderArchive, tableRowsArchive);
+        } else if (activeBody === "#Report") {
+            createTableArchive(activeBody, activeTab.replace('#', ''), tableHeaderArchive, tableRowsArchive);
+        }
+        $(activeBody+ ' .head').css('display', 'flex');
+        if (activeBody === "#Archive" && activeTab != "#Patients") {
             plusIcon = $('<i></i>');
             plusIcon.addClass('fa fa-plus fa-2x');
             plusIcon.attr('onclick', "formToggle('#form-" +activeTab.replace('#', '')+ "')");
+            $('#Archive .info-table').append(plusIcon);
         }
+        $('.info-table').not(activeTab).remove();
+        $(activeBody+ ' .head h3').html(activeTab.replace('#', '') + activeBody.replace('#', ' '));
+        $(activeTab).fadeIn();
+        activeLink = activeTab;
     }
-    $('.info-table').not(activeTab).remove();
-    $('#Archive .head h3').html(activeTab.replace('#', '') + activeBody.replace('#', ' '));
-    $('#Archive .info-table').append(plusIcon);
-    $(activeTab).fadeIn();
-    activeLink = activeTab;
   });
 
   $(".body-container-bottom .head input").on("keyup", function() {
@@ -113,7 +117,7 @@ $('#Archive .body-container-bottom .tabs a').click(function(event) {
     });
   });
 
-  const tableHeader = [
+  const tableHeaderArchive = [
       "Full Name",
       "E-mail",
       "Role",
@@ -123,7 +127,7 @@ $('#Archive .body-container-bottom .tabs a').click(function(event) {
       "Action",
   ];
 
-  const tableRows = [
+  const tableRowsArchive = [
       [
         "Seif Ahmad",
         "Sauofa_ahmad@yahoo.com",
