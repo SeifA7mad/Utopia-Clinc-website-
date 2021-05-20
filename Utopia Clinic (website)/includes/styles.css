@@ -1192,6 +1192,50 @@ header nav .nav-container .nav-bottom .payment form .row img{
 }
 /* Payment */
 
+/* Admin profile*/
+
+.body-container .body-container-bottom .profile-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    margin: 30px auto;
+}
+
+.body-container .body-container-bottom .profile-container img{
+    display: flex;
+    width: 20%;  
+    height: 20%;
+    border-radius: 10px;
+    margin-left: 20px;
+}
+
+.body-container .body-container-bottom .profile-container .profile-container-bottom {
+    margin-left: 40px;
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+}
+
+.body-container .body-container-bottom .profile-container .profile-container-bottom * {
+    margin-bottom: 20px;
+}
+
+.body-container .body-container-bottom .profile-container .Speciality{
+    display: flex;
+    height: fit-content;
+    justify-content: space-between;
+}
+.body-container .body-container-bottom .profile-container .Speciality p{
+    font-size: 20px;
+    border: #41bfe6;;
+    border-style: solid;
+    border-radius: 10px;
+}
+
+
+
+
+/* Admin profile*/
 
 
 
