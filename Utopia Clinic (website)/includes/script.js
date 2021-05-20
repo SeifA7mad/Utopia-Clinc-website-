@@ -89,8 +89,10 @@ $('#Archive .body-container-bottom .tabs a').click(function(event) {
     // display only active tab content
     let activeTab = $(this).attr("href");
     let plusIcon;
+
     if (activeTab !== activeLink) {
         createTableArchive(activeBody, activeTab.replace('#', ''), tableHeader, tableRows);
+        $('#Archive .head').css('display', 'flex');
         if (activeTab != "#Patients") {
             plusIcon = $('<i></i>');
             plusIcon.addClass('fa fa-plus fa-2x');
@@ -102,6 +104,13 @@ $('#Archive .body-container-bottom .tabs a').click(function(event) {
     $('#Archive .info-table').append(plusIcon);
     $(activeTab).fadeIn();
     activeLink = activeTab;
+  });
+
+  $(".body-container-bottom .head input").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $(".info-table tr").not('.notForSearch').filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
   });
 
   const tableHeader = [
@@ -125,11 +134,11 @@ $('#Archive .body-container-bottom .tabs a').click(function(event) {
         "Delete"
       ],
       [
-        "Seif Ahmad",
-        "Sauofa_ahmad@yahoo.com",
+        "karim Rafaat",
+        "karim@yahoo.com",
         "mo5 w a3sab",
         "01028877643",
-        "Mokattam",
+        "shorouk",
         'M',
         "Delete"
       ]
@@ -141,7 +150,7 @@ $('#Archive .body-container-bottom .tabs a').click(function(event) {
       tableDiv.attr('id', id);
       let table = $('<table></table>');
       let tableHead = $('<tr></tr>');
-
+      tableHead.addClass('notForSearch');
       for (let i of th) {
           tableHead.append($('<th>'+i+'</th>'));
       }
@@ -174,6 +183,7 @@ $('form .validate').click(function(event) {
     let submitCond = true;
     let numbers = /^[0-9]+$/;
     let letters = /^[a-zA-Z]+$/;
+    let password = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/;
 
     for (let i = 0; i < input.length; i++) {
         if (input.eq(i).attr('name') !== "button") {
@@ -184,7 +194,10 @@ $('form .validate').click(function(event) {
                         submitCond = false;
                     }
                 } else if (input.eq(i).attr('name') === "password") {
-                    
+                    if (!input.eq(i).val().match(password)) {
+                        input.eq(i).val("Not password");
+                        submitCond = false;
+                    }
                 } else if (input.eq(i).attr('name') === "text") {
                     if (!input.eq(i).val().match(letters)) {
                         input.eq(i).val("Not text");
