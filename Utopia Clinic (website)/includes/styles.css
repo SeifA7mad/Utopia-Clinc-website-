@@ -549,7 +549,7 @@ header nav .nav-container .nav-center .nav-center-buttons {
     font-size: 1.5em;
     border-radius: 30px;
     color: white; 
-    background-color: rgba(133, 127, 127, 0.788);
+    background-color: #2d3663b4;
     cursor: pointer;
 }
 
@@ -616,6 +616,41 @@ header nav .nav-container .nav-bottom .left-nav-bottom * {
     display: flex;
     flex-direction: column;
 }
+header nav .nav-container .nav-bottom .right-nav-bottom {
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+header nav .nav-container .nav-bottom .right-nav-bottom .Diagnostic-type-card {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    height: 45%;
+    width: 20%;
+    border-radius: 10px;
+    margin: 10px 10px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #2D3663;     
+}
+
+header nav .nav-container .nav-bottom .right-nav-bottom .Diagnostic-type-card:hover {
+    background-color: #2D3663;
+    color: white;
+}
+
+header nav .nav-container .nav-bottom .right-nav-bottom .Diagnostic-type-card img {
+    width: 50%;
+    height: 50%;
+    margin-bottom: 10px;
+}
+
+header nav .nav-container .nav-bottom .right-nav-bottom .Diagnostic-type-card h3 {
+    margin-bottom: 20px;
+    font-size: 1em;
+}
 
 body main .nav-bottom .left-nav-bottom {
     background-color: white;
@@ -624,7 +659,7 @@ body main .nav-bottom .left-nav-bottom {
 
 body main .nav-bottom .left-nav-bottom h1, 
 body main .nav-bottom .right-nav-bottom h1 {
-    color: #434c5f;
+    color: #2D3663;
     margin-right: 0;
     margin-left: 0;
 }
