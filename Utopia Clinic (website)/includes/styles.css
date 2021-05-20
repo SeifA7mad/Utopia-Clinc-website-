@@ -1558,7 +1558,7 @@ header .sign-up-form::after{
 
 }
 
-header .sign-up-form form button{
+header .sign-up-form form input[type=button] {
     width: 70%;
     padding: 8px;
     margin: 30px auto;

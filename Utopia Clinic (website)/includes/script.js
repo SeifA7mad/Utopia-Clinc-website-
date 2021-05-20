@@ -63,7 +63,7 @@ progressCirclePercentage(".rating", 20);
 
 let activeBody;
 
-$('.side-nav ul li a').click(function(event) {
+$('.side-nav ul li a').not('.home-anker').click(function(event) {
     event.preventDefault();
     
     // Toggle active class on tab buttons
@@ -233,7 +233,18 @@ $('form .validate').click(function(event) {
                         input.eq(i).addClass('error');
                         submitCond = false;
                     }
-                } 
+                }  else if (input.eq(i).attr('name') === "repeat-password") {
+                    if (input.eq(i-1).val() !== input.eq(i).val()) {
+                        input.eq(i).val('');
+                        input.eq(i).attr("placeholder", "Password doesnot match");
+                        input.eq(i).addClass('error');
+                        submitCond = false;
+                    }
+                } else if (input.eq(i).attr('name') === "checked") {
+                    if (!input.eq(i).is(':checked')) {
+                        submitCond = false;
+                    }
+                }
             } else {
                 input.eq(i).attr("placeholder", "Required");
                 input.eq(i).addClass('error');
