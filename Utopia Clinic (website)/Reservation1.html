@@ -16,21 +16,22 @@
 				<i class="fa fa-clock-o fa-lg" aria-hidden="true"> 6:00am to 4:00pm</i>
 			</div>
 			<div class="small-nav">
-				<i class="fa fa-user fa-2x profile" aria-hidden="true" onclick="diplayProfileModal()"></i> 
+				<i class="fa fa-user fa-2x profile" aria-hidden="true"></i> 
 				<div class="profile-modal">
 					<div class="sign-in-form">
 						<h2> Sign in </h2>
-						<form>
+						<form name="Sign-in">
 							<label for="sign-in-email"> E-mail: </label>
-							<input type="text" name="sign-in-email" id="sign-in-email">
+							<input type="text" name="email" id="sign-in-email">
 							<label for="sign-in-password"> Password: </label>
-							<input type="password" name="sign-in-password" id="sign-in-password">
-							<input type="button" value="Sign in" class="btn btn1" style="cursor: pointer; margin-top: 20px;" onclick="signIn()">
+							<input type="password" name="pass" id="sign-in-password">
+							<input type="button" name="button" value="Sign in" class="btn btn1 sign-btn" style="cursor: pointer; margin-top: 20px;">
 						</form>
+						<a href="./Sign-up.html" class="btn btn1"> Sign up</a>
 					</div>
 					<div class="profile-modal-content">
 						<img src="./images/profilePicture.png">
-						<p> Seif Ahmad </p>
+						<p> </p>
 					</div>
 				</div>
 				<i class="fa fa-bell-o fa-2x notification" aria-hidden="true"> <div class="notification-icon"> <!-- Dynamic generated --> 1 </div> </i>
@@ -41,9 +42,6 @@
 						Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, deleniti.
 					</div>
 				</div>
-				<!-- <div class="backdrop">
-	
-				</div> -->
 			</div>
 		</div>
 		<nav>
@@ -52,7 +50,6 @@
 					<img src="images/Utopia-logo.png">
 					<div class="nav-elements">
 						<a href="./home.html"> Home </a>
-						<a href=""> Home </a>
 						<a href="./Offers.html"> Offers </a>
 						<a href="./AboutUs.html"> About Us </a>
 					</div>
@@ -77,24 +74,7 @@
 					
 			</div>
 				<div class="nav-bottom">
-					<div class="container">
-						<div class="box">
-							<h2><bold>Utopia Clinic	</bold></h2> 
-											
-												<p> Managers have administrative duties and 
-												are responsbile for the daily operations of a health care facility.
-												 Common Clinic Manager duties are managing staff, assigning work,
-												  recruiting new employees, overseeing management, maintaining the
-												   inventory, budgeting, and organizing staff meetings. 
-												   Aside from medical terminology knowledge, successful 
-												   resumes for Clinic Managers also highlight communication 
-												   abilities, professionalism, organizational skills, accuracy, 
-												   computer competencies, and time management. Studies in medical 
-												   services administration are common experience in Clinic Manager
-												    example resumes.</p>
-						</div>		
-	</div>
-						
+					<div class="container">	
 						<div class="contactForm">
 							<h2> Fill in the required fields</h2>
 							<form action="">
@@ -178,14 +158,15 @@
             <h1> Explore </h1>
             <ul>
                 <div style="display: flex; flex-direction: column;">
-                    <li> <a href=""> Home </a> </li>
-                    <li> <a href=""> Home </a> </li>
-                    <li> <a href=""> Home </a> </li>
+                    <li> <a href="./home.html"> Home </a> </li>
+                    <li> <a href="./Offers.html"> Offers </a> </li>
+                    <li> <a href="./AboutUs.html"> About Us </a> </li>
+                    <li> <a href="./doctor/dashboard.html"> Dashboard Doctor </a> </li>
                 </div>
                 <div style="display: flex; flex-direction: column;">
-                    <li> <a href=""> Home </a> </li>
-                    <li> <a href=""> Home </a> </li>
-                    <li> <a href=""> Home </a> </li>
+                    <li> <a href="./Reservation1.html"> Reservation </a> </li>
+                    <li> <a href="./AskDoctor.html"> Ask a Doctor </a> </li>
+                    <li> <a href="./admin/dashboard.html"> Dashboard Admin </a> </li>
                </div>
             </ul>
         </div>

@@ -162,6 +162,11 @@ nav .side-nav ul li:hover, nav .side-nav ul li a:hover {
     font-weight: bold;
 }
 
+.body-container .body-container-bottom .head input {
+    border-radius: 10px;
+    border-style: solid;
+}
+
 .body-container .body-container-bottom .info-table  {
     margin-top: 10px;
     width: 96%;
@@ -197,6 +202,10 @@ nav .side-nav ul li:hover, nav .side-nav ul li a:hover {
     margin-top: 10px;
     cursor: pointer;
 }
+.body-container .body-container-bottom .info-table table i {
+    color: red;
+    margin: auto auto auto 7px;
+}
 
 .add-form {
     width: 100%;
@@ -207,26 +216,23 @@ nav .side-nav ul li:hover, nav .side-nav ul li a:hover {
     position: fixed;
     display: flex;
     flex-direction: column;
-    align-items: center;
     border-radius: 10px;
-    margin: auto;
 }
 .add-form::after {
     background-color: rgba(0, 0, 0, 0.8);
     content: "";
     position: absolute;
-    height: 100%;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     opacity: 0.9;
     z-index: -1;
 }
 .add-form form{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     border-radius: 10px;
     width: 50%;
@@ -235,17 +241,15 @@ nav .side-nav ul li:hover, nav .side-nav ul li a:hover {
     font-family: sans-serif;
     margin: auto;
     z-index: 3;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 .add-form form i {
     align-self: flex-end;
     cursor: pointer;
-    margin-top: 50px;
 }
 
 .add-form form h1{
-    margin: 10px 0;
     color: rgb(69, 71, 71);
 }
 
@@ -259,13 +263,11 @@ nav .side-nav ul li:hover, nav .side-nav ul li a:hover {
 
 .add-form form label{
     width: 65%;
-    margin: 10px 0;
 }
 
 .add-form form button{
     width: 40%;
     padding: 10px;
-    margin: 30px 0;
     border: none;
     border-radius: 15px;
     background-color: rgba(148, 113, 113, 0.432);
@@ -387,7 +389,7 @@ header .head-home .info {
 }
 
 .profile-modal .sign-in-form {
-    display: none;
+    display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
@@ -424,6 +426,13 @@ header .head-home .info {
     padding: 3px 30px;
 }
 
+.profile-modal .sign-in-form a {
+    border-radius: 10px;
+    width: 75%;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
 .profile-modal .profile-modal-content {
     display: none;
     flex-direction: column;
@@ -439,6 +448,13 @@ header .head-home .info {
 }
 
 .profile-modal .profile-modal-content p {
+    align-self: center;
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+.profile-modal .profile-modal-content a {
+    margin: 10px auto;
     align-self: center;
     font-weight: bold;
     font-size: 1.3em;
@@ -551,7 +567,7 @@ header nav .nav-container .nav-center .nav-center-buttons {
     font-size: 1.5em;
     border-radius: 30px;
     color: white; 
-    background-color: rgba(133, 127, 127, 0.788);
+    background-color: #2d3663b4;
     cursor: pointer;
 }
 
@@ -618,6 +634,41 @@ header nav .nav-container .nav-bottom .left-nav-bottom * {
     display: flex;
     flex-direction: column;
 }
+header nav .nav-container .nav-bottom .right-nav-bottom {
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+header nav .nav-container .nav-bottom .right-nav-bottom .Diagnostic-type-card {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    height: 45%;
+    width: 20%;
+    border-radius: 10px;
+    margin: 10px 10px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #2D3663;     
+}
+
+header nav .nav-container .nav-bottom .right-nav-bottom .Diagnostic-type-card:hover {
+    background-color: #2D3663;
+    color: white;
+}
+
+header nav .nav-container .nav-bottom .right-nav-bottom .Diagnostic-type-card img {
+    width: 50%;
+    height: 50%;
+    margin-bottom: 10px;
+}
+
+header nav .nav-container .nav-bottom .right-nav-bottom .Diagnostic-type-card h3 {
+    margin-bottom: 20px;
+    font-size: 1em;
+}
 
 body main .nav-bottom .left-nav-bottom {
     background-color: white;
@@ -626,7 +677,7 @@ body main .nav-bottom .left-nav-bottom {
 
 body main .nav-bottom .left-nav-bottom h1, 
 body main .nav-bottom .right-nav-bottom h1 {
-    color: #434c5f;
+    color: #2D3663;
     margin-right: 0;
     margin-left: 0;
 }
@@ -872,12 +923,15 @@ header nav .nav-container .nav-bottom  .more-text {
     text-align: center;
     font-family: sans-serif;
     margin-bottom: 10px;
+    width: 100%;
 }
 
-.offer .card-offers .card-buttom button {
-    border: none;
-    width: 75%;
+.offer .card-offers .card-buttom a {
+    width: 100%;
     height: 1.5em;
+    text-decoration: none;
+    padding: 5px 50px;
+    margin-top: 10px;
 }
 
 /* Offers */
@@ -1224,12 +1278,13 @@ header nav .nav-container .nav-bottom .payment form .row img{
     display: flex;
     height: fit-content;
     justify-content: space-between;
+    
 }
 .body-container .body-container-bottom .profile-container .Speciality p{
     font-size: 20px;
-    border: #41bfe6;;
-    border-style: solid;
+    border: solid rgba(216, 211, 211, 0.836);
     border-radius: 10px;
+    padding: 5px;
 }
 
 
@@ -1513,3 +1568,98 @@ text-decoration: none;
 
 
 /*Mostafa: Reservation*/
+
+
+.error::-webkit-input-placeholder {
+    color: red;
+}
+
+
+/*Sign-up*/
+
+header .sign-up-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+
+    height: fit-content;
+    position: relative;
+
+}
+
+header .sign-up-form form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    width: 40%;
+    height: 550px;
+    background-color: rgb(255, 255, 255);
+    margin-top: 100px;
+}
+
+header .sign-up-form form h2{
+    margin: 10px 0 25px 0;
+    font-size: 20px;
+    
+}
+
+header .sign-up-form form input{
+    width: 70%;
+    padding: 10px;
+    border: solid;
+    border-color: rgb(167, 167, 167);
+    border-radius: 8px;
+    box-sizing: border-box;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 20px;
+
+}
+
+header .Sign-up-image{
+    width: 50%;
+    margin: auto;
+}
+
+header .sign-up-form::after{
+    content: "";
+    background-image: linear-gradient(rgba(133, 127, 127, 0.788),rgba(64, 224, 208, 0.78)), url("./../images/Sign-up.jpg");
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    height: 50em;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.9;
+    z-index: -1;
+
+}
+
+header .sign-up-form form input[type=button] {
+    width: 70%;
+    padding: 8px;
+    margin: 30px auto;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(82, 52, 52, 0.432);
+    font-size: 18px;
+    color: rgba(247, 247, 247, 0.911);
+    cursor: pointer;
+    background-image: linear-gradient(to right, #6a6d72 0%, #79CBCA  51%  100%)
+}
+
+header .sign-up-form form button:hover{
+    color: #1a1717;
+    background-color: rgb(78, 133, 179);
+}
+
+
+
+
+/*Sign-up*/
