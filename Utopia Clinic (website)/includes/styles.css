@@ -970,15 +970,19 @@ header nav .nav-container .nav-bottom .payment form input {
     margin: auto;
 }
 
-header nav .nav-container .nav-bottom .payment form .payment-date {
+header nav .nav-container .nav-bottom .payment form .p-date {
     display: flex;
-    width: 82%;
-    margin: auto;
+    width: 66%;
+    margin-left: 12px;
+    
 }
 
-header nav .nav-container .nav-bottom .payment form .payment-date input {
-    width: 30%;
+
+header nav .nav-container .nav-bottom .payment form .p-date input {
+    margin-right: 10px;
 }
+
+
 
 header nav .nav-container .nav-bottom .payment form button {
     width: 65%;
