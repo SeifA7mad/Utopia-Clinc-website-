@@ -260,7 +260,7 @@ nav .side-nav ul li:hover, nav .side-nav ul li a:hover {
 
 }
 
-
+/*Add doctors-offers */
 
 .add-form {
     width: 100%;
@@ -341,6 +341,52 @@ nav .side-nav ul li:hover, nav .side-nav ul li a:hover {
 #form-Doctors, #form-Offers {
     display: none;
 }
+
+
+/*Add doctors-offers */
+
+/* Admin profile*/
+
+.body-container .body-container-bottom .profile-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    margin: 30px auto;
+}
+
+.body-container .body-container-bottom .profile-container img {
+    display: flex;
+    width: 20%;
+    height: 20%;
+    border-radius: 10px;
+    margin-left: 20px;
+}
+
+.body-container .body-container-bottom .profile-container .profile-container-bottom {
+    margin-left: 40px;
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+}
+
+.body-container .body-container-bottom .profile-container .profile-container-bottom * {
+    margin-bottom: 20px;
+}
+
+.body-container .body-container-bottom .profile-container .Speciality {
+    display: flex;
+    height: fit-content;
+    justify-content: space-between;
+}
+
+.body-container .body-container-bottom .profile-container .Speciality p {
+    font-size: 20px;
+    border: solid rgba(216, 211, 211, 0.836);
+    border-radius: 10px;
+    padding: 5px;
+}
+
+/* Admin profile*/
 
 /* Dashboard */
 
@@ -518,18 +564,6 @@ header .head-home .info {
     font-size: 1.3em;
 }
 
-/* .backdrop {
-    width: 100%;
-    height: 100%;
-    z-index: 10;
-    left: 0;
-    top: 0;
-    position: fixed;
-    background-color: rgba(0, 0, 0, 0.8);
-    display: none;
-    overflow-y: scroll;
-} */
-
 header nav .nav-container {
     width: 100%;
     height: fit-content;
@@ -551,22 +585,6 @@ header nav .nav-container::after {
     z-index: -1;
 }
 
-/* @media only screen and (min-width: 600px) and (max-width: 800px) {
-    header nav .nav-container::after {
-        content: "";
-        background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)), url("./../images/nav.jpg");
-        background-size: cover;
-        background-position: center;
-        position: absolute;
-        height: 60em;
-        top: 0px;
-        right: 0px;
-        bottom: 0px;
-        left: 0px;
-        opacity: 0.9;
-        z-index: -1;
-    }
-} */
 
 header nav .nav-container .nav-top {
     display: flex;
@@ -833,9 +851,6 @@ body main .nav-bottom .right-nav-bottom .progress-circle.over50 .left-half-clipp
 }
 
 body main .nav-bottom .right-nav-bottom .progress-circle .left-half-clipper .value-bar {
-    /*This is an overlayed square, that is made round with the border radius,
-     then it is cut to display only the left half, then rotated clockwise
-     to escape the outer clipping path.*/
     position: absolute;
     /*needed for clipping*/
     clip: rect(0, 4.5em, 7em, 0);
@@ -843,16 +858,12 @@ body main .nav-bottom .right-nav-bottom .progress-circle .left-half-clipper .val
     height: 7em;
     border-radius: 50%;
     border: 0.45em solid #08a1db;
-    /*The border is 0.35 but making it larger removes visual artifacts */
-    /*background-color: #4D642D;*/
-    /* for debug */
     box-sizing: border-box;
 }
 
 /* Progress bar filling the whole right half for values above 50% */
 
 body main .nav-bottom .right-nav-bottom .progress-circle.over50 .first50-bar {
-    /*Progress bar for the first 50%, filling the whole right half*/
     position: absolute;
     /*needed for clipping*/
     clip: rect(0, 7em, 7em, 4.5em);
@@ -989,84 +1000,6 @@ header nav .nav-container .nav-bottom .more-text {
 
 /* Offers */
 
-/* Payment */
-
-header nav .nav-container .nav-bottom .payment {
-    width: 100%;
-    height: fit-content;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-radius: 10px;
-}
-
-header nav .nav-container .nav-bottom .payment form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 20px 0;
-    border-radius: 10px;
-    width: 50%;
-    height: 100%;
-    box-shadow: 0 4px 8px 0 #2b9ec2, 0 4px 8px 0 #2b9ec2;
-    background-color: rgba(221, 196, 196, 0.432);
-    font-family: sans-serif;
-    border: solid rgb(97, 93, 93);
-}
-
-
-header nav .nav-container .nav-bottom .payment form label {
-    margin: 20px 120px;
-}
-
-header nav .nav-container .nav-bottom .payment form input {
-    width: 65%;
-    padding: 10px;
-    border: none;
-    border-radius: 15px;
-    box-sizing: border-box;
-    margin: auto;
-}
-
-header nav .nav-container .nav-bottom .payment form #month,
-header nav .nav-container .nav-bottom .payment form #year {
-    width: 25%;
-    align-self: flex-start;
-    margin: 5px 120px;
-}
-
-
-header nav .nav-container .nav-bottom .payment form button {
-    width: 65%;
-    padding: 10px;
-    margin: 40px auto;
-    border: none;
-    border-radius: 15px;
-    background-color: rgba(82, 52, 52, 0.432);
-    font-size: 18px;
-    color: rgba(247, 247, 247, 0.911);
-    cursor: pointer;
-}
-
-header nav .nav-container .nav-bottom .payment form button:hover {
-    background-color: rgba(56, 33, 33, 0.534);
-    color: #2b9ec2;
-}
-
-header nav .nav-container .nav-bottom .payment form .row {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-}
-
-header nav .nav-container .nav-bottom .payment form .row img {
-    width: 15%;
-    margin: 15px 0 0 25px;
-    border-radius: 10px;
-}
-
-/* Payment */
 
 /* FOOTER */
 
@@ -1209,72 +1142,6 @@ footer .footer-bottom div ul li a:hover {
 
 /*Footer*/
 
-/*AddNewOffer(Admin)*/
-
-.form-dashboard {
-    display: flex;
-    flex-direction: column;
-    margin: auto;
-    justify-content: center;
-    align-items: center;
-    background:linear-gradient(135deg,#71b7e6,#9b59b6) ;
-    width: 70%;
-    height: 90%;
-    border-radius: 10px;
-}
-
-.form-dashboard .title{
-    font-size: 25px;
-    font-weight: 500 ;
-    position: relative;
-    margin: 20px auto;
-}
-.form-dashboard .title::before{
-    content: '';
-    position: absolute;
-    margin: auto;
-    left: 0;
-    bottom:0;
-    height: 3px;
-    width:160px;
-    margin-top: 50px;
-    background:linear-gradient(135deg,#71b7e6,#9b59b6) ;
-}
-
-.form-dashboard form {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin: 20px 0 12px 0;
-    width: 50%; 
-    height: 90%;
-    border-radius: 10px;
-    background-color: whitesmoke;
-}
-
-.form-dashboard form .input-box {
-    width: 80%;
-    margin: auto;
-    height: 20%;
-    margin-bottom: 20px;
-}
-
- .form-dashboard form .input-box input{
-    height: 70%;
-    width: 100%; 
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    font-size: medium;
-    border-bottom-width: 2px;
-    margin-top: 7px ;
-}
-
-form .offer-btn{
-    height: 100px;
-    margin: auto;
-    margin-top: 10px;
-}
-
 /* Payment */
 
 header nav .nav-container .nav-bottom .payment {
@@ -1315,14 +1182,11 @@ header nav .nav-container .nav-bottom .payment form input {
     margin: auto;
 }
 
-header nav .nav-container .nav-bottom .payment form .payment-date {
-    display: flex;
-    width: 82%;
-    margin: auto;
-}
-
-header nav .nav-container .nav-bottom .payment form .payment-date input {
-    width: 30%;
+header nav .nav-container .nav-bottom .payment form #month,
+header nav .nav-container .nav-bottom .payment form #year {
+    width: 25%;
+    align-self: flex-start;
+    margin: 5px 120px;
 }
 
 header nav .nav-container .nav-bottom .payment form button {
@@ -1356,48 +1220,6 @@ header nav .nav-container .nav-bottom .payment form .row img {
 
 /* Payment */
 
-/* Admin profile*/
-
-.body-container .body-container-bottom .profile-container {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    margin: 30px auto;
-}
-
-.body-container .body-container-bottom .profile-container img {
-    display: flex;
-    width: 20%;
-    height: 20%;
-    border-radius: 10px;
-    margin-left: 20px;
-}
-
-.body-container .body-container-bottom .profile-container .profile-container-bottom {
-    margin-left: 40px;
-    display: flex;
-    flex-direction: column;
-    align-content: space-between;
-}
-
-.body-container .body-container-bottom .profile-container .profile-container-bottom * {
-    margin-bottom: 20px;
-}
-
-.body-container .body-container-bottom .profile-container .Speciality {
-    display: flex;
-    height: fit-content;
-    justify-content: space-between;
-}
-
-.body-container .body-container-bottom .profile-container .Speciality p {
-    font-size: 20px;
-    border: solid rgba(216, 211, 211, 0.836);
-    border-radius: 10px;
-    padding: 5px;
-}
-
-/* Admin profile*/
 
 /* Mostafa */
 
@@ -1596,7 +1418,6 @@ header nav .nav-container .nav-bottom .payment form .row img {
     text-decoration: none;
 }
 
-/**/
 
 .topCon {}
 
