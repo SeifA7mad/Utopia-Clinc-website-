@@ -1,12 +1,58 @@
+const users = [
+    {
+        email: "seif@yahoo.com",
+        password: "Ss12345678",
+        role: "Admin",
+        name: "Seif"
+    },
+    {
+        email: "karim@yahoo.com",
+        password: "Kk12345678",
+        role: "Doctor",
+        name: "Karim"
+    },
+    {
+        email: "mayar@yahoo.com",
+        password: "Mm12345678",
+        role: "Patient",
+        name: "Mayar"
+    },
+]
+
+
+
 let isSigned = false;
 
-let signIn = () => {
-    isSigned = true;
-    diplayProfileModal();
-}
+$('.sign-in-form .sign-btn').click(function(event) {
+    event.preventDefault();
+    let form = $(this).parent();
+    let email = form.children('input[name=email]');
+    let pass = form.children('input[name=pass]');
+
+    for (let i of users) {
+        if (email.val() === i.email) {
+            if (pass.val() === i.password) {
+                isSigned = true;
+                diplayProfileModal(i);
+                break;
+            } else {
+                break;
+            }
+        }
+    }
+
+    if (!isSigned) {
+        email.attr('placeholder', 'email or password is incorrect');
+        email.addClass('error');
+        email.val('');
+        pass.attr('placeholder', 'email or password is incorrect');
+        pass.addClass('error');
+        pass.val('');
+    }
+});
 
 $('.notification').click(() => {
-    let displayProp =  $('.notification-modal').css("display") === "none" ? "flex" : "none";
+    let displayProp = $('.notification-modal').css("display") === "none" ? "flex" : "none";
     $('.notification-modal').css("display", displayProp);
     $('.profile-modal').css("display", "none");
 });
@@ -21,11 +67,17 @@ $('.read-more-btn').click(() => {
     }
 });
 
-let diplayProfileModal = () => {
+let diplayProfileModal = (user) => {
     let displayProp = $('.profile-modal').css("display") === "none" ? "flex" : "none";
 
     if (displayProp === "flex") {
         if (isSigned) {
+            if (user.role === "Admin") {
+                $('.profile-modal-content').append("<a href='../admin/dashboard.html'> Dashboard </a>");
+            } else if (user.role === "Doctor") {
+                $('.profile-modal-content').append("<a href='../doctor/dashboard.html'> Dashboard </a>");
+            }
+            $('.profile-modal-content').children('p').html(i.name);
             $('.profile-modal-content').css("display", displayProp);
             $('.sign-in-form').css("display", "none");
         } else {
@@ -45,11 +97,11 @@ let progressCirclePercentage = (className, percentage) => {
         $(className).addClass('over50');
     }
 
-    className = className + " .value-bar";   
+    className = className + " .value-bar";
 
-    $({deg: 0}).animate({deg: rotateDeg}, {
+    $({ deg: 0 }).animate({ deg: rotateDeg }, {
         duration: 2000,
-        step: function(now) {
+        step: function (now) {
             $(className).css({
                 transform: 'rotate(' + now + 'deg)'
             });
@@ -63,29 +115,29 @@ progressCirclePercentage(".rating", 20);
 
 let activeBody;
 
-$('.side-nav ul li a').not('.home-anker').click(function(event) {
+$('.side-nav ul li a').not('.home-anker').click(function (event) {
     event.preventDefault();
-    
+
     // Toggle active class on tab buttons
     $(this).parent().addClass("current-nav");
     $(this).parent().siblings().removeClass("current-nav");
-    
+
     // display only active tab content
     let activeTab = $(this).attr("href");
-    $('.body-container').not(activeTab).css("display","none");
+    $('.body-container').not(activeTab).css("display", "none");
     $(activeTab).fadeIn();
     activeBody = activeTab;
-  });
+});
 
 let activeLink;
 
-$('.body-container-bottom .tabs a').click(function(event) {
+$('.body-container-bottom .tabs a').click(function (event) {
     event.preventDefault();
-    
+
     // Toggle active class on tab buttons
     $(this).addClass("current-tab");
     $(this).siblings().removeClass("current-tab");
-    
+
     // display only active tab content
     let activeTab = $(this).attr("href");
     let plusIcon;
@@ -95,60 +147,59 @@ $('.body-container-bottom .tabs a').click(function(event) {
             createTableArchive(activeBody, activeTab.replace('#', ''), tableHeaderArchive, tableRowsArchive);
         } else if (activeBody === "#Report") {
             createTableArchive(activeBody, activeTab.replace('#', ''), tableHeaderReport, tableRowsArchive);
+        } else if (activeBody === "#Tasks") {
+            createTableArchive(activeBody, activeTab.replace('#', ''), tableHeaderReport, tableRowsArchive);
         }
-        $(activeBody+ ' .head').css('display', 'flex');
+        $(activeBody + ' .head').css('display', 'flex');
         if (activeBody === "#Archive" && activeTab != "#Patients") {
             plusIcon = $('<i></i>');
             plusIcon.addClass('fa fa-plus fa-2x');
-            plusIcon.attr('onclick', "formToggle('#form-" +activeTab.replace('#', '')+ "')");
+            plusIcon.attr('onclick', "formToggle('#form-" + activeTab.replace('#', '') + "')");
             $('#Archive .info-table').append(plusIcon);
         }
         $('.info-table').not(activeTab).remove();
-        $(activeBody+ ' .head h3').html(activeTab.replace('#', '') + activeBody.replace('#', ' '));
+        $(activeBody + ' .head h3').html(activeTab.replace('#', '') + activeBody.replace('#', ' '));
         $(activeTab).fadeIn();
         activeLink = activeTab;
     }
-  });
+});
 
-  $(".body-container-bottom .head input").on("keyup", function() {
+$(".body-container-bottom .head input").on("keyup", function () {
     var value = $(this).val().toLowerCase();
-    $(".info-table tr").not('.notForSearch').filter(function() {
-      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+    $(".info-table tr").not('.notForSearch').filter(function () {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
     });
-  });
+});
 
-  const tableHeaderArchive = [
-      "Full Name",
-      "E-mail",
-      "Role",
-      "Phone number",
-      "Address",
-      "Gender",
-      "Action",
-  ];
+const tableHeaderArchive = [
+    "Full Name",
+    "E-mail",
+    "Role",
+    "Phone number",
+    "Address",
+    "Gender",
+];
 
-  const tableRowsArchive = [
-      [
+const tableRowsArchive = [
+    [
         "Seif Ahmad",
         "Sauofa_ahmad@yahoo.com",
         "mo5 w a3sab",
         "01028877643",
         "Mokattam",
-        'M',
-        "Delete"
-      ],
-      [
+        'M'
+    ],
+    [
         "karim Rafaat",
         "karim@yahoo.com",
         "mo5 w a3sab",
         "01028877643",
         "shorouk",
-        'M',
-        "Delete"
-      ]
-  ]; 
+        'M'
+    ]
+];
 
-  const tableHeaderReport = [
+const tableHeaderReport = [
     "Patient Name",
     "Doctor Name",
     "Type of chechup",
@@ -156,34 +207,41 @@ $('.body-container-bottom .tabs a').click(function(event) {
     "Time",
     "Rate",
     "Cost",
-    "Action",
-    "name",
     "phone number"
 ];
 
-  let createTableArchive = (bodyID, id, th, tr) => {
-      let tableDiv = $('<div></div>');
-      tableDiv.addClass('info-table');
-      tableDiv.attr('id', id);
-      let table = $('<table></table>');
-      let tableHead = $('<tr></tr>');
-      tableHead.addClass('notForSearch');
-      for (let i of th) {
-          tableHead.append($('<th>'+i+'</th>'));
-      }
-      table.append(tableHead);
+let createTableArchive = (bodyID, id, th, tr) => {
+    let tableDiv = $('<div></div>');
+    tableDiv.addClass('info-table');
+    tableDiv.attr('id', id);
+    let table = $('<table></table>');
+    let tableHead = $('<tr></tr>');
+    tableHead.addClass('notForSearch');
 
-      for (let i = 0; i < tr.length; i++) {
-          let tableRow = $('<tr></tr>');
-          for (let j = 0; j < tr[i].length; j++) {
-              let tableD = $('<td>' +tr[i][j]+ '</td>');
-              tableRow.append(tableD);
-          }
-          table.append(tableRow);
-      }
-      tableDiv.append(table);
-      $( bodyID + ' .body-container-bottom').append(tableDiv);
-  }
+    for (let i of th) {
+        tableHead.append($('<th>' + i + '</th>'));
+    }
+    if (bodyID === "#Archive") {
+        tableHead.append($('<th> Action </th>'));
+    }
+    table.append(tableHead);
+
+     for (let i = 0; i < tr.length; i++) {
+        let tableRow = $('<tr></tr>');
+        for (let j = 0; j < tr[i].length; j++) {
+            let tableD = $('<td>' + tr[i][j] + '</td>');
+            tableRow.append(tableD);
+        }
+
+        if (bodyID === "#Archive") {
+            tableRow.append("<td> <i class='fa fa-trash'></i> <i class='fa fa-pencil'></i> </td>");
+        }
+
+        table.append(tableRow);
+    }
+    tableDiv.append(table);
+    $(bodyID + ' .body-container-bottom').append(tableDiv);
+}
 
 let formToggle = (id) => {
     $(id).show();
@@ -193,7 +251,7 @@ let closeForm = () => {
     $('.add-form').hide();
 }
 
-$('form .validate').click(function(event) {
+$('form .validate').click(function (event) {
     event.preventDefault();
     let form = $(this).parent();
     let input = form.children('input');
@@ -233,8 +291,8 @@ $('form .validate').click(function(event) {
                         input.eq(i).addClass('error');
                         submitCond = false;
                     }
-                }  else if (input.eq(i).attr('name') === "repeat-password") {
-                    if (input.eq(i-1).val() !== input.eq(i).val()) {
+                } else if (input.eq(i).attr('name') === "repeat-password") {
+                    if (input.eq(i - 1).val() !== input.eq(i).val()) {
                         input.eq(i).val('');
                         input.eq(i).attr("placeholder", "Password doesnot match");
                         input.eq(i).addClass('error');
@@ -254,29 +312,30 @@ $('form .validate').click(function(event) {
     }
 
     if (submitCond) {
-        form.submit();
+        // next Phase
+        // form.submit();
     }
 })
 
 
-  $(document).ready(function(){
-	$('#comment').click(function() {
+$(document).ready(function () {
+    $('#comment').click(function () {
 
-		var input = $("#input").val(); // get the value from the input field
-		$(".box").append(input+'<br>');// add to the box comment
-		$("#input").val(' '); 
-		$(".boxContainer").slideDown();
-	});
-		
-	
-	$("#cancel").click(function(){
-		$("#input").val(' ');
-	
+        var input = $("#input").val(); // get the value from the input field
+        $(".box").append(input + '<br>');// add to the box comment
+        $("#input").val(' ');
+        $(".boxContainer").slideDown();
+    });
 
-	});
-	$("#delete").click(function() {
-		/* Act on the event */
-		$(".box").text(' ');
-		$(".boxContainer").slideUp();
-	});
-	});
+
+    $("#cancel").click(function () {
+        $("#input").val(' ');
+
+
+    });
+    $("#delete").click(function () {
+        /* Act on the event */
+        $(".box").text(' ');
+        $(".boxContainer").slideUp();
+    });
+});

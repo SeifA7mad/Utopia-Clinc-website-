@@ -202,6 +202,10 @@ nav .side-nav ul li:hover, nav .side-nav ul li a:hover {
     margin-top: 10px;
     cursor: pointer;
 }
+.body-container .body-container-bottom .info-table table i {
+    color: red;
+    margin: auto auto auto 7px;
+}
 
 .add-form {
     width: 100%;
@@ -424,7 +428,8 @@ header .head-home .info {
 
 .profile-modal .sign-in-form a {
     border-radius: 10px;
-    padding: 3px 60px;
+    width: 75%;
+    text-align: center;
     margin-bottom: 10px;
 }
 
