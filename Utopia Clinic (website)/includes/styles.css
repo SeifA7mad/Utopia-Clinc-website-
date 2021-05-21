@@ -952,13 +952,9 @@ header nav .nav-container .nav-bottom .payment form {
     border: solid rgb(97, 93, 93);
 }
 
-header nav .nav-container .nav-bottom .payment form radio-button {
-    margin: 0;
-}
 
 header nav .nav-container .nav-bottom .payment form label {
     margin: 20px 120px;
-    align-self: flex-start;
 }
 
 header nav .nav-container .nav-bottom .payment form input {
@@ -970,18 +966,12 @@ header nav .nav-container .nav-bottom .payment form input {
     margin: auto;
 }
 
-header nav .nav-container .nav-bottom .payment form .p-date {
-    display: flex;
-    width: 66%;
-    margin-left: 12px;
-    
+header nav .nav-container .nav-bottom .payment form #month,
+header nav .nav-container .nav-bottom .payment form #year {
+    width: 25%;
+    align-self: flex-start;
+    margin: 5px 120px;
 }
-
-
-header nav .nav-container .nav-bottom .payment form .p-date input {
-    margin-right: 10px;
-}
-
 
 
 header nav .nav-container .nav-bottom .payment form button {
