@@ -96,7 +96,7 @@ nav .side-nav ul li:hover, nav .side-nav ul li a:hover {
     margin-top: 10px;
 }
 
-#Archive, #Report, #Tasks, #Profile {
+#Archive, #Report, #Tasks, #Profile, #AskaDoctor {
     display: none;
 }
 
