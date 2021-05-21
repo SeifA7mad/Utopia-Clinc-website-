@@ -224,6 +224,44 @@ nav .side-nav ul li:hover, nav .side-nav ul li a:hover {
 }
 
 
+.body-container .body-container-bottom .ask-doc form{
+    display:flex;
+    flex-direction: column;
+    margin-right: 54em;
+    width: 60%;
+    margin-top: 1.5em;
+
+}
+
+.body-container .body-container-bottom .ask-doc form input{
+    width: 85%;
+    padding: 10px;
+    border-radius: 15px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+.body-container .body-container-bottom .ask-doc form label{
+
+
+}
+
+.body-container .body-container-bottom .ask-doc form button{
+    width: 40%;
+    color: #fff;
+    background-color: #2b9ec2;
+    padding: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    margin-left: 8em;
+
+}
+
+
+
 .add-form {
     width: 100%;
     height: 100%;
