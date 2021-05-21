@@ -143,18 +143,19 @@ $('.body-container-bottom .tabs a').click(function (event) {
     if (activeTab !== activeLink) {
         if (activeBody === "#Archive") {
             createTableArchive(activeBody, activeTab.replace('#', ''), tableHeaderArchive, tableRowsArchive);
+            if (activeTab != "#Patients") {
+                plusIcon = $('<i></i>');
+                plusIcon.addClass('fa fa-plus fa-2x');
+                plusIcon.attr('onclick', "formToggle('#form-" + activeTab.replace('#', '') + "')");
+                $('#Archive .info-table').append(plusIcon);
+            }
+
         } else if (activeBody === "#Report") {
             createTableArchive(activeBody, activeTab.replace('#', ''), tableHeaderReport, tableRowsReport);
         } else if (activeBody === "#Tasks") {
             createTableArchive(activeBody, activeTab.replace('#', ''), tableHeaderReport, tableRowsReport);
         }
         $(activeBody + ' .head').css('display', 'flex');
-        if (activeBody === "#Archive" && activeTab != "#Patients") {
-            plusIcon = $('<i></i>');
-            plusIcon.addClass('fa fa-plus fa-2x');
-            plusIcon.attr('onclick', "formToggle('#form-" + activeTab.replace('#', '') + "')");
-            $('#Archive .info-table').append(plusIcon);
-        }
         $('.info-table').not(activeTab).remove();
         $(activeBody + ' .head h3').html(activeTab.replace('#', '') + activeBody.replace('#', ' '));
         $(activeTab).fadeIn();
@@ -168,6 +169,29 @@ $(".body-container-bottom .head input").on("keyup", function () {
         $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
     });
 });
+
+let editForm = (event) => {
+    let informationToBeEdit = $(event.target).parent().parent().children();
+    let tableHead = $(event.target).parent().parent().parent().children('.notForSearch').children();
+    let form = $("<form> </form>");
+    form.addClass('edit-form');
+    form.append("<label> Select what to edit </label>");
+
+    let select = $("<select> </select>");
+    for (let head of tableHead) {
+        select.append("<option value='" +head.outerText+"'>" +head.outerText+ "</option>");
+    }
+
+    form.append(select);
+    form.append("<input type='text' placeholder='Enter the new value'>");
+    form.append("<input type='submit' placeholder='Done'>");
+    $('#Archive .body-container-bottom .info-table .edit-form').remove();
+    $('#Archive .body-container-bottom .info-table').append(form);
+}
+
+let deleteForm = (event) => {
+
+}
 
 const tableHeaderArchive = [
     "Full Name",
@@ -235,6 +259,7 @@ let createTableArchive = (bodyID, id, th, tr) => {
     let tableDiv = $('<div></div>');
     tableDiv.addClass('info-table');
     tableDiv.attr('id', id);
+  
     let table = $('<table></table>');
     let tableHead = $('<tr></tr>');
     tableHead.addClass('notForSearch');
@@ -255,7 +280,14 @@ let createTableArchive = (bodyID, id, th, tr) => {
         }
 
         if (bodyID === "#Archive") {
-            tableRow.append("<td> <i class='fa fa-trash'></i> <i class='fa fa-pencil'></i> </td>");
+            let tr = $("<td> </td>");
+            let editIcon = $("<i class='fa fa-pencil'> </i>");
+            let deleteIcon = $("<i class='fa fa-trash'> </i>");
+            editIcon.attr("onclick", "editForm(event)");
+            deleteIcon.attr("onclick", "deleteForm(event)");
+            tr.append(editIcon);
+            tr.append(deleteIcon);
+            tableRow.append(tr);
         }
 
         table.append(tableRow);
@@ -373,6 +405,6 @@ $("#submit12").click(function () {
     $("#popup-1").show();
 });
     /* $("#Submit2").click(function(){
-     $("#popup-1").hide();
- });*/
+$("#popup-1").hide();
+});*/
 
