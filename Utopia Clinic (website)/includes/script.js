@@ -338,25 +338,40 @@ $('form .validate').click(function (event) {
     }
 })
 
+$(document).ready(function(){
+	$('#comment').click(function() {
 
-$(document).ready(function () {
-    $('#comment').click(function () {
-
-        var input = $("#input").val(); // get the value from the input field
-        $(".box").append(input + '<br>');// add to the box comment
-        $("#input").val(' ');
-        $(".boxContainer").slideDown();
-    });
-
-
-    $("#cancel").click(function () {
-        $("#input").val(' ');
-
-
-    });
-    $("#delete").click(function () {
-        /* Act on the event */
-        $(".box").text(' ');
+		var input = $("#input").val(); // get the value from the input field
+		$(".box").append(input+'<br>');// add to the box comment
+		$("#input").val(' '); 
+		$(".boxContainer").slideDown();
+        
+	});
+		
+	
+	$("#cancel").click(function(){
+		$("#input").val(' ');
         $(".boxContainer").slideUp();
-    });
-});
+	
+	});
+	$("#delete").click(function() {
+		$(".box").text(' ');
+		$(".boxContainer").slideUp();
+	});
+
+        $("#Add").click(function(){
+            if($(".box").text()==""){
+                alert("Please write something in the specified field");
+            }else
+                $("#popup-1").show();
+        });
+        // for the two reservation pages, should open the pop up only when the fields are done
+        $("#submit12").click(function(){
+            
+            
+                $("#popup-1").show();
+        });
+       /* $("#Submit2").click(function(){
+			$("#popup-1").hide();
+		});*/
+	});
