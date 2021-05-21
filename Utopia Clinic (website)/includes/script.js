@@ -23,7 +23,7 @@ const users = [
 
 let isSigned = false;
 
-$('.sign-in-form .sign-btn').click(function(event) {
+$('.sign-in-form .sign-btn').click(function (event) {
     event.preventDefault();
     let form = $(this).parent();
     let email = form.children('input[name=email]');
@@ -57,7 +57,7 @@ $('.notification').click(() => {
     $('.profile-modal').css("display", "none");
 });
 
-$('.profile').click(function(event) {
+$('.profile').click(function (event) {
     event.preventDefault();
     let displayProp = $('.profile-modal').css("display") === "none" ? "flex" : "none";
     $('.profile-modal').css("display", displayProp);
@@ -75,17 +75,17 @@ $('.read-more-btn').click(() => {
 });
 
 let diplayProfileModal = (user) => {
-        if (isSigned) {
-            if (user.role === "Admin") {
-                $('.profile-modal-content').append("<a href='./admin/dashboard.html'> Dashboard </a>");
-            } else if (user.role === "Doctor") {
-                $('.profile-modal-content').append("<a href='./doctor/dashboard.html'> Dashboard </a>");
-            }
-            $('.profile-modal-content').children('p').html(user.name);
-            
-            $('.profile-modal-content').css('display', 'flex');
-            $('.sign-in-form').css('display', 'none');
-        } 
+    if (isSigned) {
+        if (user.role === "Admin") {
+            $('.profile-modal-content').append("<a href='./admin/dashboard.html'> Dashboard </a>");
+        } else if (user.role === "Doctor") {
+            $('.profile-modal-content').append("<a href='./doctor/dashboard.html'> Dashboard </a>");
+        }
+        $('.profile-modal-content').children('p').html(user.name);
+
+        $('.profile-modal-content').css('display', 'flex');
+        $('.sign-in-form').css('display', 'none');
+    }
 }
 
 let progressCirclePercentage = (className, percentage) => {
@@ -247,7 +247,7 @@ let createTableArchive = (bodyID, id, th, tr) => {
     }
     table.append(tableHead);
 
-     for (let i = 0; i < tr.length; i++) {
+    for (let i = 0; i < tr.length; i++) {
         let tableRow = $('<tr></tr>');
         for (let j = 0; j < tr[i].length; j++) {
             let tableD = $('<td>' + tr[i][j] + '</td>');
@@ -336,41 +336,42 @@ $('form .validate').click(function (event) {
         // next Phase
         // form.submit();
     }
-})
+});
 
-	$('#comment').click(function() {
 
-		var input = $("#input").val(); // get the value from the input field
-		$(".box").append(input+'<br>');// add to the box comment
-		$("#input").val(' '); 
-		$(".boxContainer").slideDown();
-        
-	});
-		
-	
-	$("#cancel").click(function(){
-		$("#input").val(' ');
-        $(".boxContainer").slideUp();
-	
-	});
-	$("#delete").click(function() {
-		$(".box").text(' ');
-		$(".boxContainer").slideUp();
-	});
+$('#comment').click(function () {
 
-        $("#Add").click(function(){
-            if($(".box").text()==""){
-                alert("Please write something in the specified field");
-            }else
-                $("#popup-1").show();
-        });
-        // for the two reservation pages, should open the pop up only when the fields are done
-        $("#submit12").click(function(){
-            
-            
-                $("#popup-1").show();
-        });
+    var input = $("#input").val(); // get the value from the input field
+    $(".box").append(input + '<br>');// add to the box comment
+    $("#input").val(' ');
+    $(".boxContainer").slideDown();
+
+});
+
+
+$("#cancel").click(function () {
+    $("#input").val(' ');
+    $(".boxContainer").slideUp();
+
+});
+$("#delete").click(function () {
+    $(".box").text(' ');
+    $(".boxContainer").slideUp();
+});
+
+$("#Add").click(function () {
+    if ($(".box").text() == "") {
+        alert("Please write something in the specified field");
+    } else
+        $("#popup-1").show();
+});
+// for the two reservation pages, should open the pop up only when the fields are done
+$("#submit12").click(function () {
+
+
+    $("#popup-1").show();
+});
        /* $("#Submit2").click(function(){
-			$("#popup-1").hide();
-		});*/
+     $("#popup-1").hide();
+ });*/
 
