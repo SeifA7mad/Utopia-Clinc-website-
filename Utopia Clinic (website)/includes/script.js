@@ -338,7 +338,6 @@ $('form .validate').click(function (event) {
     }
 })
 
-$(document).ready(function(){
 	$('#comment').click(function() {
 
 		var input = $("#input").val(); // get the value from the input field
@@ -374,4 +373,4 @@ $(document).ready(function(){
        /* $("#Submit2").click(function(){
 			$("#popup-1").hide();
 		});*/
-	});
+
