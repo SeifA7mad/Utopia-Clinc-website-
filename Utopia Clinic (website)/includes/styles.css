@@ -389,7 +389,7 @@ header .head-home .info {
 }
 
 .profile-modal .sign-in-form {
-    display: none;
+    display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
@@ -448,6 +448,13 @@ header .head-home .info {
 }
 
 .profile-modal .profile-modal-content p {
+    align-self: center;
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+.profile-modal .profile-modal-content a {
+    margin: 10px auto;
     align-self: center;
     font-weight: bold;
     font-size: 1.3em;

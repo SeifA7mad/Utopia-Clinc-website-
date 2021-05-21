@@ -57,6 +57,13 @@ $('.notification').click(() => {
     $('.profile-modal').css("display", "none");
 });
 
+$('.profile').click(function(event) {
+    event.preventDefault();
+    let displayProp = $('.profile-modal').css("display") === "none" ? "flex" : "none";
+    $('.profile-modal').css("display", displayProp);
+    $('.notification-modal').css("display", "none");
+});
+
 $('.read-more-btn').click(() => {
     if ($('.more-text').css("display") === "none") {
         $('.more-text').css("display", "block");
@@ -68,26 +75,17 @@ $('.read-more-btn').click(() => {
 });
 
 let diplayProfileModal = (user) => {
-    let displayProp = $('.profile-modal').css("display") === "none" ? "flex" : "none";
-
-    if (displayProp === "flex") {
         if (isSigned) {
             if (user.role === "Admin") {
-                $('.profile-modal-content').append("<a href='../admin/dashboard.html'> Dashboard </a>");
+                $('.profile-modal-content').append("<a href='./admin/dashboard.html'> Dashboard </a>");
             } else if (user.role === "Doctor") {
-                $('.profile-modal-content').append("<a href='../doctor/dashboard.html'> Dashboard </a>");
+                $('.profile-modal-content').append("<a href='./doctor/dashboard.html'> Dashboard </a>");
             }
-            $('.profile-modal-content').children('p').html(i.name);
-            $('.profile-modal-content').css("display", displayProp);
-            $('.sign-in-form').css("display", "none");
-        } else {
-            $('.sign-in-form').css("display", displayProp);
-            $('.profile-modal-content').css("display", "none");
-        }
-    }
-
-    $('.profile-modal').css("display", displayProp);
-    $('.notification-modal').css("display", "none");
+            $('.profile-modal-content').children('p').html(user.name);
+            
+            $('.profile-modal-content').css('display', 'flex');
+            $('.sign-in-form').css('display', 'none');
+        } 
 }
 
 let progressCirclePercentage = (className, percentage) => {
