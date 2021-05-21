@@ -39,9 +39,7 @@ header .head-dashboard .head-dashboard-left img {
     height: 90%;
 }
 
-header .head-dashboard .head-dashboard-right {
-
-}
+header .head-dashboard .head-dashboard-right {}
 
 .body-dashboard {
     background-color: rgba(216, 211, 211, 0.438);
@@ -72,7 +70,6 @@ nav .side-nav ul li {
     display: flex;
     margin: 20px 0;
     align-items: center;
-    
 }
 
 nav .side-nav ul li a {
@@ -80,7 +77,7 @@ nav .side-nav ul li a {
     font-weight: bold;
     text-decoration: none;
     color: black;
-} 
+}
 
 nav .side-nav ul li i {
     width: 50%;
@@ -90,7 +87,6 @@ nav .side-nav ul li i {
 nav .side-nav ul li:hover, nav .side-nav ul li a:hover {
     color: rgba(0, 0, 255, 0.527);
 }
-
 
 .body-container {
     float: right;
@@ -121,7 +117,6 @@ nav .side-nav ul li:hover, nav .side-nav ul li a:hover {
     justify-content: center;
     align-items: center;
 }
-
 
 .body-container .body-container-bottom .tabs {
     width: 96%;
@@ -167,33 +162,29 @@ nav .side-nav ul li:hover, nav .side-nav ul li a:hover {
     border-style: solid;
 }
 
-.body-container .body-container-bottom .info-table  {
+.body-container .body-container-bottom .info-table {
     margin-top: 10px;
     width: 96%;
 }
-
 
 .body-container .body-container-bottom .info-table table {
     width: 100%;
 }
 
 .body-container .body-container-bottom .info-table table th, .body-container .body-container-bottom .info-table table td {
-   width: fit-content;
+    width: fit-content;
 }
 
 .body-container .body-container-bottom .info-table table th {
     background-color: rgba(216, 211, 211, 0.438);
 }
 
-.body-container .body-container-bottom .info-table table th,
-.body-container .body-container-bottom .info-table table td {
+.body-container .body-container-bottom .info-table table th, .body-container .body-container-bottom .info-table table td {
     border: 2.5px solid rgba(216, 211, 211, 0.966);
     text-align: left;
 }
 
-.body-container .body-container-bottom #Doctors,
-.body-container .body-container-bottom #Patients,
-.body-container .body-container-bottom #Offers {
+.body-container .body-container-bottom #Doctors, .body-container .body-container-bottom #Patients, .body-container .body-container-bottom #Offers {
     display: none;
 }
 
@@ -202,6 +193,7 @@ nav .side-nav ul li:hover, nav .side-nav ul li a:hover {
     margin-top: 10px;
     cursor: pointer;
 }
+
 .body-container .body-container-bottom .info-table table i {
     color: red;
     margin: auto auto auto 7px;
@@ -218,6 +210,7 @@ nav .side-nav ul li:hover, nav .side-nav ul li a:hover {
     flex-direction: column;
     border-radius: 10px;
 }
+
 .add-form::after {
     background-color: rgba(0, 0, 0, 0.8);
     content: "";
@@ -229,7 +222,8 @@ nav .side-nav ul li:hover, nav .side-nav ul li a:hover {
     opacity: 0.9;
     z-index: -1;
 }
-.add-form form{
+
+.add-form form {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -237,7 +231,7 @@ nav .side-nav ul li:hover, nav .side-nav ul li a:hover {
     border-radius: 10px;
     width: 50%;
     height: 100%;
-    background-color: rgba(221, 196, 196, 0.904); 
+    background-color: rgba(221, 196, 196, 0.904);
     font-family: sans-serif;
     margin: auto;
     z-index: 3;
@@ -249,11 +243,11 @@ nav .side-nav ul li:hover, nav .side-nav ul li a:hover {
     cursor: pointer;
 }
 
-.add-form form h1{
+.add-form form h1 {
     color: rgb(69, 71, 71);
 }
 
-.add-form form input{
+.add-form form input {
     width: 65%;
     padding: 10px;
     border: none;
@@ -261,11 +255,11 @@ nav .side-nav ul li:hover, nav .side-nav ul li a:hover {
     box-sizing: border-box;
 }
 
-.add-form form label{
+.add-form form label {
     width: 65%;
 }
 
-.add-form form button{
+.add-form form button {
     width: 40%;
     padding: 10px;
     border: none;
@@ -276,14 +270,15 @@ nav .side-nav ul li:hover, nav .side-nav ul li a:hover {
     cursor: pointer;
 }
 
-.add-form form button:hover{
+.add-form form button:hover {
     background-color: rgba(34, 129, 236, 0.534);
-    color:#495052;
+    color: #495052;
 }
 
 #form-Doctors, #form-Offers {
     display: none;
 }
+
 /* Dashboard */
 
 /* Home */
@@ -335,7 +330,7 @@ header .head-home .info {
     left: 18px;
     top: 18px;
     margin: auto;
-} 
+}
 
 .notification-modal {
     display: none;
@@ -404,7 +399,7 @@ header .head-home .info {
 .profile-modal .sign-in-form form {
     display: flex;
     flex-direction: column;
-    margin: 10px auto; 
+    margin: 10px auto;
     width: 75%;
 }
 
@@ -472,17 +467,15 @@ header .head-home .info {
     overflow-y: scroll;
 } */
 
-
 header nav .nav-container {
     width: 100%;
     height: fit-content;
     position: relative;
 }
 
-
 header nav .nav-container::after {
     content: "";
-    background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)), url("./../images/nav.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.5)), url("./../images/nav.jpg");
     background-size: cover;
     background-position: center;
     position: absolute;
@@ -566,7 +559,7 @@ header nav .nav-container .nav-center .nav-center-buttons {
     text-decoration: none;
     font-size: 1.5em;
     border-radius: 30px;
-    color: white; 
+    color: white;
     background-color: #2d3663b4;
     cursor: pointer;
 }
@@ -583,7 +576,7 @@ header nav .nav-container .nav-center .nav-center-buttons a {
 .btn:hover {
     background-color: rgba(0, 0, 0, 0.671);
 }
- 
+
 .nav-bottom {
     display: flex;
     width: 90%;
@@ -608,8 +601,7 @@ header nav .nav-container .nav-bottom .left-nav-bottom * {
     flex-direction: column;
 }
 
-.nav-bottom .left-nav-bottom h1, 
-.nav-bottom .right-nav-bottom h1 {
+.nav-bottom .left-nav-bottom h1, .nav-bottom .right-nav-bottom h1 {
     margin: 20px auto auto auto;
     font-size: 30px;
 }
@@ -634,6 +626,7 @@ header nav .nav-container .nav-bottom .left-nav-bottom * {
     display: flex;
     flex-direction: column;
 }
+
 header nav .nav-container .nav-bottom .right-nav-bottom {
     flex-direction: row;
     justify-content: space-between;
@@ -651,7 +644,7 @@ header nav .nav-container .nav-bottom .right-nav-bottom .Diagnostic-type-card {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    color: #2D3663;     
+    color: #2D3663;
 }
 
 header nav .nav-container .nav-bottom .right-nav-bottom .Diagnostic-type-card:hover {
@@ -675,13 +668,11 @@ body main .nav-bottom .left-nav-bottom {
     width: 40%;
 }
 
-body main .nav-bottom .left-nav-bottom h1, 
-body main .nav-bottom .right-nav-bottom h1 {
+body main .nav-bottom .left-nav-bottom h1, body main .nav-bottom .right-nav-bottom h1 {
     color: #2D3663;
     margin-right: 0;
     margin-left: 0;
 }
-
 
 body main .nav-bottom .left-nav-bottom a {
     margin-right: 0;
@@ -698,7 +689,7 @@ body main .nav-bottom .right-nav-bottom h1 {
 
 body main .nav-bottom .right-nav-bottom {
     width: 55%;
-    background-color: white;   
+    background-color: white;
     display: flex;
     justify-content: space-between;
 }
@@ -721,7 +712,7 @@ body main .nav-bottom .right-nav-bottom .progress-circle {
     border-radius: 50%;
     line-height: 5em;
 }
-  
+
 body main .nav-bottom .right-nav-bottom .progress-circle:after {
     border: none;
     position: absolute;
@@ -736,9 +727,9 @@ body main .nav-bottom .right-nav-bottom .progress-circle:after {
     background-color: white;
     content: "";
 }
-  
-  /* Text inside the control */
-  
+
+/* Text inside the control */
+
 body main .nav-bottom .right-nav-bottom .progress-circle span {
     position: absolute;
     line-height: 5em;
@@ -760,7 +751,7 @@ body main .nav-bottom .right-nav-bottom .progress-circle p {
     bottom: 0;
     left: 12px;
 }
-  
+
 body main .nav-bottom .right-nav-bottom .progress-circle .left-half-clipper {
     /* a round circle */
     border-radius: 50%;
@@ -771,14 +762,13 @@ body main .nav-bottom .right-nav-bottom .progress-circle .left-half-clipper {
     clip: rect(0, 7em, 7em, 4.5em);
     /* clips the whole left half*/
 }
-  
-  
-  /* when p>50, don't clip left half*/
-  
-body main .nav-bottom .right-nav-bottom  .progress-circle.over50 .left-half-clipper {
+
+/* when p>50, don't clip left half*/
+
+body main .nav-bottom .right-nav-bottom .progress-circle.over50 .left-half-clipper {
     clip: rect(auto, auto, auto, auto);
 }
-  
+
 body main .nav-bottom .right-nav-bottom .progress-circle .left-half-clipper .value-bar {
     /*This is an overlayed square, that is made round with the border radius,
      then it is cut to display only the left half, then rotated clockwise
@@ -795,10 +785,9 @@ body main .nav-bottom .right-nav-bottom .progress-circle .left-half-clipper .val
     /* for debug */
     box-sizing: border-box;
 }
-  
-  
-  /* Progress bar filling the whole right half for values above 50% */
-  
+
+/* Progress bar filling the whole right half for values above 50% */
+
 body main .nav-bottom .right-nav-bottom .progress-circle.over50 .first50-bar {
     /*Progress bar for the first 50%, filling the whole right half*/
     position: absolute;
@@ -809,7 +798,7 @@ body main .nav-bottom .right-nav-bottom .progress-circle.over50 .first50-bar {
     width: 7em;
     height: 7em;
 }
-  
+
 body main .nav-bottom .right-nav-bottom .progress-circle:not(.over50) .first50-bar {
     display: none;
 }
@@ -831,16 +820,16 @@ header nav .nav-container .nav-bottom .about-section {
 }
 
 header nav .nav-container .nav-bottom .about-section .content {
-  text-align: justify;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  width: 80%;
-  margin: 20px auto auto auto;
-  line-height: 1.6;
-  letter-spacing: 1px;
-  font-size: large;
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: 20px auto auto auto;
+    line-height: 1.6;
+    letter-spacing: 1px;
+    font-size: large;
 }
 
 header nav .nav-container .nav-bottom .about-section .content h2 {
@@ -849,7 +838,7 @@ header nav .nav-container .nav-bottom .about-section .content h2 {
 }
 
 header nav .nav-container .nav-bottom .about-section .content .read-more-btn {
-    color:#fff;
+    color: #fff;
     background-color: #2b9ec2;
     padding: 5px;
     text-decoration: none;
@@ -860,25 +849,25 @@ header nav .nav-container .nav-bottom .about-section .content .read-more-btn {
     margin-bottom: 20px;
     border-radius: 10px;
 }
-header nav .nav-container .nav-bottom .about-section .content .read-more-btn:hover{
+
+header nav .nav-container .nav-bottom .about-section .content .read-more-btn:hover {
     background-color: #fff;
-    color:#2b9ec2;
+    color: #2b9ec2;
 }
 
-header nav .nav-container .nav-bottom  .more-text {
+header nav .nav-container .nav-bottom .more-text {
     display: none;
     margin-bottom: 20px;
 }
 
 /* About US */
 
-
 /* Offers */
 
 .offer {
     display: flex;
     width: 100%;
-    height: fit-content;    
+    height: fit-content;
     background-color: rgba(64, 224, 208, 0.555);
     flex-wrap: wrap;
     border-radius: 10px;
@@ -894,7 +883,7 @@ header nav .nav-container .nav-bottom  .more-text {
     background-color: rgba(167, 167, 167, 0.904);
 }
 
-.offer .card-offers:hover{
+.offer .card-offers:hover {
     transform: translateY(-0.5%);
     box-shadow: 0 4rem 8rem black;
 }
@@ -915,6 +904,7 @@ header nav .nav-container .nav-bottom  .more-text {
     margin: auto;
     border-radius: 10px;
 }
+
 .offer .card-offers .card-buttom {
     font-size: 90%;
     color: black;
@@ -957,13 +947,13 @@ header nav .nav-container .nav-bottom .payment form {
     width: 50%;
     height: 100%;
     box-shadow: 0 4px 8px 0 #2b9ec2, 0 4px 8px 0 #2b9ec2;
-    background-color: rgba(221, 196, 196, 0.432); 
+    background-color: rgba(221, 196, 196, 0.432);
     font-family: sans-serif;
     border: solid rgb(97, 93, 93);
 }
 
-header nav .nav-container .nav-bottom .payment form radio-button{
-    margin:0;
+header nav .nav-container .nav-bottom .payment form radio-button {
+    margin: 0;
 }
 
 header nav .nav-container .nav-bottom .payment form label {
@@ -1004,26 +994,25 @@ header nav .nav-container .nav-bottom .payment form button {
 
 header nav .nav-container .nav-bottom .payment form button:hover {
     background-color: rgba(56, 33, 33, 0.534);
-    color:#2b9ec2;
+    color: #2b9ec2;
 }
 
-header nav .nav-container .nav-bottom .payment form .row{
+header nav .nav-container .nav-bottom .payment form .row {
     display: flex;
     width: 100%;
     justify-content: center;
-    
-
 }
 
-header nav .nav-container .nav-bottom .payment form .row img{
-
+header nav .nav-container .nav-bottom .payment form .row img {
     width: 15%;
     margin: 15px 0 0 25px;
     border-radius: 10px;
 }
+
 /* Payment */
 
 /* FOOTER */
+
 footer {
     width: 100%;
     background-color: rgb(38, 56, 95);
@@ -1084,7 +1073,6 @@ footer .footer-bottom {
     justify-content: space-between;
 }
 
-
 footer .footer-bottom div * {
     margin: 10px 0;
 }
@@ -1128,9 +1116,6 @@ footer .footer-bottom div span p {
     width: 13em;
 }
 
-    
-/*AddNewOffer(Admin)*/
-
 footer .footer-bottom div ul {
     list-style: none;
     display: flex;
@@ -1139,10 +1124,10 @@ footer .footer-bottom div ul {
 
 footer .footer-bottom div ul li {
     position: relative;
-	padding-bottom: 10px;
+    padding-bottom: 10px;
 }
 
-footer .footer-bottom div ul li:before{
+footer .footer-bottom div ul li:before {
     content: "";
     position: absolute;
     border-right: 3px solid rgba(64, 224, 208, 0.692);
@@ -1254,7 +1239,7 @@ header nav .nav-container .nav-bottom .payment form {
     width: 50%;
     height: 100%;
     box-shadow: 0 4px 8px 0 #2b9ec2, 0 4px 8px 0 #2b9ec2;
-    background-color: rgba(221, 196, 196, 0.432); 
+    background-color: rgba(221, 196, 196, 0.432);
     font-family: sans-serif;
     border: solid rgb(97, 93, 93);
 }
@@ -1297,23 +1282,21 @@ header nav .nav-container .nav-bottom .payment form button {
 
 header nav .nav-container .nav-bottom .payment form button:hover {
     background-color: rgba(56, 33, 33, 0.534);
-    color:#2b9ec2;
+    color: #2b9ec2;
 }
 
-header nav .nav-container .nav-bottom .payment form .row{
+header nav .nav-container .nav-bottom .payment form .row {
     display: flex;
     width: 100%;
     justify-content: center;
-    
-
 }
 
-header nav .nav-container .nav-bottom .payment form .row img{
-
+header nav .nav-container .nav-bottom .payment form .row img {
     width: 15%;
     margin: 15px 0 0 25px;
     border-radius: 10px;
 }
+
 /* Payment */
 
 /* Admin profile*/
@@ -1325,9 +1308,9 @@ header nav .nav-container .nav-bottom .payment form .row img{
     margin: 30px auto;
 }
 
-.body-container .body-container-bottom .profile-container img{
+.body-container .body-container-bottom .profile-container img {
     display: flex;
-    width: 20%;  
+    width: 20%;
     height: 20%;
     border-radius: 10px;
     margin-left: 20px;
@@ -1344,175 +1327,236 @@ header nav .nav-container .nav-bottom .payment form .row img{
     margin-bottom: 20px;
 }
 
-.body-container .body-container-bottom .profile-container .Speciality{
+.body-container .body-container-bottom .profile-container .Speciality {
     display: flex;
     height: fit-content;
     justify-content: space-between;
-    
 }
-.body-container .body-container-bottom .profile-container .Speciality p{
+
+.body-container .body-container-bottom .profile-container .Speciality p {
     font-size: 20px;
     border: solid rgba(216, 211, 211, 0.836);
     border-radius: 10px;
     padding: 5px;
 }
 
-
-
-
 /* Admin profile*/
-
-
 
 /* Mostafa */
 
-.topCon{
-	min-width: 800px;
-	text-align:center; 
+.topCon {
+    min-width: 800px;
+    text-align: center;
+}
 
+.topCon h2 {
+    font-size: 36px;
+    font-weight: 500;
+    color: #fff;
 }
-.topCon h2{
-	font-size: 36px;
-	font-weight: 500;
-	color: #fff;
+
+.topCon p {
+    font-weight: 300;
+    color: #fff;
 }
-.topCon p{
-	font-weight: 300;
-	color: #fff;
-} 
 
 .container {
-	width: 100%;
-	justify-content: center;
-	display: flex;
-	align-items: center;
-	margin-top: 30px;
+    justify-content: left;
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
 }
-.contactInfo{
-	width: 50%;
-	display: flex;
-	flex-direction:  column;
+
+.container .box {
+    position: relative;
+    padding: 20px 0;
+    display: flex;
 }
-.contactInfo .box{
-	position: relative;
-	padding: 20px 0;
-	display: flex;
 
+.container .box h2 {
+    padding-right: 10px;
+    font-weight: 700;
+    font-size: 40px;
+    color: rgba(18, 240, 248);
 }
-.contactInfo .box .icon{
-	min-width:  60px;
-	height: 60px;
-	background-color: #fff;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	border-radius: 50%;
-	font-size:  24px;
+
+.container .box p {
+    font-weight: 700;
+    font-size: 20px;
+    color: rgba(18, 240, 248);
+    border: all;
+    margin: 0;
+    display: flex;
 }
-.contactInfo .box .text{
-	display: flex;
-	flex-direction: column;
-	margin-left: 20px;
-	font-size: 16px;
-	color: #fff;
-	font-weight: 300;
 
+.contactForm {
+    width: 40%;
+    padding: 60px;
+    background-color: #fff;
+    top: 800px;
 }
-	.contactInfo .box .text h3{
-		font-weight: 700;
-		color: rgba(18,240,248);
 
-	}
-	.contactForm{
-		width: 40%;
-		padding: 60px;
-		background-color: #fff;
-	}
-	.contactForm h2{
-		font-size: 30px;
-		color: #333;
-		font-weight: 500;
-
-	}
-	.contactForm .inputBox{
-		margin-top: 10px;
-		position: relative;
-		width: 100%;
-	}
-	.contactForm .inputBox input,
-	.contactForm .inputBox textarea{
-		width: 100%;
-		padding: 5px 0;
-		font-size: 16px;
-		margin: 10px 0; 
-		border: none;
-		border-bottom:  2px solid #333;
-		resize: none;
-	}
-	.contactForm .inputBox span{
-		position: absolute;
-		left: 0;
-		padding: 5px 0;
-		font-size: 16px;
-		margin: 10px 0;
-		pointer-events: none;
-		color: #666;
-	}
-.contactForm .inputBox input:focus ~ span,
-.contactForm .inputBox input:valid ~ span,
-.contactForm .inputBox textarea:focus ~ span,
-.contactForm .inputBox textarea:valid ~ span
-{
-    font-size:12px;
-    color:rgb(255, 3, 137);
-    transform:translateY(-20px);
-    -webkit-transform:translateY(-20px);
-    -moz-transform:translateY(-20px);
-    -ms-transform:translateY(-20px);
-    -o-transform:translateY(-20px);
+.contactForm h2 {
+    font-size: 30px;
+    color: #333;
+    font-weight: 500;
 }
-	.contactForm .inputBox input[type=submit]{
-		width: 100%;
-		background-color: rgba(13,198,204);
-		border-bottom: none;
-		color: #fff;
-		font-weight: 500;
-		font-size: 20px;
 
+.contactForm .inputBox {
+    margin-top: 10px;
+    position: relative;
+    width: 100%;
+}
 
-	}
-	@media (max-width:991px)
-{
-    .container{
-        flex-direction:column;
+.contactForm .inputBox input, .contactForm .inputBox textarea {
+    width: 100%;
+    padding: 5px 0;
+    font-size: 16px;
+    margin: 10px 0;
+    border: none;
+    border-bottom: 2px solid #333;
+    resize: none;
+}
+
+.contactForm .inputBox span {
+    position: absolute;
+    left: 0;
+    padding: 5px 0;
+    font-size: 16px;
+    margin: 10px 0;
+    pointer-events: none;
+    color: #666;
+}
+
+.contactForm .inputBox input:focus~span, .contactForm .inputBox input:valid~span, .contactForm .inputBox textarea:focus~span, .contactForm .inputBox textarea:valid~span {
+    font-size: 12px;
+    color: rgb(255, 3, 137);
+    transform: translateY(-20px);
+}
+
+.contactForm .inputBox input[type=submit] {
+    width: 100%;
+    background-color: rgba(13, 198, 204);
+    border-bottom: none;
+    color: #fff;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+@media (max-width:991px) {
+    .container {
+        flex-direction: column;
     }
-    .container .contactInfo{
-        margin-bottom:50px;
+    .container .contactInfo {
+        margin-bottom: 50px;
     }
-    .container .contactInfo,
-    .contactForm{
-        width:100%;
+    .container .contactInfo, .contactForm {
+        width: 100%;
     }
 }
 
+/* Pop up*/
 
-.topCon{
-
-}
- .topCon h1{
-	font-size: 36px;
-	font-weight: 500;
-	color: #fff;
-	align-items: stretch;
-}
- .topCon p{
-	font-weight: 300;
-	color: #fff;
+.popup {
+    display: none;
+    background-color: #f8f8f8;
+    box-shadow: 0 5px 15px #111;
 }
 
+.popup .overlay {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 1000vw;
+    height: 100%;
+    z-index: 1;
+    background: #444;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px #111;
+    box-shadow: 0;
+    display: none;
+}
+
+.popup .contentPopUp {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgb(255, 241, 241);
+    width: 400px;
+    height: 270px;
+    z-index: 2;
+    text-align: center;
+    padding: 40px;
+    border-radius: 40px;
+    box-sizing: border-box;
+}
+
+.popup .contentPopUp h1 {
+    font-size: 25px;
+    font-family: verdana;
+    color: #444;
+    align-items: stretch;
+}
+
+.popup .contentPopUp p {
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 50px;
+    font-family: verdana;
+    color: #444;
+    align-items: stretch;
+}
+
+.popup.active .overlay {
+    display: block;
+}
+
+.popup.active .contentPopUp {
+    transition: all 300ms ease-in-out;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.popup button {
+    height: 30px;
+    width: 160px;
+    background: rgba(18, 240, 248);
+    color: #fff;
+    cursor: pointer;
+    margin: 10px 0;
+    font-size: 15px;
+    box-shadow: 0 3px 10px rgb(49, 49, 49);
+}
+
+.popup button:hover {
+    opacity: .8;
+}
+
+.popup button a {
+    text-decoration: none;
+}
+
+/**/
+
+.topCon {}
+
+.topCon h1 {
+    font-size: 36px;
+    font-weight: 500;
+    color: #fff;
+    align-items: stretch;
+}
+
+.topCon p {
+    font-weight: 300;
+    color: #fff;
+}
 
 .askadoctor-container {
-	margin: auto;
+    margin: auto;
     display: flex;
     width: 50%;
     flex-direction: column;
@@ -1526,75 +1570,73 @@ header nav .nav-container .nav-bottom .payment form .row img{
     width: 60%;
 }
 
-.askadoctor-container button{
-	height: 30px;
-	width: 160px;
-	background:rgba(18,240,248);
-	color: #fff;
-	cursor: pointer;
-	margin: 10px 0;
-	font-size: 15px;
-	box-shadow: 0 3px 10px #111;
-	border-radius: 5px;
+.askadoctor-container button {
+    height: 30px;
+    width: 160px;
+    background: rgba(18, 240, 248);
+    color: #fff;
+    cursor: pointer;
+    margin: 10px 0;
+    font-size: 15px;
+    box-shadow: 0 3px 10px #111;
+    border-radius: 5px;
 }
-.askadoctor-container button:hover{
-	opacity: .8;
+
+.askadoctor-container button:hover {
+    opacity: .8;
 }
-.askadoctor-container .boxContainer{
-	width: 100%;
+
+.askadoctor-container .boxContainer {
+    width: 100%;
     height: fit-content;
-	background: #444;
-	box-shadow: 0 5px 15px #111;
-	border-radius: 5px;
-	padding: 15px; 
-	display: none;
+    background: #444;
+    box-shadow: 0 5px 15px #111;
+    border-radius: 5px;
+    padding: 15px;
+    display: none;
 }
 
-.askadoctor-container .boxContainer .box{
-	height: fit-content;
-	width: 100%;
-	border-radius: 5px;
-	background:#f8f8f8;
-	overflow-y: auto;
-	text-align: left;
+.askadoctor-container .boxContainer .box {
+    height: fit-content;
+    width: 100%;
+    border-radius: 5px;
+    background: #f8f8f8;
+    overflow-y: auto;
+    text-align: left;
 }
 
-#input{
-	width: 100%;
-	height: 40px;
-	background:none;
-	font-size: 15px;
-	color: #fff;
-	border-bottom: 1px solid #fff;
-}
-#input:focus{
-	border-bottom: 2px solid #fff;
+#input {
+    width: 100%;
+    height: 40px;
+    background: none;
+    font-size: 15px;
+    color: #fff;
+    border-bottom: 1px solid #fff;
 }
 
+#input:focus {
+    border-bottom: 2px solid #fff;
+}
 
 /*Mostafa: Reservation*/
-
 
 .error::-webkit-input-placeholder {
     color: red;
 }
 
-
 /*Sign-up*/
 
-header .sign-up-form{
+header .sign-up-form {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
     justify-content: space-between;
-
     height: fit-content;
     position: relative;
-
 }
 
-header .sign-up-form form{
+header .sign-up-form form {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1606,13 +1648,12 @@ header .sign-up-form form{
     margin-top: 100px;
 }
 
-header .sign-up-form form h2{
+header .sign-up-form form h2 {
     margin: 10px 0 25px 0;
     font-size: 20px;
-    
 }
 
-header .sign-up-form form input{
+header .sign-up-form form input {
     width: 70%;
     padding: 10px;
     border: solid;
@@ -1622,17 +1663,16 @@ header .sign-up-form form input{
     margin: auto;
     margin-top: 10px;
     margin-bottom: 20px;
-
 }
 
-header .Sign-up-image{
+header .Sign-up-image {
     width: 50%;
     margin: auto;
 }
 
-header .sign-up-form::after{
+header .sign-up-form::after {
     content: "";
-    background-image: linear-gradient(rgba(133, 127, 127, 0.788),rgba(64, 224, 208, 0.78)), url("./../images/Sign-up.jpg");
+    background-image: linear-gradient(rgba(133, 127, 127, 0.788), rgba(64, 224, 208, 0.78)), url("./../images/Sign-up.jpg");
     background-size: cover;
     background-position: center;
     position: absolute;
@@ -1643,7 +1683,6 @@ header .sign-up-form::after{
     left: 0px;
     opacity: 0.9;
     z-index: -1;
-
 }
 
 header .sign-up-form form input[type=button] {
@@ -1656,15 +1695,12 @@ header .sign-up-form form input[type=button] {
     font-size: 18px;
     color: rgba(247, 247, 247, 0.911);
     cursor: pointer;
-    background-image: linear-gradient(to right, #6a6d72 0%, #79CBCA  51%  100%)
+    background-image: linear-gradient(to right, #6a6d72 0%, #79CBCA 51% 100%)
 }
 
-header .sign-up-form form button:hover{
+header .sign-up-form form button:hover {
     color: #1a1717;
     background-color: rgb(78, 133, 179);
 }
-
-
-
 
 /*Sign-up*/
