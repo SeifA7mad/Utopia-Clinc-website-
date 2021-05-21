@@ -144,9 +144,9 @@ $('.body-container-bottom .tabs a').click(function (event) {
         if (activeBody === "#Archive") {
             createTableArchive(activeBody, activeTab.replace('#', ''), tableHeaderArchive, tableRowsArchive);
         } else if (activeBody === "#Report") {
-            createTableArchive(activeBody, activeTab.replace('#', ''), tableHeaderReport, tableRowsArchive);
+            createTableArchive(activeBody, activeTab.replace('#', ''), tableHeaderReport, tableRowsReport);
         } else if (activeBody === "#Tasks") {
-            createTableArchive(activeBody, activeTab.replace('#', ''), tableHeaderReport, tableRowsArchive);
+            createTableArchive(activeBody, activeTab.replace('#', ''), tableHeaderReport, tableRowsReport);
         }
         $(activeBody + ' .head').css('display', 'flex');
         if (activeBody === "#Archive" && activeTab != "#Patients") {
@@ -206,6 +206,29 @@ const tableHeaderReport = [
     "Rate",
     "Cost",
     "phone number"
+];
+
+const tableRowsReport = [
+    [
+        "Mayar",
+        "karim",
+        "mo5 w a3sab",
+        "21/05/2021",
+        "12:00pm",
+        '4',
+        "10$",
+        "010256497464"
+    ],
+    [
+        "Mayar",
+        "karim",
+        "mo5 w a3sab",
+        "21/05/2021",
+        "12:00pm",
+        '4',
+        "10$",
+        "010256497464"
+    ]
 ];
 
 let createTableArchive = (bodyID, id, th, tr) => {
