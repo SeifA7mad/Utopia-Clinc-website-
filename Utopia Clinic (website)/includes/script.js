@@ -82,7 +82,6 @@ let diplayProfileModal = (user) => {
     }
 }
 
-
 $('.read-more-btn').click(() => {
     if ($('.more-text').css("display") === "none") {
         $('.more-text').css("display", "block");
