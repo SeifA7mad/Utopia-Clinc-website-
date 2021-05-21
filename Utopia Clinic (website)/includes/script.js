@@ -17,9 +17,13 @@ const users = [
         role: "Patient",
         name: "Mayar"
     },
+    {
+        email: "mostafa@yahoo.com",
+        password: "Mm12345678",
+        role: "Patient",
+        name: "Mostafa"
+    },
 ]
-
-
 
 let isSigned = false;
 
@@ -64,16 +68,6 @@ $('.profile').click(function (event) {
     $('.notification-modal').css("display", "none");
 });
 
-$('.read-more-btn').click(() => {
-    if ($('.more-text').css("display") === "none") {
-        $('.more-text').css("display", "block");
-        $('.read-more-btn').html("Read Less");
-    } else {
-        $('.more-text').css("display", "none");
-        $('.read-more-btn').html("Read More");
-    }
-});
-
 let diplayProfileModal = (user) => {
     if (isSigned) {
         if (user.role === "Admin") {
@@ -87,6 +81,18 @@ let diplayProfileModal = (user) => {
         $('.sign-in-form').css('display', 'none');
     }
 }
+
+
+$('.read-more-btn').click(() => {
+    if ($('.more-text').css("display") === "none") {
+        $('.more-text').css("display", "block");
+        $('.read-more-btn').html("Read Less");
+    } else {
+        $('.more-text').css("display", "none");
+        $('.read-more-btn').html("Read More");
+    }
+});
+
 
 let progressCirclePercentage = (className, percentage) => {
     let rotateDeg = percentage * 3.6;
