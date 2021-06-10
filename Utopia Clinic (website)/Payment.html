@@ -24,10 +24,10 @@
                     <h2> Sign in </h2>
                     <form name="Sign-in">
                         <label for="sign-in-email"> E-mail: </label>
-                        <input type="text" name="email" id="sign-in-email">
+                        <input type="text" name="sign-in-email" id="sign-in-email" class="email">
                         <label for="sign-in-password"> Password: </label>
-                        <input type="password" name="pass" id="sign-in-password">
-                        <input type="button" name="button" value="Sign in" class="btn btn1 sign-btn" style="cursor: pointer; margin-top: 20px;">
+                        <input type="password" name="sign-in-password" id="sign-in-password" class="pass">
+                        <input type="button" name="button" value="Sign in" class="btn btn1 sign-btn validate" style="cursor: pointer; margin-top: 20px;">
                     </form>
                     <a href="./Sign-up.html" class="btn btn1"> Sign up</a>
                 </div>
@@ -68,14 +68,14 @@
                             <img src ="images/mc.png" alt="Master Card">
                         </div>
                         <label for = "name"> NAME ON CARD </label>
-                        <input type = "text" name="text" id="name" placeholder="Enter name on Card">
+                        <input type = "text" name="nameOnCard" id="name" placeholder="Enter name on Card" class="text">
                         <label for = "name"> CARD NUMBER</label>
-                        <input type = "text" name="num" id="number" placeholder="0000 0000 0000 0000">
+                        <input type = "text" name="cardNumber" id="number" placeholder="0000 0000 0000 0000" class="num">
                         <label for = "name"> EXPIRY DATE</label>
-                        <input type = "text" name="num" id="month" placeholder="MONTH/MM">
-                        <input type = "text" name="num" id="year" placeholder="YEAR/YY">
+                        <input type = "text" name="expireDate" id="month" placeholder="MONTH/MM" class="num">
+                        <input type = "text" name="expireDate" id="year" placeholder="YEAR/YY" class="num">
                         <label for = "name"> CCV</label>
-                        <input type = "text" name="num" id="ccv" placeholder="123">
+                        <input type = "text" name="cvv" id="ccv" placeholder="123" class="num">
             
                         <button type = "button" class="validate"> Pay</button>
                     </form>

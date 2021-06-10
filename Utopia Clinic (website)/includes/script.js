@@ -55,14 +55,23 @@ $('.sign-in-form .sign-btn').click(function (event) {
     }
 });
 
-$('.notification').click(() => {
+
+$('.notification').click((event) => {
+    event.stopPropagation();
     let displayProp = $('.notification-modal').css("display") === "none" ? "flex" : "none";
     $('.notification-modal').css("display", displayProp);
     $('.profile-modal').css("display", "none");
+
+    // if (displayProp === 'flex') {
+    //     $('body').not('.notification-modal').click(() => {
+    //         $('.notification-modal').css("display", "none");
+    //         $('body').not('.notification-modal').off('click');
+    //     });
+    // }
 });
 
 $('.profile').click(function (event) {
-    event.preventDefault();
+    event.stopPropagation();
     let displayProp = $('.profile-modal').css("display") === "none" ? "flex" : "none";
     $('.profile-modal').css("display", displayProp);
     $('.notification-modal').css("display", "none");
@@ -184,12 +193,12 @@ let editForm = (event) => {
 
     let select = $("<select> </select>");
     for (let head of tableHead) {
-        select.append("<option value='" +head.outerText+"'>" +head.outerText+ "</option>");
+        select.append("<option value='" + head.outerText + "'>" + head.outerText + "</option>");
     }
 
     form.append(select);
-    form.append("<input type='text' placeholder='Enter the new value'>");
-    form.append("<input type='submit' placeholder='Done'>");
+    form.append("<input type='text' placeholder='Enter the new value' class='text'>");
+    form.append("<input type='button' value='Done' class='btn validate'>");
     $('#Archive .body-container-bottom .info-table .edit-form').remove();
     $('#Archive .body-container-bottom .info-table').append(form);
 }
@@ -264,7 +273,7 @@ let createTableArchive = (bodyID, id, th, tr) => {
     let tableDiv = $('<div></div>');
     tableDiv.addClass('info-table');
     tableDiv.attr('id', id);
-  
+
     let table = $('<table></table>');
     let tableHead = $('<tr></tr>');
     tableHead.addClass('notForSearch');
@@ -319,44 +328,44 @@ $('form .validate').click(function (event) {
     let password = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/;
 
     for (let i = 0; i < input.length; i++) {
-        if (input.eq(i).attr('name') !== "button") {
+        if (input.eq(i).attr('class') !== "btn") {
             if (input.eq(i).val() !== "") {
-                if (input.eq(i).attr('name') === "email") {
+                if (input.eq(i).attr('class') === "email") {
                     if (!input.eq(i).val().includes('@')) {
                         input.eq(i).val('');
                         input.eq(i).attr("placeholder", "Enter a valid mail");
                         input.eq(i).addClass('error');
                         submitCond = false;
                     }
-                } else if (input.eq(i).attr('name') === "password") {
+                } else if (input.eq(i).attr('class') === "pass") {
                     if (!input.eq(i).val().match(password)) {
                         input.eq(i).val('');
                         input.eq(i).attr("placeholder", "Password must contains 8 letters, at least one capital and small letter");
                         input.eq(i).addClass('error');
                         submitCond = false;
                     }
-                } else if (input.eq(i).attr('name') === "text") {
+                } else if (input.eq(i).attr('class') === "text") {
                     if (!input.eq(i).val().match(letters)) {
                         input.eq(i).val('');
                         input.eq(i).attr("placeholder", "no numbers allowed");
                         input.eq(i).addClass('error');
                         submitCond = false;
                     }
-                } else if (input.eq(i).attr('name') === "num") {
+                } else if (input.eq(i).attr('class') === "num") {
                     if (!input.eq(i).val().match(numbers)) {
                         input.eq(i).val('');
                         input.eq(i).attr("placeholder", "no letters allowed");
                         input.eq(i).addClass('error');
                         submitCond = false;
                     }
-                } else if (input.eq(i).attr('name') === "repeat-password") {
+                } else if (input.eq(i).attr('class') === "repeat-password") {
                     if (input.eq(i - 1).val() !== input.eq(i).val()) {
                         input.eq(i).val('');
                         input.eq(i).attr("placeholder", "Password doesnot match");
                         input.eq(i).addClass('error');
                         submitCond = false;
                     }
-                } else if (input.eq(i).attr('name') === "checked") {
+                } else if (input.eq(i).attr('class') === "checked") {
                     if (!input.eq(i).is(':checked')) {
                         submitCond = false;
                     }
@@ -373,6 +382,7 @@ $('form .validate').click(function (event) {
         // next Phase
         // form.submit();
     }
+
 });
 
 
