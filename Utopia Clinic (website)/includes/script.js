@@ -61,13 +61,6 @@ $('.notification').click((event) => {
     let displayProp = $('.notification-modal').css("display") === "none" ? "flex" : "none";
     $('.notification-modal').css("display", displayProp);
     $('.profile-modal').css("display", "none");
-
-    // if (displayProp === 'flex') {
-    //     $('body').not('.notification-modal').click(() => {
-    //         $('.notification-modal').css("display", "none");
-    //         $('body').not('.notification-modal').off('click');
-    //     });
-    // }
 });
 
 $('.profile').click(function (event) {
