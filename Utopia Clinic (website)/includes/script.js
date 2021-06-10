@@ -151,10 +151,12 @@ $('.body-container-bottom .tabs a').click(function (event) {
                     dataType:'json',
                     success: function(data) {
                         console.log(data);
+                        createTableArchive(activeBody, activeTab, tableHeaderArchive, tableRowsArchive);
                     } 
                 });
-                //createTableArchive(activeBody, activeTab.replace('#', ''), tableHeaderArchive, tableRowsArchive);
-            } 
+            } else if (activeTab === "#Doctors") {
+                createTableArchive(activeBody, activeTab, tableHeaderArchive, tableRowsArchive);
+            }
             if (activeTab != "#Patients") {
                 plusIcon = $('<i></i>');
                 plusIcon.addClass('fa fa-plus fa-2x');
@@ -163,14 +165,13 @@ $('.body-container-bottom .tabs a').click(function (event) {
             }
 
         } else if (activeBody === "#Report") {
-            createTableArchive(activeBody, activeTab.replace('#', ''), tableHeaderReport, tableRowsReport);
+            createTableArchive(activeBody, activeTab, tableHeaderReport, tableRowsReport);
         } else if (activeBody === "#Tasks") {
             createTableArchive(activeBody, activeTab.replace('#', ''), tableHeaderReport, tableRowsReport);
         }
         $(activeBody + ' .head').css('display', 'flex');
         $('.info-table').not(activeTab).remove();
         $(activeBody + ' .head h3').html(activeTab.replace('#', '') + activeBody.replace('#', ' '));
-        $(activeTab).fadeIn();
         activeLink = activeTab;
     }
 });
@@ -270,8 +271,8 @@ const tableRowsReport = [
 let createTableArchive = (bodyID, id, th, tr) => {
     let tableDiv = $('<div></div>');
     tableDiv.addClass('info-table');
-    tableDiv.attr('id', id);
-
+    tableDiv.attr('id', id.replace('#', ''));
+    //tableDiv.css('display', 'block');
     let table = $('<table></table>');
     let tableHead = $('<tr></tr>');
     tableHead.addClass('notForSearch');
@@ -306,6 +307,7 @@ let createTableArchive = (bodyID, id, th, tr) => {
     }
     tableDiv.append(table);
     $(bodyID + ' .body-container-bottom').append(tableDiv);
+    $(id).fadeIn();
 }
 
 let formToggle = (id) => {
