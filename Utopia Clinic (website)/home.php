@@ -8,17 +8,11 @@
     <link rel="stylesheet" type="text/css" href="./includes/styles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <?php
-        session_start();
-        //Make the connection with the sql database and store it in $database
-        $database = mysqli_connect("localhost", "root", "", "utopiaclinic");
-        if (!($database))
-            die("<p>Could not connect to database </p>");
-        
-    ?>
 </head>
 
 <header>
+    <?php include 'DB.php';
+    ?>
     <div class="head-home">
         <div class="info">
             <i class="fa fa-phone fa-lg" aria-hidden="true"> 01028877643 </i>
