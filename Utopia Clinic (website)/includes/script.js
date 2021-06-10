@@ -51,14 +51,23 @@ $('.sign-in-form .sign-btn').click(function (event) {
     }
 });
 
-$('.notification').click(() => {
+
+$('.notification').click((event) => {
+    event.stopPropagation();
     let displayProp = $('.notification-modal').css("display") === "none" ? "flex" : "none";
     $('.notification-modal').css("display", displayProp);
     $('.profile-modal').css("display", "none");
+
+    // if (displayProp === 'flex') {
+    //     $('body').not('.notification-modal').click(() => {
+    //         $('.notification-modal').css("display", "none");
+    //         $('body').not('.notification-modal').off('click');
+    //     });
+    // }
 });
 
 $('.profile').click(function (event) {
-    event.preventDefault();
+    event.stopPropagation();
     let displayProp = $('.profile-modal').css("display") === "none" ? "flex" : "none";
     $('.profile-modal').css("display", displayProp);
     $('.notification-modal').css("display", "none");
@@ -179,7 +188,7 @@ let editForm = (event) => {
 
     let select = $("<select> </select>");
     for (let head of tableHead) {
-        select.append("<option value='" +head.outerText+"'>" +head.outerText+ "</option>");
+        select.append("<option value='" + head.outerText + "'>" + head.outerText + "</option>");
     }
 
     form.append(select);
@@ -259,7 +268,7 @@ let createTableArchive = (bodyID, id, th, tr) => {
     let tableDiv = $('<div></div>');
     tableDiv.addClass('info-table');
     tableDiv.attr('id', id);
-  
+
     let table = $('<table></table>');
     let tableHead = $('<tr></tr>');
     tableHead.addClass('notForSearch');
@@ -363,12 +372,12 @@ $('form .validate').click(function (event) {
             }
         }
     }
-    
+
     if (submitCond) {
         // next Phase
         // form.submit();
-    } 
-    
+    }
+
 });
 
 
