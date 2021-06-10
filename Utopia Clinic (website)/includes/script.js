@@ -145,12 +145,16 @@ $('.body-container-bottom .tabs a').click(function (event) {
         if (activeBody === "#Archive") {
             if (activeTab === "#Patients") {
                 $.ajax({
-                    type: "POST",
+                    type: "GET",
                     url: "../fetchTableData.php",
                     data: ({query: "SELECT patient.National_ID, Fname, Lname, DOB, PhoneNo, Gender FROM patient, user WHERE patient.National_ID = user.National_ID"}),
-                    dataType:'json',
+                    dataType:"json",
                     success: function(data) {
-                        console.log(data);
+                        for (obj of data) {
+                            console.log("z8ds");
+                            console.log(obj);
+                            console.log("z8ds");
+                        }
                         createTableArchive(activeBody, activeTab, tableHeaderArchive, tableRowsArchive);
                     } 
                 });

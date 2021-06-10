@@ -4,7 +4,7 @@
     if (!($database))
         die("<p>Could not connect to database </p>");
         
-    $result = mysqli_query($database, $_POST['query']);
+    $result = mysqli_query($database, $_GET['query']);
     $array = array();
 
     while($row = mysqli_fetch_assoc($result)) {
