@@ -147,19 +147,14 @@ $('.body-container-bottom .tabs a').click(function (event) {
                 $.ajax({
                     type: "GET",
                     url: "../fetchTableData.php",
-                    data: ({query: "SELECT patient.National_ID, Fname, Lname, DOB, PhoneNo, Gender FROM patient, user WHERE patient.National_ID = user.National_ID"}),
-                    dataType:"json",
-                    success: function(data) {
-                        for (obj of data) {
-                            console.log("z8ds");
-                            console.log(obj);
-                            console.log("z8ds");
-                        }
-                        createTableArchive(activeBody, activeTab, tableHeaderArchive, tableRowsArchive);
-                    } 
+                    data: ({ activeTab: activeTab }),
+                    dataType: "json",
+                    success: function (data) {
+                        createTableArchive(activeBody, activeTab, tableHeaderPatients, data);
+                    }
                 });
             } else if (activeTab === "#Doctors") {
-                createTableArchive(activeBody, activeTab, tableHeaderArchive, tableRowsArchive);
+                //createTableArchive(activeBody, activeTab, tableHeaderArchive, tableRowsArchive);
             }
             if (activeTab != "#Patients") {
                 plusIcon = $('<i></i>');
@@ -169,9 +164,9 @@ $('.body-container-bottom .tabs a').click(function (event) {
             }
 
         } else if (activeBody === "#Report") {
-            createTableArchive(activeBody, activeTab, tableHeaderReport, tableRowsReport);
+            //createTableArchive(activeBody, activeTab, tableHeaderReport, tableRowsReport);
         } else if (activeBody === "#Tasks") {
-            createTableArchive(activeBody, activeTab.replace('#', ''), tableHeaderReport, tableRowsReport);
+            //createTableArchive(activeBody, activeTab.replace('#', ''), tableHeaderReport, tableRowsReport);
         }
         $(activeBody + ' .head').css('display', 'flex');
         $('.info-table').not(activeTab).remove();
@@ -210,12 +205,12 @@ let deleteForm = (event) => {
 
 }
 
-const tableHeaderArchive = [
-    "Full Name",
-    "E-mail",
-    "Role",
-    "Phone number",
-    "Address",
+const tableHeaderPatients = [
+    "National ID",
+    "First Name",
+    "Last Name",
+    "DOB",
+    "Phone Number",
     "Gender",
 ];
 
@@ -276,7 +271,6 @@ let createTableArchive = (bodyID, id, th, tr) => {
     let tableDiv = $('<div></div>');
     tableDiv.addClass('info-table');
     tableDiv.attr('id', id.replace('#', ''));
-    //tableDiv.css('display', 'block');
     let table = $('<table></table>');
     let tableHead = $('<tr></tr>');
     tableHead.addClass('notForSearch');
@@ -291,11 +285,10 @@ let createTableArchive = (bodyID, id, th, tr) => {
 
     for (let i = 0; i < tr.length; i++) {
         let tableRow = $('<tr></tr>');
-        for (let j = 0; j < tr[i].length; j++) {
-            let tableD = $('<td>' + tr[i][j] + '</td>');
+        for (const key in tr[i]) {
+            let tableD = $('<td>' + tr[i][key] + '</td>');
             tableRow.append(tableD);
         }
-
         if (bodyID === "#Archive") {
             let tr = $("<td> </td>");
             let editIcon = $("<i class='fa fa-pencil'> </i>");
@@ -306,9 +299,28 @@ let createTableArchive = (bodyID, id, th, tr) => {
             tr.append(deleteIcon);
             tableRow.append(tr);
         }
-
         table.append(tableRow);
     }
+    // for (let i = 0; i < tr.length; i++) {
+    //     let tableRow = $('<tr></tr>');
+    //     for (let j = 0; j < tr[i].length; j++) {
+    //         let tableD = $('<td>' + tr[i][j] + '</td>');
+    //         tableRow.append(tableD);
+    //     }
+
+    //     if (bodyID === "#Archive") {
+    //         let tr = $("<td> </td>");
+    //         let editIcon = $("<i class='fa fa-pencil'> </i>");
+    //         let deleteIcon = $("<i class='fa fa-trash'> </i>");
+    //         editIcon.attr("onclick", "editForm(event)");
+    //         deleteIcon.attr("onclick", "deleteForm(event)");
+    //         tr.append(editIcon);
+    //         tr.append(deleteIcon);
+    //         tableRow.append(tr);
+    //     }
+
+    //     table.append(tableRow);
+    // }
     tableDiv.append(table);
     $(bodyID + ' .body-container-bottom').append(tableDiv);
     $(id).fadeIn();
