@@ -133,7 +133,6 @@ let activeLink;
 
 $('.body-container-bottom .tabs a').click(function (event) {
     event.preventDefault();
-
     // Toggle active class on tab buttons
     $(this).addClass("current-tab");
     $(this).siblings().removeClass("current-tab");
@@ -144,7 +143,18 @@ $('.body-container-bottom .tabs a').click(function (event) {
 
     if (activeTab !== activeLink) {
         if (activeBody === "#Archive") {
-            createTableArchive(activeBody, activeTab.replace('#', ''), tableHeaderArchive, tableRowsArchive);
+            if (activeTab === "#Patients") {
+                $.ajax({
+                    type: "POST",
+                    url: "../fetchTableData.php",
+                    data: ({query: "SELECT patient.National_ID, Fname, Lname, DOB, PhoneNo, Gender FROM patient, user WHERE patient.National_ID = user.National_ID"}),
+                    dataType:'json',
+                    success: function(data) {
+                        console.log(data);
+                    } 
+                });
+                //createTableArchive(activeBody, activeTab.replace('#', ''), tableHeaderArchive, tableRowsArchive);
+            } 
             if (activeTab != "#Patients") {
                 plusIcon = $('<i></i>');
                 plusIcon.addClass('fa fa-plus fa-2x');
