@@ -183,8 +183,8 @@ let editForm = (event) => {
     }
 
     form.append(select);
-    form.append("<input type='text' placeholder='Enter the new value'>");
-    form.append("<input type='submit' placeholder='Done'>");
+    form.append("<input type='text' placeholder='Enter the new value' class='text'>");
+    form.append("<input type='button' value='Done' class='btn validate'>");
     $('#Archive .body-container-bottom .info-table .edit-form').remove();
     $('#Archive .body-container-bottom .info-table').append(form);
 }
@@ -314,44 +314,44 @@ $('form .validate').click(function (event) {
     let password = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/;
 
     for (let i = 0; i < input.length; i++) {
-        if (input.eq(i).attr('name') !== "button") {
+        if (input.eq(i).attr('class') !== "btn") {
             if (input.eq(i).val() !== "") {
-                if (input.eq(i).attr('name') === "email") {
+                if (input.eq(i).attr('class') === "email") {
                     if (!input.eq(i).val().includes('@')) {
                         input.eq(i).val('');
                         input.eq(i).attr("placeholder", "Enter a valid mail");
                         input.eq(i).addClass('error');
                         submitCond = false;
                     }
-                } else if (input.eq(i).attr('name') === "password") {
+                } else if (input.eq(i).attr('class') === "pass") {
                     if (!input.eq(i).val().match(password)) {
                         input.eq(i).val('');
                         input.eq(i).attr("placeholder", "Password must contains 8 letters, at least one capital and small letter");
                         input.eq(i).addClass('error');
                         submitCond = false;
                     }
-                } else if (input.eq(i).attr('name') === "text") {
+                } else if (input.eq(i).attr('class') === "text") {
                     if (!input.eq(i).val().match(letters)) {
                         input.eq(i).val('');
                         input.eq(i).attr("placeholder", "no numbers allowed");
                         input.eq(i).addClass('error');
                         submitCond = false;
                     }
-                } else if (input.eq(i).attr('name') === "num") {
+                } else if (input.eq(i).attr('class') === "num") {
                     if (!input.eq(i).val().match(numbers)) {
                         input.eq(i).val('');
                         input.eq(i).attr("placeholder", "no letters allowed");
                         input.eq(i).addClass('error');
                         submitCond = false;
                     }
-                } else if (input.eq(i).attr('name') === "repeat-password") {
+                } else if (input.eq(i).attr('class') === "repeat-password") {
                     if (input.eq(i - 1).val() !== input.eq(i).val()) {
                         input.eq(i).val('');
                         input.eq(i).attr("placeholder", "Password doesnot match");
                         input.eq(i).addClass('error');
                         submitCond = false;
                     }
-                } else if (input.eq(i).attr('name') === "checked") {
+                } else if (input.eq(i).attr('class') === "checked") {
                     if (!input.eq(i).is(':checked')) {
                         submitCond = false;
                     }
@@ -363,11 +363,12 @@ $('form .validate').click(function (event) {
             }
         }
     }
-
+    
     if (submitCond) {
         // next Phase
         // form.submit();
-    }
+    } 
+    
 });
 
 

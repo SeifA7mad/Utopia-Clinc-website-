@@ -21,12 +21,12 @@
 					<div class="sign-in-form">
 						<h2> Sign in </h2>
 						<form name="Sign-in">
-							<label for="sign-in-email"> E-mail: </label>
-							<input type="text" name="email" id="sign-in-email">
-							<label for="sign-in-password"> Password: </label>
-							<input type="password" name="pass" id="sign-in-password">
-							<input type="button" name="button" value="Sign in" class="btn btn1 sign-btn" style="cursor: pointer; margin-top: 20px;">
-						</form>
+                            <label for="sign-in-email"> E-mail: </label>
+                            <input type="text" name="sign-in-email" id="sign-in-email" class="email">
+                            <label for="sign-in-password"> Password: </label>
+                            <input type="password" name="sign-in-password" id="sign-in-password" class="pass">
+                            <input type="button" name="button" value="Sign in" class="btn btn1 sign-btn validate" style="cursor: pointer; margin-top: 20px;">
+                        </form>
 						<a href="./Sign-up.html" class="btn btn1"> Sign up</a>
 					</div>
 					<div class="profile-modal-content">
@@ -115,21 +115,21 @@
                     <i class="fa fa-times fa-2x" aria-hidden="true" onclick="closeForm()"></i>
                     <h1> Enter Doctor Information </h1>
                     <label for = "name"> name</label>
-                    <input type = "text" name="text" placeholder="Enter name">
-                    <label for = "name"> Age</label>
-                    <input type = "text" name="num" placeholder="Enter age">
-                    <label for = "name"> Gender</label>
-                    <input type = "text" name="text" placeholder="Enter gender">
-                    <label for = "name"> Phone number</label>
-                    <input type = "text" name="num" placeholder="Enter phone number">
-                    <label for = "name"> Email</label>
-                    <input type = "text" name="email" placeholder="Enter Email">
-                    <label for = "name"> Address</label>
-                    <input type = "text" name="text" placeholder="Enter Address">
-                    <label for = "name"> Password </label>
-                    <input type = "text" name="password" placeholder="Enter password">
-                    <label for = "name"> Medical Speciality</label>
-                    <input type = "text" name="text" placeholder="Enter Medical Speciality">
+                    <input type = "text" name="name" placeholder="Enter name" class=text>
+                    <label for = "age"> Age</label>
+                    <input type = "text" name="age" placeholder="Enter age" class="num">
+                    <label for = "gender"> Gender</label>
+                    <input type = "text" name="gender" placeholder="Enter gender" class="text">
+                    <label for = "phoneNum"> Phone number</label>
+                    <input type = "text" name="phoneNum" placeholder="Enter phone number" class="num">
+                    <label for = "email"> Email</label>
+                    <input type = "text" name="email" placeholder="Enter Email" class="email">
+                    <label for = "adress"> Address</label>
+                    <input type = "text" name="adress" placeholder="Enter Address" class="text">
+                    <label for = "password"> Password </label>
+                    <input type = "text" name="password" placeholder="Enter password" class="pass">
+                    <label for = "speciality"> Medical Speciality</label>
+                    <input type = "text" name="speciality" placeholder="Enter Medical Speciality" class="text">
 
                     <button type ="button" class="validate"> Add Doctor </button>
                 </form>
@@ -138,12 +138,12 @@
                 <form>
                     <i class="fa fa-times fa-2x" aria-hidden="true" onclick="closeForm()"></i>
                     <h1> Enter Offer Information </h1>
-                    <label for = "name"> Offer name</label>
-                    <input type = "text" name="name" placeholder="Enter name">
-                    <label for = "name"> Offer description</label>
-                    <input type = "text" name="Description" placeholder="Enter Description">
-                    <label for = "name"> Offer date</label>
-                    <input type = "text" name="date" placeholder="Enter date">
+                    <label for = "offerName"> Offer name</label>
+                    <input type = "text" name="offerName" placeholder="Enter name" class="text">
+                    <label for = "Description"> Offer description</label>
+                    <input type = "text" name="Description" placeholder="Enter Description" class="text">
+                    <label for = "date"> Offer date</label>
+                    <input type = "text" name="date" placeholder="Enter date" class="text">
 
                     <button type = "button" class="validate"> Add Offer</button>
                 </form>
