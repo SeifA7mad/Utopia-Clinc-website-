@@ -11,8 +11,6 @@
 </head>
 
 <header>
-    <?php include 'DB.php';
-    ?>
     <div class="head-home">
         <div class="info">
             <i class="fa fa-phone fa-lg" aria-hidden="true"> 01028877643 </i>
@@ -24,7 +22,7 @@
             <div class="profile-modal">
                 <div class="sign-in-form">
                     <h2> Sign in </h2>
-                    <form method="POST" name="Sign-in">
+                    <form name="Sign-in">
                         <label for="sign-in-email"> E-mail: </label>
                         <input type="text" name="sign-in-email" id="sign-in-email" class="email">
                         <label for="sign-in-password"> Password: </label>

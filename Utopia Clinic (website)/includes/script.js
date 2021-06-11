@@ -1,33 +1,3 @@
-let isSigned = false;
-
-$('.sign-in-form .sign-btn').click(function (event) {
-    event.preventDefault();
-    let form = $(this).parent();
-    let email = form.children('input[name=email]');
-    let pass = form.children('input[name=pass]');
-
-    for (let i of users) {
-        if (email.val() === i.email) {
-            if (pass.val() === i.password) {
-                isSigned = true;
-                diplayProfileModal(i);
-                break;
-            } else {
-                break;
-            }
-        }
-    }
-
-    if (!isSigned) {
-        email.attr('placeholder', 'email or password is incorrect');
-        email.addClass('error');
-        email.val('');
-        pass.attr('placeholder', 'email or password is incorrect');
-        pass.addClass('error');
-        pass.val('');
-    }
-});
-
 
 $('.notification').click((event) => {
     event.stopPropagation();
@@ -112,7 +82,7 @@ let tableInfoRequest = (activeTab) => {
     return new Promise((resolve, reject) => {
         $.ajax({
             type: "GET",
-            url: "../fetchTableData.php",
+            url: "../Server/fetchTableData.php",
             dataType: "json",   
             data: ({activeTab: activeTab}),
             success: function (data) {
@@ -324,7 +294,10 @@ $('form .validate').click(function (event) {
     }
 
     if (submitCond) {
-        form.submit();
+        //form.submit();
+        if ($("form .validate").attr('name') === "login") {
+            console.log("z7k");
+        }
     }
 
 });
