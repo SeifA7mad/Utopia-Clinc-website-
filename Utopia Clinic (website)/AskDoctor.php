@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html>
-	
+<html lang="en">
 	<head>
 		<title> Utopia Clinic </title>
 		<meta charset="utf-8">
@@ -11,6 +10,11 @@
 	
 	<header>
 		<div class="head-home">
+			<div class="info">
+				<i class="fa fa-phone fa-lg" aria-hidden="true"> 01028877643 </i>
+				<i class="fa fa-map-marker fa-lg" aria-hidden="true"> Mokattam </i>
+				<i class="fa fa-clock-o fa-lg" aria-hidden="true"> 6:00am to 4:00pm</i>
+			</div>
 			<div class="small-nav">
 				<i class="fa fa-user fa-2x profile" aria-hidden="true"></i> 
 				<div class="profile-modal">
@@ -23,7 +27,7 @@
 							<input type="password" name="sign-in-password" id="sign-in-password" class="pass">
 							<input type="button" name="button" value="Sign in" class="btn btn1 sign-btn validate" style="cursor: pointer; margin-top: 20px;">
 						</form>
-						<a href="./Sign-up.html" class="btn btn1"> Sign up</a>
+						<a href="./Sign-up.php" class="btn btn1"> Sign up</a>
 					</div>
 					<div class="profile-modal-content">
 						<img src="./images/profilePicture.png">
@@ -45,17 +49,15 @@
 				<div class="nav-top">
 					<img src="images/Utopia-logo.png">
 					<div class="nav-elements">
-						<a href="./home.html"> Home </a>
-						<a href="./Offers.html"> Offers </a>
-						<a href="./AskDoctor.html"> AskaDoctor </a>
-						<a href="./AboutUs.html"> About Us </a>
+						<a href="./home.php"> Home </a>
+						<a href="./Offers.php"> Offers </a>
+						<a href="./AboutUs.php"> About Us </a>
 					</div>
 				</div>
 				<div class="nav-center">
 					<div class="topCon">
-						<h2>Lab Reservation</h2>
-						<p>Please Type your Information in a form, polit, applicable way and ensure honesty
-						</p>
+						<h1>Ask Doctor</h1>
+						<p> Please Feel free to ask one of our doctors about your sever issue. </p>
 					</div>
 				</div>
 				<div class="popup" id="popup-1">
@@ -63,76 +65,29 @@
 					<div class="contentPopUp">
 					
 					<h1>Confirmation</h1>
-					<p> Your Desired Test has been reserved and we are waiting for you at our lab</p>
-					<button type="button"  name="button" id=""> <a href="./home.html"> Close </a> </button>
+					<p> Your Comment Has been Saved and waiting for our doctors to reveiwe and we will be back soon</p>
+					<button type="button"  name="button" id="Submit2"> <a href="./home.php"> Close </a> </button>
 				</div>
 					
 			</div>
-
 				<div class="nav-bottom">
-								<div class="container">
-										<div class="box">
-											<h2><bold>Utopia Lab</bold></h2> 
-											
-												<p> Managers have administrative duties and 
-												are responsbile for the daily operations of a health care facility.
-												 Common Clinic Manager duties are managing staff, assigning work,
-												  recruiting new employees, overseeing management, maintaining the
-												   inventory, budgeting, and organizing staff meetings. 
-												   Aside from medical terminology knowledge, successful 
-												   resumes for Clinic Managers also highlight communication 
-												   abilities, professionalism, organizational skills, accuracy, 
-												   computer competencies, and time management. Studies in medical 
-												   services administration are common experience in Clinic Manager
-												    example resumes.</p>
-										</div>		
-					</div>
-			
+					<div class="askadoctor-container">
+						<input type="text" id="input" placeholder="write your issue">
+						<div class="buttons">
+							<button type="button" name="button" id="cancel">cancel</button>
+							<button type="button" name="button" onclick= "myFunciotn()"id="comment">comment </button>
+						</div>
+						<div class="boxContainer">
+							<div class="box"></div>
 						
-						<div class="contactForm">
-							<h2> Fill Application</h2>
-							<form action="">
-								<div class="inputBox">
-									<input type="" name="" id="" required>
-									<span> Full Name</span>
-								</div>
-								<div class="inputBox">
-									<input type="" name="" id=""required>
-									<span>  Clinical ID</span>
-								</div>
-								<div class="inputBox">
-									<input type="" name="" id=""required>
-									<span>  National ID</span>
-								</div>
-								<div class="inputBox">
-									<input type="" name="" id=""required>
-									<span> Type of test (Liver F.T, Lipase, Fasting Blood Glucose, CRP, etc..)</span>
-								</div>
-								<div class="inputBox">
-									<input type="" name="" id="" required>
-									<span> Past of diseases</span>
-								</div>
-								<div class="inputBox">
-									<input type="" name="" id=""required>
-									<span> Your signature</span>
-								</div>
-								<div class="inputBox">
-									
-									<textarea name="" id="" required></textarea>
-									<span> Type any further Information</span>
-								</div>
-								<div class="inputBox">
-									<input type="submit" id ="submit12" value="Submit">
-									
-								</div>
-							</form>
+							<button type="button" name="button" id="delete">delete</button>
+							<button type="button"  name="button" id="Add">Add</button>
 						</div>
 					</div>
 				</div>
 			</div>   
 		</nav>
 	</header>
-
 
 <body>
 	<script src="./includes/script.js"></script>
@@ -161,14 +116,15 @@
             <h1> Explore </h1>
             <ul>
                 <div style="display: flex; flex-direction: column;">
-                    <li> <a href=""> Home </a> </li>
-                    <li> <a href=""> Home </a> </li>
-                    <li> <a href=""> Home </a> </li>
+                    <li> <a href="./home.php"> Home </a> </li>
+                    <li> <a href="./Offers.php"> Offers </a> </li>
+                    <li> <a href="./AboutUs.php"> About Us </a> </li>
+                    <li> <a href="./doctor/dashboard.php"> Dashboard Doctor </a> </li>
                 </div>
                 <div style="display: flex; flex-direction: column;">
-                    <li> <a href=""> Home </a> </li>
-                    <li> <a href=""> Home </a> </li>
-                    <li> <a href=""> Home </a> </li>
+                    <li> <a href="./Reservation1.php"> Reservation </a> </li>
+                    <li> <a href="./AskDoctor.php"> Ask a Doctor </a> </li>
+                    <li> <a href="./admin/dashboard.php"> Dashboard Admin </a> </li>
                </div>
             </ul>
         </div>
@@ -177,6 +133,4 @@
         </div>
     </div>
 </footer>
-
-
 </html>

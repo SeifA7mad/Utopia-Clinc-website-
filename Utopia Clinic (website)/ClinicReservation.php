@@ -28,7 +28,7 @@
                         <input type="password" name="sign-in-password" id="sign-in-password" class="pass">
                         <input type="button" name="button" value="Sign in" class="btn btn1 sign-btn validate" style="cursor: pointer; margin-top: 20px;">
                     </form>
-					<a href="./Sign-up.html" class="btn btn1"> Sign up</a>
+					<a href="./Sign-up.php" class="btn btn1"> Sign up</a>
 				</div>
 				<div class="profile-modal-content">
 					<img src="./images/profilePicture.png">
@@ -54,9 +54,9 @@
 			<div class="nav-top">
 				<img src="images/Utopia-logo.png">
 				<div class="nav-elements">
-					<a href="./home.html"> Home </a>
-					<a href="./Offers.html"> Offers </a>
-					<a href="./AboutUs.html"> About Us </a>
+					<a href="./home.php"> Home </a>
+					<a href="./Offers.php"> Offers </a>
+					<a href="./AboutUs.php"> About Us </a>
 				</div>
 			</div>
 			<div class="nav-center">
@@ -74,7 +74,7 @@
 						<h1>Confirmation</h1>
 						<p> Your Information has been added. You reserved at the $clinicName at $date and $time with the
 							doctor $doctorName</p>
-						<button type="button" name="button" id=""> <a href="./home.html"> Close </a> </button>
+						<button type="button" name="button" id=""> <a href="./home.php"> Close </a> </button>
 					</div>
 				</div>
 

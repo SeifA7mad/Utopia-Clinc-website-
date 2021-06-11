@@ -136,9 +136,19 @@ $('.side-nav ul li a').not('.home-anker').click(function (event) {
 
 let activeLink;
 
+let tableInfoRequest = (activeTab) => {
+    return new Promise(
+        $.ajax({
+            type: "GET",
+            url: "../fetchTableData.php",
+            data: ({ activeTab: activeTab }),
+            dataType: "json"
+        })
+    );
+}
+
 $('.body-container-bottom .tabs a').click(function (event) {
     event.preventDefault();
-
     // Toggle active class on tab buttons
     $(this).addClass("current-tab");
     $(this).siblings().removeClass("current-tab");
@@ -149,23 +159,21 @@ $('.body-container-bottom .tabs a').click(function (event) {
 
     if (activeTab !== activeLink) {
         if (activeBody === "#Archive") {
-            createTableArchive(activeBody, activeTab.replace('#', ''), tableHeaderArchive, tableRowsArchive);
-            if (activeTab != "#Patients") {
-                plusIcon = $('<i></i>');
-                plusIcon.addClass('fa fa-plus fa-2x');
-                plusIcon.attr('onclick', "formToggle('#form-" + activeTab.replace('#', '') + "')");
-                $('#Archive .info-table').append(plusIcon);
+            if (activeTab === "#Patients") {
+                tableInfoRequest(activeTab).then(createTableArchive(activeBody, activeTab, tableHeaderPatients, data));
+            } else if (activeTab === "#Doctors") {
+                tableInfoRequest(activeTab).then(createTableArchive(activeBody, activeTab, tableHeaderDoctors, data));
+            } else if (activeTab === "#Offers") {
+                tableInfoRequest(activeTab).then(createTableArchive(activeBody, activeTab, tableHeaderOffers, data));
             }
-
         } else if (activeBody === "#Report") {
-            createTableArchive(activeBody, activeTab.replace('#', ''), tableHeaderReport, tableRowsReport);
+            //createTableArchive(activeBody, activeTab, tableHeaderReport, tableRowsReport);
         } else if (activeBody === "#Tasks") {
-            createTableArchive(activeBody, activeTab.replace('#', ''), tableHeaderReport, tableRowsReport);
+            //createTableArchive(activeBody, activeTab.replace('#', ''), tableHeaderReport, tableRowsReport);
         }
         $(activeBody + ' .head').css('display', 'flex');
         $('.info-table').not(activeTab).remove();
         $(activeBody + ' .head h3').html(activeTab.replace('#', '') + activeBody.replace('#', ' '));
-        $(activeTab).fadeIn();
         activeLink = activeTab;
     }
 });
@@ -200,73 +208,39 @@ let deleteForm = (event) => {
 
 }
 
-const tableHeaderArchive = [
-    "Full Name",
-    "E-mail",
-    "Role",
-    "Phone number",
-    "Address",
+const tableHeaderPatients = [
+    "National ID",
+    "First Name",
+    "Last Name",
+    "DOB",
+    "Phone Number",
     "Gender",
 ];
 
-const tableRowsArchive = [
-    [
-        "Seif Ahmad",
-        "Sauofa_ahmad@yahoo.com",
-        "mo5 w a3sab",
-        "01028877643",
-        "Mokattam",
-        'M'
-    ],
-    [
-        "karim Rafaat",
-        "karim@yahoo.com",
-        "mo5 w a3sab",
-        "01028877643",
-        "shorouk",
-        'M'
-    ]
+const tableHeaderDoctors = [
+    "National ID",
+    "First Name",
+    "Last Name",
+    "DOB",
+    "Phone Number",
+    "Gender",
+    "MedicalSpecialist",
+    "Address"
 ];
 
-const tableHeaderReport = [
-    "Patient Name",
-    "Doctor Name",
-    "Type of chechup",
-    "Date",
-    "Time",
-    "Rate",
-    "Cost",
-    "phone number"
+const tableHeaderOffers = [
+    "Offer ID",
+    "Offer Name",
+    "Offer Descreption",
+    "Offer Price",
+    "Clinic/Lab ID"
 ];
 
-const tableRowsReport = [
-    [
-        "Mayar",
-        "karim",
-        "mo5 w a3sab",
-        "21/05/2021",
-        "12:00pm",
-        '4',
-        "10$",
-        "010256497464"
-    ],
-    [
-        "Mayar",
-        "karim",
-        "mo5 w a3sab",
-        "21/05/2021",
-        "12:00pm",
-        '4',
-        "10$",
-        "010256497464"
-    ]
-];
 
 let createTableArchive = (bodyID, id, th, tr) => {
     let tableDiv = $('<div></div>');
     tableDiv.addClass('info-table');
-    tableDiv.attr('id', id);
-
+    tableDiv.attr('id', id.replace('#', ''));
     let table = $('<table></table>');
     let tableHead = $('<tr></tr>');
     tableHead.addClass('notForSearch');
@@ -281,11 +255,10 @@ let createTableArchive = (bodyID, id, th, tr) => {
 
     for (let i = 0; i < tr.length; i++) {
         let tableRow = $('<tr></tr>');
-        for (let j = 0; j < tr[i].length; j++) {
-            let tableD = $('<td>' + tr[i][j] + '</td>');
+        for (const key in tr[i]) {
+            let tableD = $('<td>' + tr[i][key] + '</td>');
             tableRow.append(tableD);
         }
-
         if (bodyID === "#Archive") {
             let tr = $("<td> </td>");
             let editIcon = $("<i class='fa fa-pencil'> </i>");
@@ -296,11 +269,12 @@ let createTableArchive = (bodyID, id, th, tr) => {
             tr.append(deleteIcon);
             tableRow.append(tr);
         }
-
         table.append(tableRow);
     }
+
     tableDiv.append(table);
     $(bodyID + ' .body-container-bottom').append(tableDiv);
+    $(id).fadeIn();
 }
 
 let formToggle = (id) => {
