@@ -11,7 +11,7 @@
     <?php 
         session_start();
         if (isset($_SESSION['email'])) {
-            $email = $_SESSION['email'];
+            $fisrtName = $_SESSION['Fname'];
             $styleH = "style='display:none';";
             $styleS = "style='display:flex';";
         } else {
@@ -44,7 +44,7 @@
                 </div>
                 <div class="profile-modal-content" <?php echo $styleS;?>>
                     <img src="./images/profilePicture.png">
-                    <p> <?php echo $email;?> </p>
+                    <p> <?php echo $fisrtName;?> </p>
                     <a href="./Server/logout.php">Logout</a>
                 </div>
             </div>

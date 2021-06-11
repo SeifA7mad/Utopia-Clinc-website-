@@ -9,7 +9,7 @@
         $email = mysqli_real_escape_string($database, $_POST["sign-in-email"]);  
         $password = mysqli_real_escape_string($database, $_POST["sign-in-password"]);
         $pass = password_hash($_POST["sign-in-password"], PASSWORD_DEFAULT);
-        $query = "SELECT * FROM account WHERE Email = '$email'";
+        $query = "SELECT * FROM account, user WHERE account.NationalID = user.National_ID AND Email = '$email'";
 
         $result = mysqli_query($database, $query);
         if($result)  
@@ -19,7 +19,10 @@
              { 
                   if(password_verify($password, $row["Password"])) {  
                        //return true;  
-                       $_SESSION["email"] = $row['Email'];  
+                       $_SESSION["email"] = $row['Email']; 
+                       $_SESSION['Fname'] = $row['Fname'];
+                       $_SESSION['Lname'] = $row['Lname']; 
+                       $_SESSION['accType'] = $row['AccountType'];
                        header("location: ../home.php");  
                   }  
                   else  
