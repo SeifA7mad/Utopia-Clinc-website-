@@ -25,7 +25,14 @@
         }
         session_start();
         if (isset($_SESSION['email'])) {
-            $email = $_SESSION['email'];
+            if ($_SESSION['accType'] == "Doctor") {
+                $link = "href='./doctor/dashboard.php'";
+            } else if ($_SESSION['accType'] == "Admin") {
+                $link = "href='./doctor/dashboard.php'";
+            } else {
+                $link = "style='display:none';";
+            }
+            $fisrtName = $_SESSION['Fname'];
             $styleH = "style='display:none';";
             $styleS = "style='display:flex';";
         } else {
@@ -43,25 +50,31 @@
             <i class="fa fa-clock-o fa-lg" aria-hidden="true"> 6:00am to 4:00pm</i>
         </div>
         <div class="small-nav">
-            <i class="fa fa-user fa-2x profile" aria-hidden="true"></i> 
+            <i class="fa fa-user fa-2x profile" aria-hidden="true"></i>
             <div class="profile-modal">
                 <div class="sign-in-form" <?php echo $styleH;?>>
                     <h2> Sign in </h2>
-                    <form name="Sign-in">
+                    <form method="POST" name="Sign-in" action="./Server/loginRegister.php">
                         <label for="sign-in-email"> E-mail: </label>
                         <input type="text" name="sign-in-email" id="sign-in-email" class="email">
                         <label for="sign-in-password"> Password: </label>
                         <input type="password" name="sign-in-password" id="sign-in-password" class="pass">
-                        <input type="button" name="button" value="Sign in" class="btn btn1 sign-btn validate" style="cursor: pointer; margin-top: 20px;">
+                        <input type="button" name="login" value="Sign in" class="btn btn1 sign-btn validate" style="cursor: pointer; margin-top: 20px;">
                     </form>
                     <a href="./Sign-up.php" class="btn btn1"> Sign up</a>
                 </div>
                 <div class="profile-modal-content" <?php echo $styleS;?>>
                     <img src="./images/profilePicture.png">
-                    <p> <?php echo $email;?> </p>
+                    <p> <?php echo $fisrtName;?> </p>
+                    <a <?php echo $link;?>> Dashboard <a>
+                    <a href="./Server/logout.php">Logout</a>
                 </div>
             </div>
-            <i class="fa fa-bell-o fa-2x notification" aria-hidden="true"> <div class="notification-icon"> <!-- Dynamic generated --> 1 </div> </i>
+            <i class="fa fa-bell-o fa-2x notification" aria-hidden="true">
+                <div class="notification-icon">
+                    <!-- Dynamic generated --> 1
+                </div>
+            </i>
             <div class="notification-modal">
                 <h2> Notifications </h2>
                 <!-- Dynamic generated -->

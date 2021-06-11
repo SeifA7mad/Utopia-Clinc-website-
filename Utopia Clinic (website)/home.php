@@ -11,6 +11,13 @@
     <?php 
         session_start();
         if (isset($_SESSION['email'])) {
+            if ($_SESSION['accType'] == "Doctor") {
+                $link = "href='./doctor/dashboard.php'";
+            } else if ($_SESSION['accType'] == "Admin") {
+                $link = "href='./doctor/dashboard.php'";
+            } else {
+                $link = "style='display:none';";
+            }
             $fisrtName = $_SESSION['Fname'];
             $styleH = "style='display:none';";
             $styleS = "style='display:flex';";
@@ -45,6 +52,7 @@
                 <div class="profile-modal-content" <?php echo $styleS;?>>
                     <img src="./images/profilePicture.png">
                     <p> <?php echo $fisrtName;?> </p>
+                    <a <?php echo $link;?>> Dashboard <a>
                     <a href="./Server/logout.php">Logout</a>
                 </div>
             </div>
