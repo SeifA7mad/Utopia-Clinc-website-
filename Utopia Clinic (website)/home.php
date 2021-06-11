@@ -11,8 +11,6 @@
 </head>
 
 <header>
-    <?php include 'DB.php';
-    ?>
     <div class="head-home">
         <div class="info">
             <i class="fa fa-phone fa-lg" aria-hidden="true"> 01028877643 </i>
@@ -29,7 +27,7 @@
                         <input type="text" name="sign-in-email" id="sign-in-email" class="email">
                         <label for="sign-in-password"> Password: </label>
                         <input type="password" name="sign-in-password" id="sign-in-password" class="pass">
-                        <input type="button" name="button" value="Sign in" class="btn btn1 sign-btn validate" style="cursor: pointer; margin-top: 20px;">
+                        <input type="button" name="login" value="Sign in" class="btn btn1 sign-btn validate" style="cursor: pointer; margin-top: 20px;">
                     </form>
                     <a href="./Sign-up.php" class="btn btn1"> Sign up</a>
                 </div>

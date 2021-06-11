@@ -11,4 +11,6 @@
 
         return $result;
     }
+
+    //mysqli_close($database);
 ?>

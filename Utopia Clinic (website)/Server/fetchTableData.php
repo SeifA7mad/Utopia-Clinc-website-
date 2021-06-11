@@ -15,7 +15,7 @@
                     FROM doctor, user 
                     WHERE doctor.National_ID = user.National_ID";
     } else if ($_GET["activeTab"] == "#Offers") {
-        $query = " SELECT OfferID, OfferName, OfferDescription, OfferPrice, Clinic_Lab_ID FROM offer";
+        $query = " SELECT OfferID, OfferName, OfferDescription, OfferPrice, expireDate, Clinic_Lab_ID FROM offer";
     }
 
     $result = mysqli_query($database, $query);
@@ -26,4 +26,5 @@
     }
 
     echo json_encode($array);
+    mysqli_close($database);
 ?>

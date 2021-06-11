@@ -1,60 +1,3 @@
-const users = [
-    {
-        email: "seif@yahoo.com",
-        password: "Ss12345678",
-        role: "Admin",
-        name: "Seif"
-    },
-    {
-        email: "karim@yahoo.com",
-        password: "Kk12345678",
-        role: "Doctor",
-        name: "Karim"
-    },
-    {
-        email: "mayar@yahoo.com",
-        password: "Mm12345678",
-        role: "Patient",
-        name: "Mayar"
-    },
-    {
-        email: "mostafa@yahoo.com",
-        password: "Mm12345678",
-        role: "Patient",
-        name: "Mostafa"
-    },
-]
-
-let isSigned = false;
-
-$('.sign-in-form .sign-btn').click(function (event) {
-    event.preventDefault();
-    let form = $(this).parent();
-    let email = form.children('input[name=email]');
-    let pass = form.children('input[name=pass]');
-
-    for (let i of users) {
-        if (email.val() === i.email) {
-            if (pass.val() === i.password) {
-                isSigned = true;
-                diplayProfileModal(i);
-                break;
-            } else {
-                break;
-            }
-        }
-    }
-
-    if (!isSigned) {
-        email.attr('placeholder', 'email or password is incorrect');
-        email.addClass('error');
-        email.val('');
-        pass.attr('placeholder', 'email or password is incorrect');
-        pass.addClass('error');
-        pass.val('');
-    }
-});
-
 
 $('.notification').click((event) => {
     event.stopPropagation();
@@ -137,14 +80,20 @@ $('.side-nav ul li a').not('.home-anker').click(function (event) {
 let activeLink;
 
 let tableInfoRequest = (activeTab) => {
-    return new Promise(
+    return new Promise((resolve, reject) => {
         $.ajax({
             type: "GET",
-            url: "../fetchTableData.php",
+            url: "../Server/fetchTableData.php",
+            dataType: "json",
             data: ({ activeTab: activeTab }),
-            dataType: "json"
+            success: function (data) {
+                resolve(data)
+            },
+            error: function (error) {
+                reject(error)
+            }
         })
-    );
+    });
 }
 
 $('.body-container-bottom .tabs a').click(function (event) {
@@ -160,12 +109,13 @@ $('.body-container-bottom .tabs a').click(function (event) {
     if (activeTab !== activeLink) {
         if (activeBody === "#Archive") {
             if (activeTab === "#Patients") {
-                tableInfoRequest(activeTab).then(createTableArchive(activeBody, activeTab, tableHeaderPatients, data));
+                tableInfoRequest(activeTab).then(data => createTableArchive(activeBody, activeTab, tableHeaderPatients, data));
             } else if (activeTab === "#Doctors") {
-                tableInfoRequest(activeTab).then(createTableArchive(activeBody, activeTab, tableHeaderDoctors, data));
+                tableInfoRequest(activeTab).then(data => createTableArchive(activeBody, activeTab, tableHeaderDoctors, data));
             } else if (activeTab === "#Offers") {
-                tableInfoRequest(activeTab).then(createTableArchive(activeBody, activeTab, tableHeaderOffers, data));
+                tableInfoRequest(activeTab).then(data => createTableArchive(activeBody, activeTab, tableHeaderOffers, data));
             }
+
         } else if (activeBody === "#Report") {
             //createTableArchive(activeBody, activeTab, tableHeaderReport, tableRowsReport);
         } else if (activeBody === "#Tasks") {
@@ -233,6 +183,7 @@ const tableHeaderOffers = [
     "Offer Name",
     "Offer Descreption",
     "Offer Price",
+    "Offer Date",
     "Clinic/Lab ID"
 ];
 
@@ -274,15 +225,47 @@ let createTableArchive = (bodyID, id, th, tr) => {
 
     tableDiv.append(table);
     $(bodyID + ' .body-container-bottom').append(tableDiv);
+    if (id !== "#Patients") {
+        plusIcon = $('<i></i>');
+        plusIcon.addClass('fa fa-plus fa-2x');
+        plusIcon.attr('onclick', "formToggle('#form-" + id.replace('#', '') + "')");
+        $('#Archive .info-table').append(plusIcon);
+    }
     $(id).fadeIn();
 }
 
+let getData = (tableName) => {
+    return new Promise((resolve, reject) => {
+        $.ajax({
+            type: "GET",
+            url: "../Server/getData.php",
+            dataType: "json",
+            data: ({ tableName: tableName}),
+            success: function (data) {
+                resolve(data)
+            },
+            error: function (error) {
+                reject(error)
+            }
+        })
+    });
+}
+
 let formToggle = (id) => {
+    if (id == "#form-Offers") {
+        getData("clinic").then(data => {
+            for (let i = 0; i < data.length; i++) {
+                let option = "<option value='" +data[i].Clinic_Lab_ID+ "'> "+data[i].Specialty+ "</option>";
+                $('#form-Offers select').append(option);
+            }
+        });
+    }
     $(id).show();
 }
 
 let closeForm = () => {
     $('.add-form').hide();
+    $('#form-Offers select').empty();
 }
 
 $('form .validate').click(function (event) {
@@ -346,8 +329,11 @@ $('form .validate').click(function (event) {
     }
 
     if (submitCond) {
-        // next Phase
-        // form.submit();
+        if ($("form .validate").attr('name') === "login") {
+            console.log("z7k");
+        } else {
+            form.submit();
+        }
     }
 
 });
