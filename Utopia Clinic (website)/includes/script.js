@@ -329,7 +329,7 @@ $('form .validate').click(function (event) {
 
     if (submitCond) {
         if ($("form .validate").attr('name') === "login") {
-            console.log("z7k");
+            
         } else {
             form.submit();
         }
