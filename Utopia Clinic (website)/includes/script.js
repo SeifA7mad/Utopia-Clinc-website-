@@ -1,26 +1,3 @@
-const users = [
-    {
-        email: "seif@yahoo.com",
-        password: "Ss12345678",
-        role: "Admin",
-        name: "Seif"
-    },
-    {
-        email: "karim@yahoo.com",
-        password: "Kk12345678",
-        role: "Doctor",
-        name: "Karim"
-    },
-    {
-        email: "mayar@yahoo.com",
-        password: "Mm12345678",
-        role: "Patient",
-        name: "Mayar"
-    },
-]
-
-
-
 let isSigned = false;
 
 $('.sign-in-form .sign-btn').click(function (event) {
@@ -132,14 +109,20 @@ $('.side-nav ul li a').not('.home-anker').click(function (event) {
 let activeLink;
 
 let tableInfoRequest = (activeTab) => {
-    return new Promise(
+    return new Promise((resolve, reject) => {
         $.ajax({
             type: "GET",
             url: "../fetchTableData.php",
-            data: ({ activeTab: activeTab }),
-            dataType: "json"
+            dataType: "json",   
+            data: ({activeTab: activeTab}),
+            success: function (data) {
+                resolve(data)
+            },
+            error: function (error) {
+                reject(error)
+            }
         })
-    );
+    });
 }
 
 $('.body-container-bottom .tabs a').click(function (event) {
@@ -155,11 +138,11 @@ $('.body-container-bottom .tabs a').click(function (event) {
     if (activeTab !== activeLink) {
         if (activeBody === "#Archive") {
             if (activeTab === "#Patients") {
-                tableInfoRequest(activeTab).then(createTableArchive(activeBody, activeTab, tableHeaderPatients, data));
+                tableInfoRequest(activeTab).then(data => createTableArchive(activeBody, activeTab, tableHeaderPatients, data));
             } else if (activeTab === "#Doctors") {
-                tableInfoRequest(activeTab).then(createTableArchive(activeBody, activeTab, tableHeaderDoctors, data));
+                tableInfoRequest(activeTab).then(data => createTableArchive(activeBody, activeTab, tableHeaderDoctors, data));
             } else if (activeTab === "#Offers") {
-                tableInfoRequest(activeTab).then(createTableArchive(activeBody, activeTab, tableHeaderOffers, data));
+                tableInfoRequest(activeTab).then(data => createTableArchive(activeBody, activeTab, tableHeaderOffers, data));
             }
         } else if (activeBody === "#Report") {
             //createTableArchive(activeBody, activeTab, tableHeaderReport, tableRowsReport);
@@ -341,8 +324,7 @@ $('form .validate').click(function (event) {
     }
 
     if (submitCond) {
-        // next Phase
-        // form.submit();
+        form.submit();
     }
 
 });
