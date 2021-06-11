@@ -23,6 +23,15 @@
                         </div>';
             echo $element;
         }
+        session_start();
+        if (isset($_SESSION['email'])) {
+            $email = $_SESSION['email'];
+            $styleH = "style='display:none';";
+            $styleS = "style='display:flex';";
+        } else {
+            $styleH = "style='display:flex';";
+            $styleS = "style='display:none';";
+        }
     ?>
 </head>
 
@@ -36,7 +45,7 @@
         <div class="small-nav">
             <i class="fa fa-user fa-2x profile" aria-hidden="true"></i> 
             <div class="profile-modal">
-                <div class="sign-in-form">
+                <div class="sign-in-form" <?php echo $styleH;?>>
                     <h2> Sign in </h2>
                     <form name="Sign-in">
                         <label for="sign-in-email"> E-mail: </label>
@@ -47,9 +56,9 @@
                     </form>
                     <a href="./Sign-up.php" class="btn btn1"> Sign up</a>
                 </div>
-                <div class="profile-modal-content">
+                <div class="profile-modal-content" <?php echo $styleS;?>>
                     <img src="./images/profilePicture.png">
-                    <p> </p>
+                    <p> <?php echo $email;?> </p>
                 </div>
             </div>
             <i class="fa fa-bell-o fa-2x notification" aria-hidden="true"> <div class="notification-icon"> <!-- Dynamic generated --> 1 </div> </i>

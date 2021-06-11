@@ -8,6 +8,17 @@
     <link rel="stylesheet" type="text/css" href="./includes/styles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <?php 
+        session_start();
+        if (isset($_SESSION['email'])) {
+            $fisrtName = $_SESSION['Fname'];
+            $styleH = "style='display:none';";
+            $styleS = "style='display:flex';";
+        } else {
+            $styleH = "style='display:flex';";
+            $styleS = "style='display:none';";
+        }
+    ?>
 </head>
 
 <header>
@@ -20,9 +31,9 @@
         <div class="small-nav">
             <i class="fa fa-user fa-2x profile" aria-hidden="true"></i>
             <div class="profile-modal">
-                <div class="sign-in-form">
+                <div class="sign-in-form" <?php echo $styleH;?>>
                     <h2> Sign in </h2>
-                    <form name="Sign-in">
+                    <form method="POST" name="Sign-in" action="./Server/loginRegister.php">
                         <label for="sign-in-email"> E-mail: </label>
                         <input type="text" name="sign-in-email" id="sign-in-email" class="email">
                         <label for="sign-in-password"> Password: </label>
@@ -31,9 +42,10 @@
                     </form>
                     <a href="./Sign-up.php" class="btn btn1"> Sign up</a>
                 </div>
-                <div class="profile-modal-content">
+                <div class="profile-modal-content" <?php echo $styleS;?>>
                     <img src="./images/profilePicture.png">
-                    <p> </p>
+                    <p> <?php echo $fisrtName;?> </p>
+                    <a href="./Server/logout.php">Logout</a>
                 </div>
             </div>
             <i class="fa fa-bell-o fa-2x notification" aria-hidden="true">
