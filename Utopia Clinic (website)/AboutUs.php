@@ -1,4 +1,4 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 
 <html>
 
@@ -29,7 +29,7 @@
                         <input type="password" name="sign-in-password" id="sign-in-password" class="pass">
                         <input type="button" name="button" value="Sign in" class="btn btn1 sign-btn validate" style="cursor: pointer; margin-top: 20px;">
                     </form>
-                    <a href="./Sign-up.html" class="btn btn1"> Sign up</a>
+                    <a href="./Sign-up.php" class="btn btn1"> Sign up</a>
                 </div>
                 <div class="profile-modal-content">
                     <img src="./images/profilePicture.png">
@@ -51,57 +51,41 @@
             <div class="nav-top">
                 <img src="images/Utopia-logo.png">
                 <div class="nav-elements">
-                    <div class="nav-elements">
-                        <a href="./home.html"> Home </a>
-                        <a href="./Offers.html"> Offers </a>
-                        <a href="./AboutUs.html"> About Us </a>
-                    </div>
+                    <a href="./home.php"> Home </a>
+                    <a href="./Offers.php"> Offers </a>
+                    <a href="./AboutUs.php"> About Us </a>
                 </div>
             </div>
             <div class="nav-center">
-                <h1> Payment </h1>
+                <h1> About <span style="color: rgba(64, 224, 208, 0.78);"> Us </span> </h1>
             </div>
             <div class="nav-bottom">
-                <div class="payment">
-                    <form>
-                        <div class="row">
-                            <img src="images/visa.png" alt="visa">
-                            <img src ="images/mc.png" alt="Master Card">
-                        </div>
-                        <label for = "name"> NAME ON CARD </label>
-                        <input type = "text" name="nameOnCard" id="name" placeholder="Enter name on Card" class="text">
-                        <label for = "name"> CARD NUMBER</label>
-                        <input type = "text" name="cardNumber" id="number" placeholder="0000 0000 0000 0000" class="num">
-                        <label for = "name"> EXPIRY DATE</label>
-                        <input type = "text" name="expireDate" id="month" placeholder="MONTH/MM" class="num">
-                        <input type = "text" name="expireDate" id="year" placeholder="YEAR/YY" class="num">
-                        <label for = "name"> CCV</label>
-                        <input type = "text" name="cvv" id="ccv" placeholder="123" class="num">
-            
-                        <button type = "button" class="validate"> Pay</button>
-                    </form>
-                  
+                <div class="about-section">
+                    <div class="content">
+                        <p> Utopia Clinic is driven by a Team of Internet Pioneers with a demonstrated reputation of helping specialists use the most current advances and showcasing methodologies to develop their practices. In the wake of working with a huge number of specialists as customers, we chose to assemble the Utopia Web-based Application for one straightforward reason: Doctors urgently required it! </p>
+                        <h2> Here are a few measurements you should think about your training: </h2>
+                        <ul>
+                            <li>98% of your patients call first before booking an arrangement.</li>
+                            <li>Half of the patients who have decided not to keep visiting your training have done as such in view of an affair they have had with your front work area staff.</li>
+                            <li>Over half of your promoting spend is being squandered on advertisement positions that don’t create a solitary new patient for your training.</li>
+                            <li>Utopia tackles the issues that are presently influencing your training by giving you the apparatuses important to drive and change over more telephone calls to booked arrangements.</li>
+                        </ul> <br>
+                        <p class="more-text"> 
+                            To start with, Utopia diminishes the measure of blown telephone calls happening at your front work area. The call recording highlights wipe out the mystery about what is being said between your patients and your staff individuals – and conveys exceedingly successful staff instructional courses. <br>
+                            Next, Utopia enables you to quit sitting around idly and cash on publicizing or advancements that don’t have what it takes. Our application tracks where each call originates from, and gives you new places to advance your training. <br> 
+                            At long last, Utopia incorporates FREE Marketing Consultation. Truth is stranger than fiction; when you enroll for Utopia it resembles procuring your very own group of Professional Marketers that will work with you at every turn to execute an advertising plan that will be both reasonable and powerful for your training.
+                        </p>
+                        <a class="read-more-btn"> Read more... </a>
+                    </div>
                 </div>
             </div>
-        </div>
-                
+        </div>  
     </nav>
 </header>
-
 <body>
     <main>
-        <div class="home-content">
-            <div class="left-home-content">
-                
-            </div>
-            <div class="right-home-content">
-                
-            </div>
-        </div>
     </main>
     <script src="./includes/script.js"></script>
-
-
 </body>
 
 <footer>
@@ -127,15 +111,15 @@
             <h1> Explore </h1>
             <ul>
                 <div style="display: flex; flex-direction: column;">
-                    <li> <a href="./home.html"> Home </a> </li>
-                    <li> <a href="./Offers.html"> Offers </a> </li>
-                    <li> <a href="./AboutUs.html"> About Us </a> </li>
-                    <li> <a href="./doctor/dashboard.html"> Dashboard Doctor </a> </li>
+                    <li> <a href="./home.php"> Home </a> </li>
+                    <li> <a href="./Offers.php"> Offers </a> </li>
+                    <li> <a href="./AboutUs.php"> About Us </a> </li>
+                    <li> <a href="./doctor/dashboard.php"> Dashboard Doctor </a> </li>
                 </div>
                 <div style="display: flex; flex-direction: column;">
-                    <li> <a href="./Reservation1.html"> Reservation </a> </li>
-                    <li> <a href="./AskDoctor.html"> Ask a Doctor </a> </li>
-                    <li> <a href="./admin/dashboard.html"> Dashboard Admin </a> </li>
+                    <li> <a href="./Reservation1.php"> Reservation </a> </li>
+                    <li> <a href="./AskDoctor.php"> Ask a Doctor </a> </li>
+                    <li> <a href="./admin/dashboard.php"> Dashboard Admin </a> </li>
                </div>
             </ul>
         </div>
@@ -144,6 +128,4 @@
         </div>
     </div>
 </footer>
-
-
 </html>

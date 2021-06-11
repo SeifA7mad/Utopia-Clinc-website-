@@ -27,7 +27,7 @@
                             <input type="password" name="sign-in-password" id="sign-in-password" class="pass">
                             <input type="button" name="button" value="Sign in" class="btn btn1 sign-btn validate" style="cursor: pointer; margin-top: 20px;">
                         </form>
-						<a href="./Sign-up.html" class="btn btn1"> Sign up</a>
+						<a href="./Sign-up.php" class="btn btn1"> Sign up</a>
 					</div>
 					<div class="profile-modal-content">
 						<img src="./images/profilePicture.png">
@@ -50,7 +50,7 @@
        <nav>
             <div class="side-nav">
                 <ul>
-                    <li> <i class="fa fa-home fa-2x" aria-hidden="true"></i> <a href="../home.html" class="home-anker"> Home </a> </li>
+                    <li> <i class="fa fa-home fa-2x" aria-hidden="true"></i> <a href="../home.php" class="home-anker"> Home </a> </li>
                     <li> <i class="fa fa-user fa-2x" aria-hidden="true"></i> <a href="#Profile"> Profile </a> </li>
                     <li> <i class="fa fa-tasks fa-2x" aria-hidden="true"></i> <a href="#Tasks"> Tasks </a> </li>
                     <li> <i class="fa fa-tasks fa-2x" aria-hidden="true"></i> <a href="#AskaDoctor"> Ask a Doctor </a> </li>

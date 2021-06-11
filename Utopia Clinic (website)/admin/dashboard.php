@@ -27,7 +27,7 @@
                             <input type="password" name="sign-in-password" id="sign-in-password" class="pass">
                             <input type="button" name="button" value="Sign in" class="btn btn1 sign-btn validate" style="cursor: pointer; margin-top: 20px;">
                         </form>
-						<a href="./Sign-up.html" class="btn btn1"> Sign up</a>
+						<a href="./Sign-up.htmphpl" class="btn btn1"> Sign up</a>
 					</div>
 					<div class="profile-modal-content">
 						<img src="./images/profilePicture.png">

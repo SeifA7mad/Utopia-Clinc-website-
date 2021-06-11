@@ -131,6 +131,17 @@ $('.side-nav ul li a').not('.home-anker').click(function (event) {
 
 let activeLink;
 
+let tableInfoRequest = (activeTab) => {
+    return new Promise(
+        $.ajax({
+            type: "GET",
+            url: "../fetchTableData.php",
+            data: ({ activeTab: activeTab }),
+            dataType: "json"
+        })
+    );
+}
+
 $('.body-container-bottom .tabs a').click(function (event) {
     event.preventDefault();
     // Toggle active class on tab buttons
@@ -144,43 +155,11 @@ $('.body-container-bottom .tabs a').click(function (event) {
     if (activeTab !== activeLink) {
         if (activeBody === "#Archive") {
             if (activeTab === "#Patients") {
-                $.ajax({
-                    type: "GET",
-                    url: "../fetchTableData.php",
-                    data: ({ activeTab: activeTab }),
-                    dataType: "json",
-                    success: function (data) {
-                        createTableArchive(activeBody, activeTab, tableHeaderPatients, data);
-                    }
-                });
+                tableInfoRequest(activeTab).then(createTableArchive(activeBody, activeTab, tableHeaderPatients, data));
             } else if (activeTab === "#Doctors") {
-                $.ajax({
-                    type: "GET",
-                    url: "../fetchTableData.php",
-                    data: ({ activeTab: activeTab }),
-                    dataType: "json",
-                    success: function (data) {
-                        createTableArchive(activeBody, activeTab, tableHeaderDoctors, data);
-                        plusIcon = $('<i></i>');
-                        plusIcon.addClass('fa fa-plus fa-2x');
-                        plusIcon.attr('onclick', "formToggle('#form-" + activeTab.replace('#', '') + "')");
-                        $('#Archive .info-table').append(plusIcon);
-                    }
-                });
+                tableInfoRequest(activeTab).then(createTableArchive(activeBody, activeTab, tableHeaderDoctors, data));
             } else if (activeTab === "#Offers") {
-                $.ajax({
-                    type: "GET",
-                    url: "../fetchTableData.php",
-                    data: ({ activeTab: activeTab }),
-                    dataType: "json",
-                    success: function (data) {
-                        createTableArchive(activeBody, activeTab, tableHeaderOffers, data);
-                        plusIcon = $('<i></i>');
-                        plusIcon.addClass('fa fa-plus fa-2x');
-                        plusIcon.attr('onclick', "formToggle('#form-" + activeTab.replace('#', '') + "')");
-                        $('#Archive .info-table').append(plusIcon);
-                    }
-                });
+                tableInfoRequest(activeTab).then(createTableArchive(activeBody, activeTab, tableHeaderOffers, data));
             }
         } else if (activeBody === "#Report") {
             //createTableArchive(activeBody, activeTab, tableHeaderReport, tableRowsReport);

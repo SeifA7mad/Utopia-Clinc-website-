@@ -31,7 +31,7 @@
                         <input type="password" name="sign-in-password" id="sign-in-password" class="pass">
                         <input type="button" name="button" value="Sign in" class="btn btn1 sign-btn validate" style="cursor: pointer; margin-top: 20px;">
                     </form>
-                    <a href="./Sign-up.html" class="btn btn1"> Sign up</a>
+                    <a href="./Sign-up.php" class="btn btn1"> Sign up</a>
                 </div>
                 <div class="profile-modal-content">
                     <img src="./images/profilePicture.png">
@@ -57,9 +57,9 @@
             <div class="nav-top">
                 <img src="images/Utopia-logo.png">
                 <div class="nav-elements">
-                    <a href="./home.html"> Home </a>
-                    <a href="./Offers.html"> Offers </a>
-                    <a href="./AboutUs.html"> About Us </a>
+                    <a href="./home.php"> Home </a>
+                    <a href="./Offers.php"> Offers </a>
+                    <a href="./AboutUs.php"> About Us </a>
                 </div>
             </div>
             <div class="nav-center">
@@ -68,8 +68,8 @@
                     fugit deserunt in aperiam, suscipit commodi sed culpa eligendi nihil omnis! Debitis voluptates modi
                     aspernatur molestiae fugiat.</p>
                 <div class="nav-center-buttons">
-                    <a href="./ClinicReservation.html" class="btn"> Clinic Reservation </a>
-                    <a href="./AskDoctor.html" class="btn btn1" style="margin-left: 30px;"> Ask a Doctor </a>
+                    <a href="./ClinicReservation.php" class="btn"> Clinic Reservation </a>
+                    <a href="./AskDoctor.php" class="btn btn1" style="margin-left: 30px;"> Ask a Doctor </a>
                 </div>
             </div>
             <div class="nav-bottom">
@@ -78,7 +78,7 @@
                     <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod blanditiis neque laudantium eos
                         exercitationem quaerat dolorem optio, expedita dolor ab aliquid sequi nesciunt ea pariatur sint
                         voluptate enim accusamus? Eius. </p>
-                    <a href="./labReservation.html" class="btn"> Lab Reservation </a>
+                    <a href="./labReservation.php" class="btn"> Lab Reservation </a>
                 </div>
                 <div class="right-nav-bottom">
                     <div class="Diagnostic-type-card">
@@ -127,7 +127,7 @@
                 <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod blanditiis neque laudantium eos
                     exercitationem quaerat dolorem optio, expedita dolor ab aliquid sequi nesciunt ea pariatur sint
                     voluptate enim accusamus? Eius. </p>
-                <a href="AboutUs.html" class="btn"> Read more </a>
+                <a href="AboutUs.php" class="btn"> Read more </a>
             </div>
             <div class="right-nav-bottom">
                 <h1> Our Percentages: </h1>
@@ -196,15 +196,15 @@
             <h1> Explore </h1>
             <ul>
                 <div style="display: flex; flex-direction: column;">
-                    <li> <a href="./home.html"> Home </a> </li>
-                    <li> <a href="./Offers.html"> Offers </a> </li>
-                    <li> <a href="./AboutUs.html"> About Us </a> </li>
-                    <li> <a href="./doctor/dashboard.html"> Dashboard Doctor </a> </li>
+                    <li> <a href="./home.php"> Home </a> </li>
+                    <li> <a href="./Offers.php"> Offers </a> </li>
+                    <li> <a href="./AboutUs.php"> About Us </a> </li>
+                    <li> <a href="./doctor/dashboard.php"> Dashboard Doctor </a> </li>
                 </div>
                 <div style="display: flex; flex-direction: column;">
-                    <li> <a href="./Reservation1.html"> Reservation </a> </li>
-                    <li> <a href="./AskDoctor.html"> Ask a Doctor </a> </li>
-                    <li> <a href="./admin/dashboard.html"> Dashboard Admin </a> </li>
+                    <li> <a href="./Reservation1.php"> Reservation </a> </li>
+                    <li> <a href="./AskDoctor.php"> Ask a Doctor </a> </li>
+                    <li> <a href="./admin/dashboard.php"> Dashboard Admin </a> </li>
                 </div>
             </ul>
         </div>
