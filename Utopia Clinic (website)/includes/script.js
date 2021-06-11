@@ -24,17 +24,15 @@ $('.read-more-btn').click(() => {
 });
 
 let diplayProfileModal = (user) => {
-    if (isSigned) {
-        if (user.role === "Admin") {
-            $('.profile-modal-content').append("<a href='./admin/dashboard.html'> Dashboard </a>");
-        } else if (user.role === "Doctor") {
-            $('.profile-modal-content').append("<a href='./doctor/dashboard.html'> Dashboard </a>");
-        }
-        $('.profile-modal-content').children('p').html(user.name);
+    // if (user.role === "Admin") {
+    //     $('.profile-modal-content').append("<a href='./admin/dashboard.html'> Dashboard </a>");
+    // } else if (user.role === "Doctor") {
+    //     $('.profile-modal-content').append("<a href='./doctor/dashboard.html'> Dashboard </a>");
+    // }
+    $('.profile-modal-content').children('p').html(user);
 
-        $('.profile-modal-content').css('display', 'flex');
-        $('.sign-in-form').css('display', 'none');
-    }
+    $('.profile-modal-content').css('display', 'flex');
+    $('.sign-in-form').css('display', 'none');
 }
 
 let progressCirclePercentage = (className, percentage) => {
@@ -239,7 +237,7 @@ let getData = (tableName) => {
             type: "GET",
             url: "../Server/getData.php",
             dataType: "json",
-            data: ({ tableName: tableName}),
+            data: ({ tableName: tableName }),
             success: function (data) {
                 resolve(data)
             },
@@ -254,7 +252,7 @@ let formToggle = (id) => {
     if (id == "#form-Offers") {
         getData("clinic").then(data => {
             for (let i = 0; i < data.length; i++) {
-                let option = "<option value='" +data[i].Clinic_Lab_ID+ "'> "+data[i].Specialty+ "</option>";
+                let option = "<option value='" + data[i].Clinic_Lab_ID + "'> " + data[i].Specialty + "</option>";
                 $('#form-Offers select').append(option);
             }
         });
@@ -267,22 +265,6 @@ let closeForm = () => {
     $('#form-Offers select').empty();
 }
 
-let signInOut_Register = (func) => {
-    return new Promise((resolve, reject) => {
-        $.ajax({
-            type: "POST",
-            url: "../Server/loginRegister.php",
-            dataType: "json",
-            data: ({func: func}),
-            success: function (data) {
-                resolve(data)
-            },
-            error: function (error) {
-                reject(error)
-            }
-        })
-    });
-}
 
 $('form .validate').click(function (event) {
     event.preventDefault();
@@ -345,23 +327,17 @@ $('form .validate').click(function (event) {
     }
 
     if (submitCond) {
-        if ($("form .validate").attr('name') === "login") {
-            signInOut_Register("login").then(data => console.log(data));
-        } else {
-            form.submit();
-        }
+        form.submit();
     }
 
 });
 
 
 $('#comment').click(function () {
-
     var input = $("#input").val(); // get the value from the input field
     $(".box").append(input + '<br>');// add to the box comment
     $("#input").val(' ');
     $(".boxContainer").slideDown();
-
 });
 
 
