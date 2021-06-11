@@ -267,6 +267,23 @@ let closeForm = () => {
     $('#form-Offers select').empty();
 }
 
+let signInOut_Register = (func) => {
+    return new Promise((resolve, reject) => {
+        $.ajax({
+            type: "POST",
+            url: "../Server/loginRegister.php",
+            dataType: "json",
+            data: ({func: func}),
+            success: function (data) {
+                resolve(data)
+            },
+            error: function (error) {
+                reject(error)
+            }
+        })
+    });
+}
+
 $('form .validate').click(function (event) {
     event.preventDefault();
     let form = $(this).parent();
@@ -329,14 +346,13 @@ $('form .validate').click(function (event) {
 
     if (submitCond) {
         if ($("form .validate").attr('name') === "login") {
-            
+            signInOut_Register("login").then(data => console.log(data));
         } else {
             form.submit();
         }
     }
 
 });
-
 
 
 $('#comment').click(function () {
