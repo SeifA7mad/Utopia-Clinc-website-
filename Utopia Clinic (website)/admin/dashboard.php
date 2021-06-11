@@ -140,7 +140,7 @@
         </form>
     </div>
     <div class="add-form" id="form-Offers">
-        <form method="POST" enctype="multipart/form-data" action="../Server/uploudImage.php">
+        <form method="POST" enctype="multipart/form-data" action="../Server/addOffer.php">
             <i class="fa fa-times fa-2x" aria-hidden="true" onclick="closeForm()"></i>
             <h1> Enter Offer Information </h1>
             <label for="offerName"> Offer name</label>
@@ -148,12 +148,14 @@
             <label for="Description"> Offer description</label>
             <input type="text" name="Description" placeholder="Enter Description" class="text">
             <label for="date"> Offer date</label>
-            <input type="date" name="date" placeholder="Enter date">
+            <input type="date" name="offerDate" placeholder="Enter date">
             <label for="price"> Offer price</label>
-            <input type="text" name="price" placeholder="Enter price" class="num">
+            <input type="text" name="offerPrice" placeholder="Enter price" class="num">
+            <select name="clinc_lab_ID">
+            </select>
             <label for="image"> Offer Image </label>
             <input type="file" name="image" placeholder="uploud image">
-            <button type="button" class="validate"> Add Offer</button>
+            <button type="button" name="sumbitOffer" class="validate"> Add Offer</button>
         </form>
     </div>
     <script src="./../includes/script.js"></script>

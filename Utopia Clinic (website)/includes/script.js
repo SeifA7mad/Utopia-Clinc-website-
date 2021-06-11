@@ -83,8 +83,8 @@ let tableInfoRequest = (activeTab) => {
         $.ajax({
             type: "GET",
             url: "../Server/fetchTableData.php",
-            dataType: "json",   
-            data: ({activeTab: activeTab}),
+            dataType: "json",
+            data: ({ activeTab: activeTab }),
             success: function (data) {
                 resolve(data)
             },
@@ -114,6 +114,7 @@ $('.body-container-bottom .tabs a').click(function (event) {
             } else if (activeTab === "#Offers") {
                 tableInfoRequest(activeTab).then(data => createTableArchive(activeBody, activeTab, tableHeaderOffers, data));
             }
+
         } else if (activeBody === "#Report") {
             //createTableArchive(activeBody, activeTab, tableHeaderReport, tableRowsReport);
         } else if (activeBody === "#Tasks") {
@@ -222,15 +223,47 @@ let createTableArchive = (bodyID, id, th, tr) => {
 
     tableDiv.append(table);
     $(bodyID + ' .body-container-bottom').append(tableDiv);
+    if (id !== "#Patients") {
+        plusIcon = $('<i></i>');
+        plusIcon.addClass('fa fa-plus fa-2x');
+        plusIcon.attr('onclick', "formToggle('#form-" + id.replace('#', '') + "')");
+        $('#Archive .info-table').append(plusIcon);
+    }
     $(id).fadeIn();
 }
 
+let getData = (tableName) => {
+    return new Promise((resolve, reject) => {
+        $.ajax({
+            type: "GET",
+            url: "../Server/getData.php",
+            dataType: "json",
+            data: ({ tableName: tableName}),
+            success: function (data) {
+                resolve(data)
+            },
+            error: function (error) {
+                reject(error)
+            }
+        })
+    });
+}
+
 let formToggle = (id) => {
+    if (id == "#form-Offers") {
+        getData("clinic").then(data => {
+            for (let i = 0; i < data.length; i++) {
+                let option = "<option value='" +data[i].Clinic_Lab_ID+ "'> "+data[i].Specialty+ "</option>";
+                $('#form-Offers select').append(option);
+            }
+        });
+    }
     $(id).show();
 }
 
 let closeForm = () => {
     $('.add-form').hide();
+    $('#form-Offers select').empty();
 }
 
 $('form .validate').click(function (event) {
@@ -294,9 +327,10 @@ $('form .validate').click(function (event) {
     }
 
     if (submitCond) {
-        //form.submit();
         if ($("form .validate").attr('name') === "login") {
             console.log("z7k");
+        } else {
+            form.submit();
         }
     }
 
