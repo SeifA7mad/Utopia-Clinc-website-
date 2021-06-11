@@ -146,7 +146,7 @@
             <label for="offerName"> Offer name</label>
             <input type="text" name="offerName" placeholder="Enter name" class="text">
             <label for="Description"> Offer description</label>
-            <input type="text" name="Description" placeholder="Enter Description" class="text">
+            <input type="text" name="Description" placeholder="Enter Description">
             <label for="date"> Offer date</label>
             <input type="date" name="offerDate" placeholder="Enter date">
             <label for="price"> Offer price</label>

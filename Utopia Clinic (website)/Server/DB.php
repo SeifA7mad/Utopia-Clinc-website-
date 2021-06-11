@@ -12,5 +12,5 @@
         return $result;
     }
 
-    mysqli_close($database);
+    //mysqli_close($database);
 ?>

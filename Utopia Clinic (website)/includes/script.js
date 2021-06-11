@@ -182,6 +182,7 @@ const tableHeaderOffers = [
     "Offer Name",
     "Offer Descreption",
     "Offer Price",
+    "Offer Date",
     "Clinic/Lab ID"
 ];
 

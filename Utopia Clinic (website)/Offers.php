@@ -8,6 +8,22 @@
     <link rel="stylesheet" type="text/css" href="./includes/styles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <?php
+        function offerCard($offerName, $offerDesc, $offerDate, $offerPrice, $offerImage) {
+            $element = '<div class="card-offers">
+                            <div class="card-top">
+                                <img src="data:image/jpeg;base64,'.base64_encode($offerImage).'"/>
+                            </div>
+                            <div class="card-buttom">
+                                <h1> '.$offerName.' </h1>
+                                <p> '.$offerDesc.' </p>
+                                <p> Expire Date: '.$offerDate.' </p>
+                                <p> Price: '.$offerPrice.' </p> 
+                            </div>
+                        </div>';
+            echo $element;
+        }
+    ?>
 </head>
 
 <header>
@@ -62,38 +78,17 @@
             <div class="nav-bottom">
                 <div class="offer">
                     <!-- Generated dynamicly -->
-                    <div class="card-offers">
-                        <div class="card-top">
-                            <img class="card-img" src="./images/dental.webp" alt="Dental">
-                        </div>
-                        <div class="card-buttom">
-                            <h1>Dental</h1>
-                            <P>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae maiores nobis ratione sequi! Cum ex debitis aut, laudantium obcaecati tenetur. </P>
-                            <a class="btn"> Reserve </a>
-                        </div>
-                    </div>
-                    <div class="card-offers">
-                        <div class="card-top">
-                            <img class="card-img" src="./images/dental.webp"alt="Dental">
-                        </div>
-                        <div class="card-buttom">
-                            <h1>Dental</h1>
-                            <P>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae maiores nobis ratione sequi! Cum ex debitis aut, laudantium obcaecati tenetur. </P>
-                            <a class="btn">
-                                Reserve
-                            </a>
-                        </div>
-                    </div>
-                    <div class="card-offers">
-                        <div class="card-top">
-                            <img class="card-img" src="./images/dental.webp" alt="Dental">
-                        </div>
-                        <div class="card-buttom">
-                            <h1>Dental</h1>
-                            <P>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae maiores nobis ratione sequi! Cum ex debitis aut, laudantium obcaecati tenetur. </P>
-                            <a class="btn"> Reserve </a>
-                        </div>
-                    </div>        
+                    <?php include './Server/DB.php';
+                        $query = "SELECT * FROM offer";
+                        $result = getData($query);
+                        while($row = mysqli_fetch_assoc($result)) {
+                            //$imgData = $row['OfferImage'];
+                            //header("Content-type: image/jpg"); 
+                            offerCard($row['OfferName'], $row['OfferDescription'], $row['expireDate'], 
+                            $row['OfferPrice'], $row['OfferImage']);
+                        }
+                        mysqli_close($database);
+                    ?>
                 </div>
             </div>
         </div>   
