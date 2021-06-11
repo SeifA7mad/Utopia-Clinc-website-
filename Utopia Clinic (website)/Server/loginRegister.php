@@ -14,7 +14,6 @@
         $result = mysqli_query($database, $query);
         if($result)  
         {  
-            echo '<p> '.$pass.' </p>';
              while($row = mysqli_fetch_array($result))  
              { 
                   if(password_verify($password, $row["Password"])) {  
