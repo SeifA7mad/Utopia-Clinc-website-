@@ -311,7 +311,9 @@ let createTableArchive = (bodyID, id, th, tr) => {
             let deleteIcon = $("<i class='fa fa-trash'> </i>");
             editIcon.attr("onclick", "editForm(event)");
             deleteIcon.attr("onclick", "deleteForm(event)");
-            tr.append(editIcon);
+            if (id !== "#Patients") {
+                tr.append(editIcon);
+            }
             tr.append(deleteIcon);
             tableRow.append(tr);
         }
