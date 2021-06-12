@@ -217,12 +217,10 @@
                     <li> <a href="./home.php"> Home </a> </li>
                     <li> <a href="./Offers.php"> Offers </a> </li>
                     <li> <a href="./AboutUs.php"> About Us </a> </li>
-                    <li> <a href="./doctor/dashboard.php"> Dashboard Doctor </a> </li>
                 </div>
                 <div style="display: flex; flex-direction: column;">
                     <li> <a href="./Reservation1.php"> Reservation </a> </li>
                     <li> <a href="./AskDoctor.php"> Ask a Doctor </a> </li>
-                    <li> <a href="./admin/dashboard.php"> Dashboard Admin </a> </li>
                 </div>
             </ul>
         </div>

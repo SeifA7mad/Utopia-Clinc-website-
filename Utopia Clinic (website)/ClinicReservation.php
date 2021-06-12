@@ -202,16 +202,15 @@
 		<div>
 			<h1> Explore </h1>
 			<ul>
-				<div style="display: flex; flex-direction: column;">
-					<li> <a href=""> Home </a> </li>
-					<li> <a href=""> Home </a> </li>
-					<li> <a href=""> Home </a> </li>
-				</div>
-				<div style="display: flex; flex-direction: column;">
-					<li> <a href=""> Home </a> </li>
-					<li> <a href=""> Home </a> </li>
-					<li> <a href=""> Home </a> </li>
-				</div>
+			<div style="display: flex; flex-direction: column;">
+                    <li> <a href="./home.php"> Home </a> </li>
+                    <li> <a href="./Offers.php"> Offers </a> </li>
+                    <li> <a href="./AboutUs.php"> About Us </a> </li>
+                </div>
+                <div style="display: flex; flex-direction: column;">
+                    <li> <a href="./Reservation1.php"> Reservation </a> </li>
+                    <li> <a href="./AskDoctor.php"> Ask a Doctor </a> </li>
+                </div>
 			</ul>
 		</div>
 		<div>
