@@ -458,11 +458,11 @@ $("#Add").click(function () {
         $("#popup-1").show();
 });
 // for the two reservation pages, should open the pop up only when the fields are done
-$("#submit12").click(function () {
+// $("#submit12").click(function () {
 
 
-    $("#popup-1").show();
-});
+//     $("#popup-1").show();
+// });
     /* $("#Submit2").click(function(){
 $("#popup-1").hide();
 });*/

@@ -94,7 +94,7 @@
 						<h1>Confirmation</h1>
 						<p> Your Information has been added. You reserved at the $clinicName at $date and $time with the
 							doctor $doctorName</p>
-						<button type="button" name="button" id=""> <a href="./home.html"> Close </a> </button>
+						<button type="button" name="button" id=""> <a href="./home.php"> Close </a> </button>
 					</div>
 				</div>
 
@@ -129,32 +129,28 @@
 						<div class="inputBox">
 							<label id="labelForSymptoms" for="clinic"> Clinic: </label>
 							<select name="clincNumber">
-								<option>Clinic-1</option>
-								<option>Clinic-2</option>
-								<option>Clinic-3</option>
-								<option>Clinic-4</option>
-								<option>Clinic-6</option>
-								<option>Clinic-6</option>
+								<option value="1">Neurology</option>
+								<option>Dentistry</option>
+								<option>Gynecology</option>
+								<option>Obstetrics</option>
+								<option>Internal</option>
+								<option>Covid-19</option>
 							</select>
 						</div>
 						<br>
 						<div class="inputBox">
 
 							<label id="labelForSymptoms" for="Symptoms"> Symptoms: </label>
-							<br><br>
-							<select name="selectReservation">
-								<option>Covid-19</option>
-								<option>Internal</option>
-								<option>Dentistry</option>
-								<option>Neurology</option>
-								<option>Obstetrics</option>
-								<option>Gynecology</option>
-							</select>
+							<input type="text" name="symptoms">
 						</div>
 						<br>
 
 						<div class="inputBox">
 							<input type="date" name="date" id="" required>
+
+						</div>
+						<div class="inputBox">
+							<input type="time" name="time" id="" required>
 
 						</div>
 						<div class="inputBox">

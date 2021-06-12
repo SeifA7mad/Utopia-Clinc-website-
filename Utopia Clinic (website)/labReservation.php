@@ -128,7 +128,7 @@
 							<label id="labelForSymptoms" for="Test"> Type of test: </label>
 
 							<select name="testReservation">
-								<option>Liver F.T</option>
+								<option value="">Liver F.T</option>
 								<option>Lipase</option>
 								<option>Fasting Blood Glucose</option>
 
@@ -136,6 +136,11 @@
 
 						<div class="inputBox">
 							<input type="date" name="date" id="" required>
+
+						</div>
+
+                        <div class="inputBox">
+							<input type="time" name="time" id="" required>
 
 						</div>
 

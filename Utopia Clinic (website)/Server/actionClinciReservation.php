@@ -1,37 +1,28 @@
 <?php 
-	include 'DB.php';
+	$database = mysqli_connect("localhost", "root", "", "utopiaclinic");
+	session_start();
+    if (!($database))
+        die("<p>Could not connect to database </p>");
 
-$clincNumber = val($_POST["clincNumber"]);
-$date=val($_POST["date"]);
-$Symptoms = val($_POST["selectReservation"]);
-$FurtherInfo = val($_POST["FurtherInfo"]);
-//$time =val($_POST["time"]);
+$clincNumber = $_POST["clincNumber"];
+$Symptoms = $_POST["symptoms"];
+$date= $_POST["date"];
+$time = $_POST["time"];
+$FurtherInfo = $_POST["FurtherInfo"];
 
-function val($data){
-	$data= trim($data);
-	$data=stripslashes($data);
-	$data= htmlspecialchars($data);
-	return $data;
-}
-	//echo $clincNumber.$Symptoms.$FurtherInfo.$date ;
-$sql= "INSERT INTO reservation (ReservationID, Clinic_Lab_ID, Patient_ssn, Syptoms, Date, Time, Type, Address, furtherInfo) VALUES
-		 ('', '1', '5', '$Symptoms', '$date', '', 'Clinic Reservation', '', '$FurtherInfo');";
-				//$result = mysqli_query($conn,$sql);
-		if($conn->query($sql)==TRUE){
+if (isset($_SESSION['ssn'])) {
+	$sql= "	INSERT INTO reservation (Clinic_Lab_ID, Patient_ssn, Syptoms, Date, Time, FurtherInfo)
+	 		VALUES ('$clincNumber', '.$_SESSION[ssn].', '$Symptoms', '$date', '$time', '$FurtherInfo')";
+
+		if(mysqli_query($database, $sql)){
 			echo "New record added successfully ";
 		}
 		else{
 			echo "0 results";
 
 		}
-	//$resultCheck = mysqli_num_rows($result);
+	}
+$database->close();
 
-
-$conn->close();
-
-
-	
-
-
-
+header("Location: ../home.php");
 ?>
