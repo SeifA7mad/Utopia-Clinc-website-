@@ -225,7 +225,7 @@ nav .side-nav ul li:hover, nav .side-nav ul li a:hover {
 }
 
 
-.body-container .body-container-bottom .ask-doc form{
+.body-container .body-container-bottom .ask-doc {
     display:flex;
     flex-direction: column;
     margin-right: 54em;
@@ -234,21 +234,19 @@ nav .side-nav ul li:hover, nav .side-nav ul li a:hover {
 
 }
 
-.body-container .body-container-bottom .ask-doc form input{
+.body-container .body-container-bottom .ask-doc input{
     width: 85%;
     padding: 10px;
     border-radius: 15px;
     box-sizing: border-box;
-    margin-bottom: 15px;
-    margin-top: 15px;
 }
 
-.body-container .body-container-bottom .ask-doc form label{
+.body-container .body-container-bottom .ask-doc  label{
 
 
 }
 
-.body-container .body-container-bottom .ask-doc form button{
+.body-container .body-container-bottom .ask-doc  button{
     width: 40%;
     color: #fff;
     background-color: #2b9ec2;
