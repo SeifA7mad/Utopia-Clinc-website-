@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
-	
-	<head>
-		<title> Utopia Clinic </title>
-		<meta charset="utf-8">
-		<link rel="stylesheet" type="text/css" href="./includes/styles.css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<?php 
+
+<head>
+	<title> Utopia Clinic </title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="./includes/styles.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<?php
         session_start();
         if (isset($_SESSION['email'])) {
             if ($_SESSION['accType'] == "Doctor") {
@@ -69,19 +69,19 @@
             </div>
         </div>
     </div>
-		<nav>
-			<div class="nav-container">
-				<div class="nav-top">
-					<img src="images/Utopia-logo.png">
-					<div class="nav-elements">
-						<a href="./home.php"> Home </a>
-						<a href="./Offers.php"> Offers </a>
-						<a href="./AboutUs.php"> About Us </a>
-					</div>
+	<nav>
+		<div class="nav-container">
+			<div class="nav-top">
+				<img src="images/Utopia-logo.png">
+				<div class="nav-elements">
+					<a href="./home.php"> Home </a>
+					<a href="./Offers.php"> Offers </a>
+					<a href="./AboutUs.php"> About Us </a>
 				</div>
-				<div class="nav-center">
+			</div>
+			<div class="nav-center">
 				<div class="topCon">
-					<h2>Lab Reservation</h2>
+					<h2> Home Resrvation</h2>
 					<p>Please Type your Information in a form, polit, applicable way and ensure honesty
 					</p>
 				</div>
@@ -91,7 +91,7 @@
 				<div class="contentPopUp">
 
 					<h1>Confirmation</h1>
-					<p> Your Desired Test has been reserved and we are waiting for you at our lab</p>
+					<p> Your visit request is saved. Please wait for us!</p>
 					<button type="button" name="button" id=""> <a href="./home.html"> Close </a> </button>
 				</div>
 
@@ -101,49 +101,55 @@
 				<div class="container">
 					<div class="box">
 						<h2>
-							<bold>Utopia Lab</bold>
+							<bold>Utopia Home Visit</bold>
 						</h2>
 
-						<p> Managers have administrative duties and
-							are responsbile for the daily operations of a health care facility.
-							Common Clinic Manager duties are managing staff, assigning work,
-							recruiting new employees, overseeing management, maintaining the
-							inventory, budgeting, and organizing staff meetings.
-							Aside from medical terminology knowledge, successful
-							resumes for Clinic Managers also highlight communication
-							abilities, professionalism, organizational skills, accuracy,
-							computer competencies, and time management. Studies in medical
-							services administration are common experience in Clinic Manager
-							example resumes.</p>
+						<p> The Home visit is a brand new offer from Utopia Clinic for those who are unable to come and
+							pay us a visit.
+							Our delegator will send a mail and a message to confirm he will come. Also he will call you
+							before comming.
+							We recommend you keep wearing masks during the visit and feel free to ask whatever you want
+							to our delegator.
+							our delegator shall not take any money and please keep that way.
+							We would like to know your feedback from the visit.
+							Please feel free to commit a complain.
+						</p>
 					</div>
 				</div>
 
 
 				<div class="contactForm">
 					<h2> Fill Application</h2>
-					<form action="./Server/actionLabReservation.php" method="POST">
-
+					<form action="./Server/actionHomeReservation.php" method="POST">
 
 						<div class="inputBox">
-							<label id="labelForSymptoms" for="Test"> Type of test: </label>
-
-							<select name="testReservation">
-								<option>Liver F.T</option>
-								<option>Lipase</option>
-								<option>Fasting Blood Glucose</option>
-
+							<input type="" name="Address" id="Address" required>
+							<span> Address</span>
 						</div>
 
 						<div class="inputBox">
 							<input type="date" name="date" id="" required>
 
 						</div>
-
-
+						<br>
 						<div class="inputBox">
 
+							<label id="labelForSymptoms" for="Symptoms"> Symptoms: </label>
+							<br><br>
+							<select name="selectReservation">
+								<option>Covid-19</option>
+								<option>Internal</option>
+								<option>Dentistry</option>
+								<option>Neurology</option>
+								<option>Obstetrics</option>
+								<option>Gynecology</option>
+
+							</select>
+						</div>
+						<br>
+						<div class="inputBox">
 							<textarea name="FurtherInfo" id="" required></textarea>
-							<span> Type any further Information</span>
+							<span> Please Explain the symptoms more..</span>
 						</div>
 						<div class="inputBox">
 							<input type="submit" id="submit12" value="Submit">
@@ -163,43 +169,51 @@
 </body>
 
 <footer>
-    <div class="footer-top">
-        <img src="images/Utopia-logo.png">
-        <div class="social-icons">
-            <p> Follow us -</p>
-            <span class="icons"> <i class="fa fa-instagram fa-lg" aria-hidden="true"></i> </span>
-            <span class="icons"> <i class="fa fa-facebook fa-lg" aria-hidden="true"></i> </span>
-            <span class="icons"> <i class="fa fa-twitter fa-lg" aria-hidden="true"></i> </span>
-            <span class="icons"> <i class="fa fa-google-plus fa-lg" aria-hidden="true"></i> </span>
-        </div>
-    </div>
-    <div class="footer-bottom">
-        <div>
-            <h1> About Us </h1>
-            <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium esse eos velit aperiam vero iure quo ullam numquam molestiae ipsa aut obcaecati, illum eaque ipsum asperiores similique sint repellat ex.</p>
-            <span class="icons"> <i class="fa fa-phone" aria-hidden="true"></i> <p> <span style="color: rgba(64, 224, 208, 0.692);"> Hotline: </span> </p>  </span>
-            <span class="icons"> <i class="fa fa-map-marker" aria-hidden="true"></i> <p> <span style="color: rgba(64, 224, 208, 0.692);"> Address: </span> </p> </span>
-            <span class="icons"> <i class="fa fa-clock-o" aria-hidden="true"></i> <p><span style="color: rgba(64, 224, 208, 0.692);"> Sat-Thurs: </span> </p></span>
-        </div>
-        <div>
-            <h1> Explore </h1>
-            <ul>
-                <div style="display: flex; flex-direction: column;">
-                    <li> <a href=""> Home </a> </li>
-                    <li> <a href=""> Home </a> </li>
-                    <li> <a href=""> Home </a> </li>
-                </div>
-                <div style="display: flex; flex-direction: column;">
-                    <li> <a href=""> Home </a> </li>
-                    <li> <a href=""> Home </a> </li>
-                    <li> <a href=""> Home </a> </li>
-               </div>
-            </ul>
-        </div>
-        <div>
-            <h1> Recent News </h1>
-        </div>
-    </div>
+	<div class="footer-top">
+		<img src="images/Utopia-logo.png">
+		<div class="social-icons">
+			<p> Follow us -</p>
+			<span class="icons"> <i class="fa fa-instagram fa-lg" aria-hidden="true"></i> </span>
+			<span class="icons"> <i class="fa fa-facebook fa-lg" aria-hidden="true"></i> </span>
+			<span class="icons"> <i class="fa fa-twitter fa-lg" aria-hidden="true"></i> </span>
+			<span class="icons"> <i class="fa fa-google-plus fa-lg" aria-hidden="true"></i> </span>
+		</div>
+	</div>
+	<div class="footer-bottom">
+		<div>
+			<h1> About Us </h1>
+			<p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium esse eos velit aperiam vero iure
+				quo ullam numquam molestiae ipsa aut obcaecati, illum eaque ipsum asperiores similique sint repellat ex.
+			</p>
+			<span class="icons"> <i class="fa fa-phone" aria-hidden="true"></i>
+				<p> <span style="color: rgba(64, 224, 208, 0.692);"> Hotline: </span> </p>
+			</span>
+			<span class="icons"> <i class="fa fa-map-marker" aria-hidden="true"></i>
+				<p> <span style="color: rgba(64, 224, 208, 0.692);"> Address: </span> </p>
+			</span>
+			<span class="icons"> <i class="fa fa-clock-o" aria-hidden="true"></i>
+				<p><span style="color: rgba(64, 224, 208, 0.692);"> Sat-Thurs: </span> </p>
+			</span>
+		</div>
+		<div>
+			<h1> Explore </h1>
+			<ul>
+				<div style="display: flex; flex-direction: column;">
+					<li> <a href=""> Home </a> </li>
+					<li> <a href=""> Home </a> </li>
+					<li> <a href=""> Home </a> </li>
+				</div>
+				<div style="display: flex; flex-direction: column;">
+					<li> <a href=""> Home </a> </li>
+					<li> <a href=""> Home </a> </li>
+					<li> <a href=""> Home </a> </li>
+				</div>
+			</ul>
+		</div>
+		<div>
+			<h1> Recent News </h1>
+		</div>
+	</div>
 </footer>
 
 

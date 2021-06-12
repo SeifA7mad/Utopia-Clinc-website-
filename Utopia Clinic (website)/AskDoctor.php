@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<title> Utopia Clinic </title>
-		<meta charset="utf-8">
-		<link rel="stylesheet" type="text/css" href="./includes/styles.css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<?php 
+
+<head>
+    <title> Utopia Clinic </title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="./includes/styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <?php 
 			session_start();
 			if (isset($_SESSION['email'])) {
 				if ($_SESSION['accType'] == "Doctor") {
@@ -43,15 +44,18 @@
                         <input type="text" name="sign-in-email" id="sign-in-email" class="email">
                         <label for="sign-in-password"> Password: </label>
                         <input type="password" name="sign-in-password" id="sign-in-password" class="pass">
-                        <input type="button" name="login" value="Sign in" class="btn btn1 sign-btn validate" style="cursor: pointer; margin-top: 20px;">
+                        <input type="button" name="login" value="Sign in" class="btn btn1 sign-btn validate"
+                            style="cursor: pointer; margin-top: 20px;">
                     </form>
                     <a href="./Sign-up.php" class="btn btn1"> Sign up</a>
                 </div>
                 <div class="profile-modal-content" <?php echo $styleS;?>>
                     <img src="./images/profilePicture.png">
-                    <p> <?php echo $fisrtName;?> </p>
+                    <p>
+                        <?php echo $fisrtName;?>
+                    </p>
                     <a <?php echo $link;?>> Dashboard <a>
-                    <a href="./Server/logout.php">Logout</a>
+                            <a href="./Server/logout.php">Logout</a>
                 </div>
             </div>
             <i class="fa fa-bell-o fa-2x notification" aria-hidden="true">
@@ -68,53 +72,56 @@
             </div>
         </div>
     </div>
-		<nav>
-			<div class="nav-container">
-				<div class="nav-top">
-					<img src="images/Utopia-logo.png">
-					<div class="nav-elements">
-						<a href="./home.php"> Home </a>
-						<a href="./Offers.php"> Offers </a>
-						<a href="./AboutUs.php"> About Us </a>
-					</div>
-				</div>
-				<div class="nav-center">
-					<div class="topCon">
-						<h1>Ask Doctor</h1>
-						<p> Please Feel free to ask one of our doctors about your sever issue. </p>
-					</div>
-				</div>
-				<div class="popup" id="popup-1">
-					<div class="overlay"></div>
-					<div class="contentPopUp">
-					
-					<h1>Confirmation</h1>
-					<p> Your Comment Has been Saved and waiting for our doctors to reveiwe and we will be back soon</p>
-					<button type="button"  name="button" id="Submit2"> <a href="./home.php"> Close </a> </button>
-				</div>
-					
-			</div>
-				<div class="nav-bottom">
-					<div class="askadoctor-container">
-						<input type="text" id="input" placeholder="write your issue">
-						<div class="buttons">
-							<button type="button" name="button" id="cancel">cancel</button>
-							<button type="button" name="button" onclick= "myFunciotn()"id="comment">comment </button>
-						</div>
-						<div class="boxContainer">
-							<div class="box"></div>
-						
-							<button type="button" name="button" id="delete">delete</button>
-							<button type="button"  name="button" id="Add">Add</button>
-						</div>
-					</div>
-				</div>
-			</div>   
-		</nav>
-	</header>
+    <nav>
+        <div class="nav-container">
+            <div class="nav-top">
+                <img src="images/Utopia-logo.png">
+                <div class="nav-elements">
+                    <a href="./home.php"> Home </a>
+                    <a href="./Offers.php"> Offers </a>
+                    <a href="./AboutUs.php"> About Us </a>
+                </div>
+            </div>
+            <div class="nav-center">
+                <div class="topCon">
+                    <h1>Ask Doctor</h1>
+                    <p> Please Feel free to ask one of our doctors about your sever issue. </p>
+                </div>
+            </div>
+            <div class="popup" id="popup-1">
+                <div class="overlay"></div>
+                <div class="contentPopUp">
+
+                    <h1>Confirmation</h1>
+                    <p> Your Comment Has been Saved and waiting for our doctors to reveiwe and we will be back soon</p>
+                    <button type="button" name="button" id="Submit2"> <a href="./home.html"> Close </a> </button>
+                </div>
+
+            </div>
+            <div class="nav-bottom">
+                <div class="askadoctor-container">
+                    <form action="./Server/actionAskDoctor.php" method="POST">
+                        <input type="text" name="" id="input" placeholder="write your issue">
+                        <div class="buttons">
+                            <button type="button" name="button" id="cancel">cancel</button>
+                            <button type="button" name="button" onclick="myFunciotn()" id="comment">comment </button>
+                        </div>
+                        <div class="boxContainer" name="issue">
+                            <div class="box" name=""></div>
+
+                            <button type="button" name="button" id="delete">delete</button>
+                            <button type="submit" name="button" id="Add">Add</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+
 
 <body>
-	<script src="./includes/script.js"></script>
+    <script src="./includes/script.js"></script>
 </body>
 
 <footer>
@@ -131,10 +138,18 @@
     <div class="footer-bottom">
         <div>
             <h1> About Us </h1>
-            <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium esse eos velit aperiam vero iure quo ullam numquam molestiae ipsa aut obcaecati, illum eaque ipsum asperiores similique sint repellat ex.</p>
-            <span class="icons"> <i class="fa fa-phone" aria-hidden="true"></i> <p> <span style="color: rgba(64, 224, 208, 0.692);"> Hotline: </span> </p>  </span>
-            <span class="icons"> <i class="fa fa-map-marker" aria-hidden="true"></i> <p> <span style="color: rgba(64, 224, 208, 0.692);"> Address: </span> </p> </span>
-            <span class="icons"> <i class="fa fa-clock-o" aria-hidden="true"></i> <p><span style="color: rgba(64, 224, 208, 0.692);"> Sat-Thurs: </span> </p></span>
+            <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium esse eos velit aperiam vero iure
+                quo ullam numquam molestiae ipsa aut obcaecati, illum eaque ipsum asperiores similique sint repellat ex.
+            </p>
+            <span class="icons"> <i class="fa fa-phone" aria-hidden="true"></i>
+                <p> <span style="color: rgba(64, 224, 208, 0.692);"> Hotline: </span> </p>
+            </span>
+            <span class="icons"> <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <p> <span style="color: rgba(64, 224, 208, 0.692);"> Address: </span> </p>
+            </span>
+            <span class="icons"> <i class="fa fa-clock-o" aria-hidden="true"></i>
+                <p><span style="color: rgba(64, 224, 208, 0.692);"> Sat-Thurs: </span> </p>
+            </span>
         </div>
         <div>
             <h1> Explore </h1>
@@ -149,7 +164,7 @@
                     <li> <a href="./Reservation1.php"> Reservation </a> </li>
                     <li> <a href="./AskDoctor.php"> Ask a Doctor </a> </li>
                     <li> <a href="./admin/dashboard.php"> Dashboard Admin </a> </li>
-               </div>
+                </div>
             </ul>
         </div>
         <div>
@@ -157,4 +172,5 @@
         </div>
     </div>
 </footer>
+
 </html>

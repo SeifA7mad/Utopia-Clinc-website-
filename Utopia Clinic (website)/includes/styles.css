@@ -1495,6 +1495,18 @@ header nav .nav-container .nav-bottom .payment form .row img {
     border-bottom: 2px solid #fff;
 }
 
+.contactForm .inputBox label {
+    color: #666;
+}
+.contactForm .inputBox select{
+   font-size: 16px;
+   margin: 10px 0;
+   width: 100%;
+   padding: 5px 0;
+   border-bottom: 2px solid #666;
+    color: #666;
+}
+
 /*Mostafa: Reservation*/
 
 .error::-webkit-input-placeholder {

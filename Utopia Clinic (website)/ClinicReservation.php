@@ -94,7 +94,7 @@
 						<h1>Confirmation</h1>
 						<p> Your Information has been added. You reserved at the $clinicName at $date and $time with the
 							doctor $doctorName</p>
-						<button type="button" name="button" id=""> <a href="./home.php"> Close </a> </button>
+						<button type="button" name="button" id=""> <a href="./home.html"> Close </a> </button>
 					</div>
 				</div>
 
@@ -122,48 +122,47 @@
 
 				<div class="contactForm">
 					<h2> Fill in the required fields</h2>
-					<form action="">
-						<div class="inputBox">
-							<input type="" name="" id="" required>
-							<span> Full Name</span>
-						</div>
-						<div class="inputBox">
-							<input type="" name="" id="" required>
-							<span> Clinical ID</span>
-						</div>
-						<div class="inputBox">
-							<input type="" name="" id="" required>
-							<span> National ID</span>
-						</div>
+					<form action="./Server/actionClinciReservation.php" method="POST">
+
+
 
 						<div class="inputBox">
-							<input type="" name="" id="" required>
-							<span> Desired Clinic (Internal, Dentistry, Neurology, Obstetrics & Gynecology, etc..)
-							</span>
+							<label id="labelForSymptoms" for="clinic"> Clinic: </label>
+							<select name="clincNumber">
+								<option>Clinic-1</option>
+								<option>Clinic-2</option>
+								<option>Clinic-3</option>
+								<option>Clinic-4</option>
+								<option>Clinic-6</option>
+								<option>Clinic-6</option>
+							</select>
 						</div>
-						<div class="inputBox">
-							<input type="" name="" id="" required>
-							<span> Symptom</span>
-						</div>
-
-						<div class="inputBox">
-							<input type="date" name="" id="" required>
-							<span> </span>
-						</div>
-						<div class="inputBox">
-							<input type="time" name="" id="" required>
-							<span> </span>
-						</div>
-
+						<br>
 						<div class="inputBox">
 
-							<textarea name="" id="" required></textarea>
+							<label id="labelForSymptoms" for="Symptoms"> Symptoms: </label>
+							<br><br>
+							<select name="selectReservation">
+								<option>Covid-19</option>
+								<option>Internal</option>
+								<option>Dentistry</option>
+								<option>Neurology</option>
+								<option>Obstetrics</option>
+								<option>Gynecology</option>
+							</select>
+						</div>
+						<br>
+
+						<div class="inputBox">
+							<input type="date" name="date" id="" required>
+
+						</div>
+						<div class="inputBox">
+
+							<textarea name="FurtherInfo" id="" required></textarea>
 							<span> Type any further Information</span>
 						</div>
-						<div class="inputBox">
-							<input type="" name="" id="" required>
-							<span> Your signature</span>
-						</div>
+
 						<div class="inputBox">
 							<input type="submit" id="submit12" value="Submit">
 
