@@ -23,6 +23,7 @@
                        $_SESSION['Lname'] = $row['Lname']; 
                        $_SESSION['accType'] = $row['AccountType'];
                        $_SESSION['ssn'] = (int) $row['NationalID'];
+                       $_SESSION['profilePic'] = $row['ProfilePicture'];
                        header("location: ../home.php");  
                   }  
                   else  

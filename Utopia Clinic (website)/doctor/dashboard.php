@@ -47,7 +47,7 @@
                         </form>
                     </div>
                     <div class="profile-modal-content" <?php echo $styleS;?>>
-                        <img src="./images/profilePicture.png">
+                        <img src=".<?php echo $_SESSION['profilePic']?>">
                         <p> <?php echo $fisrtName;?> </p>
                         <a <?php echo $link;?>> Dashboard <a>
                         <a href="../Server/logout.php">Logout</a>
@@ -100,15 +100,12 @@
 
                 <div class="body-container-bottom">
                     <div class="profile-container">
-                        <img src="../images/profilePicture.png" alt="profilePicture">
+                        <img src=".<?php echo $_SESSION['profilePic']?>" alt="profilePicture">
                         <div class="profile-container-bottom">
                             <h1>Profile</h1>
-                            <h2>Dr. name</h2>
-                            <h3>(Paediatric surgery) <br> Medic Genereal Medical Hospital</h3>
+                            <h2><?php echo $_SESSION['Fname']?></h2>
                             <h2>Speciality</h2>
                             <div class="Speciality">
-                                <p>Laparoscopy</p>
-                                <p>Endoscopic</p>
                             </div>
                             <h4>Experience: 22 years</h4>
                             <h4>Language: English Spanish</h4>

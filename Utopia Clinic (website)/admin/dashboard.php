@@ -48,7 +48,7 @@
                         </form>
                     </div>
                     <div class="profile-modal-content" <?php echo $styleS;?>>
-                        <img src="./images/profilePicture.png">
+                        <img src=".<?php echo $_SESSION['profilePic']?>">
                         <p> <?php echo $fisrtName;?> </p>
                         <a <?php echo $link;?>> Dashboard <a>
                         <a href="../Server/logout.php">Logout</a>
@@ -122,13 +122,12 @@
             </div>
             <div class="body-container-bottom">
                 <div class="profile-container">
-                    <img src="../images/profilePicture.png" alt="profilePicture">
+                    <img src=".<?php echo $_SESSION['profilePic']?>" alt="profilePicture">
                     <div class="profile-container-bottom">
                         <h1>Profile</h1>
-                        <h2>Welcome Admin name</h2>
-                        <h2>Email: admin@mycompany.com</h2>
-                        <h2>Phone: 01025485663</h2>
-                        <h2>Position: Manager</h2>
+                        <h2>Welcome Admin <?php echo $_SESSION['Fname']?></h2>
+                        <h2>Email: <?php echo $_SESSION['email']?></h2>
+                        <h2>Position: Admin</h2>
                     </div>
                 </div>
             </div>

@@ -50,7 +50,7 @@
                     <a href="./Sign-up.php" class="btn btn1"> Sign up</a>
                 </div>
                 <div class="profile-modal-content" <?php echo $styleS;?>>
-                    <img src="./images/profilePicture.png">
+                    <img src="<?php echo $_SESSION['profilePic']?>">
                     <p> <?php echo $fisrtName;?> </p>
                     <a <?php echo $link;?>> Dashboard <a>
                     <a href="./Server/logout.php">Logout</a>
