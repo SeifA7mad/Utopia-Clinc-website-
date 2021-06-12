@@ -167,7 +167,26 @@ let editForm = (event) => {
     $('#Archive .body-container-bottom .info-table').append(form);
 }
 
+let deleteFrom = (tableName, id) => {
+    return new Promise((resolve, reject) => {
+        $.ajax({
+            type: "GET",
+            url: "../Server/getData.php",
+            dataType: "json",
+            data: ({ tableName: tableName }),
+            success: function (data) {
+                resolve(data)
+            },
+            error: function (error) {
+                reject(error)
+            }
+        })
+    });
+}
+
 let deleteForm = (event) => {
+    let idToDelete = $(event.target).parent().parent().children()[0];
+    let tableName = $(event.target).parent().parent().parent().parent().attr('id');
 
 }
 

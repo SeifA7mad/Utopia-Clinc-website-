@@ -104,8 +104,6 @@
                         $query = "SELECT * FROM offer";
                         $result = getData($query);
                         while($row = mysqli_fetch_assoc($result)) {
-                            //$imgData = $row['OfferImage'];
-                            //header("Content-type: image/jpg"); 
                             offerCard($row['OfferName'], $row['OfferDescription'], $row['expireDate'], 
                             $row['OfferPrice'], $row['OfferImage']);
                         }
