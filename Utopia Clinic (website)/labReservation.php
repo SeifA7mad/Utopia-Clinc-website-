@@ -128,10 +128,8 @@
 							<label id="labelForSymptoms" for="Test"> Type of test: </label>
 
 							<select name="testReservation">
-								<option value="">Liver F.T</option>
-								<option>Lipase</option>
-								<option>Fasting Blood Glucose</option>
-
+								<option value="4">Liver F.T</option>
+								<option value="2">Gland analysi</option>
 						</div>
 
 						<div class="inputBox">

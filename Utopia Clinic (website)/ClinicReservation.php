@@ -130,11 +130,7 @@
 							<label id="labelForSymptoms" for="clinic"> Clinic: </label>
 							<select name="clincNumber">
 								<option value="1">Neurology</option>
-								<option>Dentistry</option>
-								<option>Gynecology</option>
-								<option>Obstetrics</option>
-								<option>Internal</option>
-								<option>Covid-19</option>
+								<option value="3">Dentistry</option>
 							</select>
 						</div>
 						<br>
