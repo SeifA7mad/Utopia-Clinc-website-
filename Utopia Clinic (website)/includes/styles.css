@@ -1532,7 +1532,7 @@ header .sign-up-form form {
     align-items: center;
     border-radius: 4px;
     width: 40%;
-    height: 550px;
+    height: 1000px;
     background-color: rgb(255, 255, 255);
     margin-top: 100px;
 }
@@ -1565,7 +1565,7 @@ header .sign-up-form::after {
     background-size: cover;
     background-position: center;
     position: absolute;
-    height: 50em;
+    height: 70em;
     top: 0px;
     right: 0px;
     bottom: 0px;
