@@ -76,7 +76,7 @@ $('.side-nav ul li a').not('.home-anker').click(function (event) {
 
 let activeLink;
 
-let tableInfoRequest = (activeTab) => {
+let tableInfoRequestAjax = (activeTab) => {
     return new Promise((resolve, reject) => {
         $.ajax({
             type: "GET",
@@ -106,31 +106,31 @@ $('.body-container-bottom .tabs a').click(function (event) {
     if (activeTab !== activeLink) {
         if (activeBody === "#Archive") {
             if (activeTab === "#Patients") {
-                tableInfoRequest(activeTab)
+                tableInfoRequestAjax(activeTab)
                     .then(data => createTableArchive(activeBody, activeTab, tableHeaderPatients, data))
                     .catch(error => console.log(error));
             } else if (activeTab === "#Doctors") {
-                tableInfoRequest(activeTab)
+                tableInfoRequestAjax(activeTab)
                     .then(data => createTableArchive(activeBody, activeTab, tableHeaderDoctors, data))
                     .catch(error => console.log(error));
             } else if (activeTab === "#Offers") {
-                tableInfoRequest(activeTab)
+                tableInfoRequestAjax(activeTab)
                     .then(data => createTableArchive(activeBody, activeTab, tableHeaderOffers, data))
                     .catch(error => console.log(error));
             }
 
         } else if (activeBody === "#Report") {
             if (activeTab === "#Daily") {
-                tableInfoRequest(activeTab)
+                tableInfoRequestAjax(activeTab)
                     .then(data => createTableArchive(activeBody, activeTab, tableHeaderDailyReport, data))
                     .catch(error => console.log(error));
             } else if (activeTab === "#Weekly") {
-                tableInfoRequest(activeTab)
+                tableInfoRequestAjax(activeTab)
                     .then(data => createTableArchive(activeBody, activeTab, tableHeaderDailyReport, data))
                     .catch(error => console.log(error));
             }
         } else if (activeBody === "#Tasks") {
-            tableInfoRequest(activeTab)
+            tableInfoRequestAjax(activeTab)
                 .then(data => createTableArchive(activeBody, activeTab, tableHeaderDailyTask, data))
                 .catch(error => console.log(error));
         }
@@ -149,25 +149,60 @@ $(".body-container-bottom .head input").on("keyup", function () {
 });
 
 let editForm = (event) => {
-    let informationToBeEdit = $(event.target).parent().parent().children();
     let tableHead = $(event.target).parent().parent().parent().children('.notForSearch').children();
+    let idToEdit = $(event.target).parent().parent().children()[0].innerText;
     let form = $("<form> </form>");
     form.addClass('edit-form');
     form.append("<label> Select what to edit </label>");
 
-    let select = $("<select> </select>");
-    for (let head of tableHead) {
-        select.append("<option value='" + head.outerText + "'>" + head.outerText + "</option>");
+    let select = $("<select id='" + idToEdit + "'> </select>");
+    for (let i = 1; i < tableHead.length - 1; i++) {
+        select.append("<option value='" + tableHead[i].outerText + "'>" + tableHead[i].outerText + "</option>");
     }
 
     form.append(select);
-    form.append("<input type='text' placeholder='Enter the new value' class='text'>");
-    form.append("<input type='button' value='Done' class='btn validate'>");
+    form.append("<input type='text' name='newVal' placeholder='Enter the new value'>");
+    form.append("<input type='button' value='Done' class='btn edit-btn' onClick='editFormOf(event)'>");
     $('#Archive .body-container-bottom .info-table .edit-form').remove();
     $('#Archive .body-container-bottom .info-table').append(form);
 }
 
-let deleteFrom = (tableName, id) => {
+let editFromAjax = (tableName, id, valToEdit, newVal) => {
+    return new Promise((resolve, reject) => {
+        $.ajax({
+            type: "POST",
+            url: "../Server/editData.php",
+            dataType: "json",
+            data: {
+                tableName: tableName,
+                id: id,
+                valToEdit: valToEdit,
+                newVal: newVal
+            },
+            success: function (data) {
+                resolve(data)
+            },
+            error: function (error) {
+                reject(error)
+            }
+        })
+    });
+}
+
+let editFormOf = (event) => {
+    let tableName = $(event.target).parent().parent().attr('id');
+    let idToEdit = $(event.target).parent().children('select').attr('id');
+    let valToEdit = $(event.target).parent().children('select').val();
+    let newVal =  $(event.target).parent().children('input[name=newVal]').val();
+
+    editFromAjax(tableName, idToEdit, valToEdit, newVal)
+        .then(data => {
+            location.reload();
+        })
+        .catch(error => console.log(error));
+}
+
+let deleteFromAjax = (tableName, id) => {
     return new Promise((resolve, reject) => {
         $.ajax({
             type: "POST",
@@ -192,7 +227,7 @@ let deleteForm = (event) => {
     let tableName = $(event.target).parent().parent().parent().parent().attr('id');
     let id = idToDelete.innerText;
 
-    deleteFrom(tableName, id)
+    deleteFromAjax(tableName, id)
         .then(data => {
             $(event.target).parent().parent().remove();
         })
@@ -294,11 +329,11 @@ let createTableArchive = (bodyID, id, th, tr) => {
     $(id).fadeIn();
 }
 
-let getData = (tableName) => {
+let getDataAjax = (tableName) => {
     return new Promise((resolve, reject) => {
         $.ajax({
             type: "GET",
-            url: "../Server/getData.php",
+            url: "../Server/getDataAjax.php",
             dataType: "json",
             data: ({ tableName: tableName }),
             success: function (data) {
@@ -313,7 +348,7 @@ let getData = (tableName) => {
 
 let formToggle = (id) => {
     if (id == "#form-Offers") {
-        getData("clinic").then(data => {
+        getDataAjax("clinic").then(data => {
             for (let i = 0; i < data.length; i++) {
                 let option = "<option value='" + data[i].Clinic_Lab_ID + "'> " + data[i].Specialty + "</option>";
                 $('#form-Offers select').append(option);
