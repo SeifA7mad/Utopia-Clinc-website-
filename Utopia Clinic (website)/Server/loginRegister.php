@@ -22,6 +22,7 @@
                        $_SESSION['Fname'] = $row['Fname'];
                        $_SESSION['Lname'] = $row['Lname']; 
                        $_SESSION['accType'] = $row['AccountType'];
+                       $_SESSION['ssn'] = (int) $row['NationalID'];
                        header("location: ../home.php");  
                   }  
                   else  

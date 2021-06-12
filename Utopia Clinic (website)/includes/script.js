@@ -13,17 +13,16 @@ $('.profile').click(function (event) {
     $('.notification-modal').css("display", "none");
 });
 
-let diplayProfileModal = (user) => {
-    // if (user.role === "Admin") {
-    //     $('.profile-modal-content').append("<a href='./admin/dashboard.html'> Dashboard </a>");
-    // } else if (user.role === "Doctor") {
-    //     $('.profile-modal-content').append("<a href='./doctor/dashboard.html'> Dashboard </a>");
-    // }
-    $('.profile-modal-content').children('p').html(user);
+$('.read-more-btn').click(() => {
+    if ($('.more-text').css("display") === "none") {
+        $('.more-text').css("display", "block");
+        $('.read-more-btn').html("Read Less");
+    } else {
+        $('.more-text').css("display", "none");
+        $('.read-more-btn').html("Read More");
+    }
+});
 
-    $('.profile-modal-content').css('display', 'flex');
-    $('.sign-in-form').css('display', 'none');
-}
 
 $('.read-more-btn').click(() => {
     if ($('.more-text').css("display") === "none") {
@@ -107,17 +106,33 @@ $('.body-container-bottom .tabs a').click(function (event) {
     if (activeTab !== activeLink) {
         if (activeBody === "#Archive") {
             if (activeTab === "#Patients") {
-                tableInfoRequest(activeTab).then(data => createTableArchive(activeBody, activeTab, tableHeaderPatients, data));
+                tableInfoRequest(activeTab)
+                    .then(data => createTableArchive(activeBody, activeTab, tableHeaderPatients, data))
+                    .catch(error => console.log(error));
             } else if (activeTab === "#Doctors") {
-                tableInfoRequest(activeTab).then(data => createTableArchive(activeBody, activeTab, tableHeaderDoctors, data));
+                tableInfoRequest(activeTab)
+                    .then(data => createTableArchive(activeBody, activeTab, tableHeaderDoctors, data))
+                    .catch(error => console.log(error));
             } else if (activeTab === "#Offers") {
-                tableInfoRequest(activeTab).then(data => createTableArchive(activeBody, activeTab, tableHeaderOffers, data));
+                tableInfoRequest(activeTab)
+                    .then(data => createTableArchive(activeBody, activeTab, tableHeaderOffers, data))
+                    .catch(error => console.log(error));
             }
 
         } else if (activeBody === "#Report") {
-            //createTableArchive(activeBody, activeTab, tableHeaderReport, tableRowsReport);
+            if (activeTab === "#Daily") {
+                tableInfoRequest(activeTab)
+                    .then(data => createTableArchive(activeBody, activeTab, tableHeaderDailyReport, data))
+                    .catch(error => console.log(error));
+            } else if (activeTab === "#Weekly") {
+                tableInfoRequest(activeTab)
+                    .then(data => createTableArchive(activeBody, activeTab, tableHeaderDailyReport, data))
+                    .catch(error => console.log(error));
+            }
         } else if (activeBody === "#Tasks") {
-            //createTableArchive(activeBody, activeTab.replace('#', ''), tableHeaderReport, tableRowsReport);
+            tableInfoRequest(activeTab)
+                .then(data => createTableArchive(activeBody, activeTab, tableHeaderDailyTask, data))
+                .catch(error => console.log(error));
         }
         $(activeBody + ' .head').css('display', 'flex');
         $('.info-table').not(activeTab).remove();
@@ -183,6 +198,25 @@ const tableHeaderOffers = [
     "Offer Price",
     "Offer Date",
     "Clinic/Lab ID"
+];
+
+const tableHeaderDailyReport = [
+    "Reservation ID",
+    "Patient Name",
+    "Specialty",
+    "Date",
+    "Time",
+    "Price",
+    "Doctor Name"
+];
+
+tableHeaderDailyTask = [
+    "Reservation ID",
+    "Patient NationalID",
+    "Patient Name",
+    "Syptoms",
+    "Date",
+    "Time"
 ];
 
 

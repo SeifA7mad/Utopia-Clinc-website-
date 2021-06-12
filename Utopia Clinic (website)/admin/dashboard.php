@@ -51,7 +51,7 @@
                         <img src="./images/profilePicture.png">
                         <p> <?php echo $fisrtName;?> </p>
                         <a <?php echo $link;?>> Dashboard <a>
-                        <a href="./Server/logout.php">Logout</a>
+                        <a href="../Server/logout.php">Logout</a>
                     </div>
             </div>
             <i class="fa fa-bell-o fa-2x notification" aria-hidden="true">
