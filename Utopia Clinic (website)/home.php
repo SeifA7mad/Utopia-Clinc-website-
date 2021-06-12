@@ -14,7 +14,7 @@
             if ($_SESSION['accType'] == "Doctor") {
                 $link = "href='./doctor/dashboard.php'";
             } else if ($_SESSION['accType'] == "Admin") {
-                $link = "href='./doctor/dashboard.php'";
+                $link = "href='./admin/dashboard.php'";
             } else {
                 $link = "style='display:none';";
             }

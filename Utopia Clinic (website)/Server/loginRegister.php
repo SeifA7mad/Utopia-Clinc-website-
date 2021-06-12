@@ -29,7 +29,7 @@
                   {  
                        //return false;  
                        echo '<script>alert("Wrong User Details")</script>';
-                       //header("location: ../home.php");  
+                       header("location: ../home.php");  
                   }  
              }  
         }  

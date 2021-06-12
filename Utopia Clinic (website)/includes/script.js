@@ -170,10 +170,13 @@ let editForm = (event) => {
 let deleteFrom = (tableName, id) => {
     return new Promise((resolve, reject) => {
         $.ajax({
-            type: "GET",
-            url: "../Server/getData.php",
+            type: "POST",
+            url: "../Server/deleteData.php",
             dataType: "json",
-            data: ({ tableName: tableName }),
+            data: {
+                tableName: tableName,
+                id: id
+            },
             success: function (data) {
                 resolve(data)
             },
@@ -187,7 +190,13 @@ let deleteFrom = (tableName, id) => {
 let deleteForm = (event) => {
     let idToDelete = $(event.target).parent().parent().children()[0];
     let tableName = $(event.target).parent().parent().parent().parent().attr('id');
+    let id = idToDelete.innerText;
 
+    deleteFrom(tableName, id)
+        .then(data => {
+            $(event.target).parent().parent().remove();
+        })
+        .catch(error => console.log(error));
 }
 
 const tableHeaderPatients = [
