@@ -135,25 +135,31 @@
         </div>
     </main>
     <div class="add-form" id="form-Doctors">
-        <form>
+        <form method="POST" action="../Server/addDoctor.php" enctype="multipart/form-data">
             <i class="fa fa-times fa-2x" aria-hidden="true" onclick="closeForm()"></i>
             <h1> Enter Doctor Information </h1>
-            <label for="name"> name</label>
-            <input type="text" name="name" placeholder="Enter name" class=text>
-            <label for="age"> Age</label>
-            <input type="text" name="age" placeholder="Enter age" class="num">
-            <label for="gender"> Gender</label>
-            <input type="text" name="gender" placeholder="Enter gender" class="text">
+            <label for ="NationalID"> NationalID </label>
+            <input type="text" name="NationalID" placeholder="Enter National ID" >
+            <label for="name"> Fname</label>
+            <input type="text" name="Fname" placeholder="Enter name" class=text>
+            <label for="name"> Lname</label>
+            <input type="text" name="Lname" placeholder="Enter name" class=text>
+            <label for="age"> DOB</label>
+            <input type="date" name="DOB" placeholder="Enter DOB">
             <label for="phoneNum"> Phone number</label>
             <input type="text" name="phoneNum" placeholder="Enter phone number" class="num">
-            <label for="email"> Email</label>
-            <input type="text" name="email" placeholder="Enter Email" class="email">
-            <label for="adress"> Address</label>
-            <input type="text" name="adress" placeholder="Enter Address" class="text">
-            <label for="password"> Password </label>
-            <input type="text" name="password" placeholder="Enter password" class="pass">
+            <label for="gender"> Gender</label>
+            <input type="text" name="gender" placeholder="Enter gender" class="text">
             <label for="speciality"> Medical Speciality</label>
             <input type="text" name="speciality" placeholder="Enter Medical Speciality" class="text">
+            <label for="adress"> Address</label>
+            <input type="text" name="address" placeholder="Enter Address" class="text">
+            <label for="email"> Email</label>
+            <input type="text" name="email" placeholder="Enter Email" class="email">
+            <label for="password"> Password </label>
+            <input type="text" name="password" placeholder="Enter password" class="pass">
+            <label for="profilePic"> Select Profile Picture </label>
+            <input type="file" name="profielPic" accept="image/*">
 
             <button type="button" class="validate"> Add Doctor </button>
         </form>
