@@ -131,13 +131,11 @@
                         <input type="text" placeholder="Search">
                     </div>
 
-                    <div class="ask-doc">
-                        <form>
+                        <form class="ask-doc">
                             <label for = "PatientQuestion"> Patient Question </label>
                             <input type = "text" name=" PatientQuestion" id="name" placeholder="write answer here" class="text">
                             <button type = "button" class="validate"> SEND ANSWER</button> 
                         </form>
-                    </div>
                                           
                 </div>
              </div> 
