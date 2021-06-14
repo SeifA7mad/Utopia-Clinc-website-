@@ -335,7 +335,7 @@ let getDataAjax = (tableName) => {
     return new Promise((resolve, reject) => {
         $.ajax({
             type: "GET",
-            url: "../Server/getDataAjax.php",
+            url: "../Server/getData.php",
             dataType: "json",
             data: ({ tableName: tableName }),
             success: function (data) {
